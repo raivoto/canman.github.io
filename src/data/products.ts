@@ -1,7 +1,87 @@
 import { Product } from '../types';
 
+// Helper function to create clean inline SVG Data URLs for reliable rendering without external image dependencies
+const createSvgImage = (bg: string, iconType: string, label: string, accentColor = '#0e4da4') => {
+  let graphicSvg = '';
+
+  switch (iconType) {
+    case 'desktop':
+      graphicSvg = `
+        <rect x="130" y="50" width="140" height="200" rx="12" fill="#1e293b" stroke="#334155" stroke-width="4"/>
+        <circle cx="200" cy="90" r="24" fill="none" stroke="${accentColor}" stroke-width="6"/>
+        <circle cx="200" cy="150" r="24" fill="none" stroke="${accentColor}" stroke-width="6"/>
+        <rect x="180" y="210" width="40" height="8" rx="4" fill="#38bdf8"/>
+        <path d="M190 70 L210 110 M210 70 L190 110" stroke="${accentColor}" stroke-width="3"/>
+      `;
+      break;
+    case 'notebook':
+      graphicSvg = `
+        <rect x="70" y="60" width="260" height="150" rx="10" fill="#0f172a" stroke="#334155" stroke-width="4"/>
+        <rect x="80" y="70" width="240" height="130" rx="6" fill="#1e293b"/>
+        <rect x="100" y="90" width="200" height="90" rx="4" fill="${accentColor}" opacity="0.8"/>
+        <path d="M40 215 L360 215 L340 230 L60 230 Z" fill="#94a3b8" stroke="#64748b" stroke-width="2"/>
+        <rect x="170" y="218" width="60" height="4" rx="2" fill="#cbd5e1"/>
+      `;
+      break;
+    case 'apple':
+      graphicSvg = `
+        <rect x="70" y="55" width="260" height="155" rx="12" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="3"/>
+        <rect x="78" y="63" width="244" height="139" rx="8" fill="#0f172a"/>
+        <path d="M200 110 C195 110 190 115 190 125 C190 135 195 140 200 140 C210 115 205 110 200 110 Z" fill="#ffffff" opacity="0.9"/>
+        <path d="M30 215 L370 215 L350 228 L50 228 Z" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2"/>
+        <rect x="175" y="217" width="50" height="4" rx="2" fill="#64748b"/>
+      `;
+      break;
+    case 'monitor':
+      graphicSvg = `
+        <rect x="50" y="40" width="300" height="170" rx="8" fill="#0f172a" stroke="#334155" stroke-width="4"/>
+        <rect x="60" y="50" width="280" height="150" rx="4" fill="#1e293b"/>
+        <rect x="75" y="65" width="250" height="120" fill="${accentColor}" opacity="0.75"/>
+        <rect x="180" y="210" width="40" height="35" fill="#64748b"/>
+        <path d="M140 245 L260 245 L240 255 L160 255 Z" fill="#475569"/>
+      `;
+      break;
+    case 'printer':
+      graphicSvg = `
+        <rect x="90" y="100" width="220" height="110" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="4"/>
+        <rect x="120" y="40" width="160" height="70" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+        <rect x="110" y="170" width="180" height="60" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+        <circle cx="280" cy="130" r="8" fill="#22c55e"/>
+        <rect x="240" y="130" width="20" height="4" rx="2" fill="#94a3b8"/>
+      `;
+      break;
+    case 'component':
+      graphicSvg = `
+        <rect x="110" y="60" width="180" height="180" rx="16" fill="#0f172a" stroke="#334155" stroke-width="4"/>
+        <rect x="135" y="85" width="130" height="130" rx="8" fill="${accentColor}"/>
+        <text x="200" y="160" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="28">${label}</text>
+        <circle cx="120" cy="70" r="4" fill="#fbbf24"/>
+        <circle cx="280" cy="70" r="4" fill="#fbbf24"/>
+        <circle cx="120" cy="230" r="4" fill="#fbbf24"/>
+        <circle cx="280" cy="230" r="4" fill="#fbbf24"/>
+      `;
+      break;
+    case 'peripheral':
+    default:
+      graphicSvg = `
+        <rect x="140" y="70" width="120" height="160" rx="50" fill="#1e293b" stroke="#475569" stroke-width="4"/>
+        <line x1="200" y1="70" x2="200" y2="130" stroke="#64748b" stroke-width="3"/>
+        <rect x="194" y="90" width="12" height="24" rx="6" fill="${accentColor}"/>
+      `;
+      break;
+  }
+
+  const svgRaw = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+    <rect width="400" height="300" fill="${bg}"/>
+    ${graphicSvg}
+    <text x="200" y="278" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-weight="600" font-size="13">${label}</text>
+  </svg>`;
+
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svgRaw)}`;
+};
+
 export const PRODUCTS: Product[] = [
-  // 1. Desktop PCs (New & Used)
+  // 1. Desktop PCs
   {
     id: 'pc-01',
     title: 'Canman Office Pro Tower',
@@ -16,7 +96,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Canman',
     shortSpec: 'i5-10400 16GB 512GB NVMe W11P',
     description: 'Fast and quiet office desktop computer with Intel Core i5 processor, 16GB RAM and speedy NVMe SSD storage. Pre-installed Windows 11 Pro.',
-    imageUrl: 'https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f1f5f9', 'desktop', 'Canman Office Pro'),
     specs: {
       cpu: 'Intel Core i5-10400 (up to 4.3 GHz)',
       ram: '16GB DDR4 3200MHz',
@@ -41,7 +121,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Canman',
     shortSpec: 'Ryzen 5 5600 16GB 1TB RTX4060 W11',
     description: 'Powerful gaming desktop for 1080p and 1440p gaming. Features AMD Ryzen 5 5600 and NVIDIA GeForce RTX 4060 8GB.',
-    imageUrl: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#0f172a', 'desktop', 'Canman Gaming RTX', '#2563eb'),
     specs: {
       cpu: 'AMD Ryzen 5 5600 (6-core, up to 4.4 GHz)',
       ram: '16GB DDR4 3600MHz Kingston Fury',
@@ -66,7 +146,7 @@ export const PRODUCTS: Product[] = [
     brand: 'DELL',
     shortSpec: 'i5-4590 8GB 500GB HDD W10P',
     description: 'Reliable business desktop DELL OptiPlex 7020 SFF. Thoroughly cleaned, tested, Grade A condition with Windows 10 Pro license.',
-    imageUrl: 'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f8fafc', 'desktop', 'DELL OptiPlex 7020 SFF', '#d97706'),
     specs: {
       cpu: 'Intel Core i5-4590 3.30GHz',
       ram: '8GB DDR3 1600MHz',
@@ -91,7 +171,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Lenovo',
     shortSpec: 'i5-8400T 8GB 256GB SSD W10P',
     description: 'Ultra-compact mini PC for office or home. Mountable behind monitor. Fast NVMe SSD.',
-    imageUrl: 'https://images.unsplash.com/photo-1547082299-de196ea013d6?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f1f5f9', 'desktop', 'Lenovo ThinkCentre Tiny', '#d97706'),
     specs: {
       cpu: 'Intel Core i5-8400T 6-Core',
       ram: '8GB DDR4',
@@ -115,7 +195,7 @@ export const PRODUCTS: Product[] = [
     brand: 'HP',
     shortSpec: 'Xeon W-2133 32GB 512GB Quadro P2000',
     description: 'Professional workstation for CAD, 3D rendering and video editing. ECC memory support and Quadro graphics.',
-    imageUrl: 'https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f8fafc', 'desktop', 'HP Z4 G4 Workstation', '#d97706'),
     specs: {
       cpu: 'Intel Xeon W-2133 (6C 12T 3.60GHz)',
       ram: '32GB DDR4 ECC Registered',
@@ -126,7 +206,7 @@ export const PRODUCTS: Product[] = [
     },
   },
 
-  // 2. Notebooks (New & Used)
+  // 2. Notebooks
   {
     id: 'nb-01',
     title: 'Lenovo ThinkPad T14 Gen 2 (Kasutatud)',
@@ -141,7 +221,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Lenovo',
     shortSpec: 'i5-1135G7 16GB 512GB FHD W11P',
     description: 'Top-tier business laptop with magnesium chassis, backlit keyboard, FHD IPS display and high battery life.',
-    imageUrl: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f1f5f9', 'notebook', 'Lenovo ThinkPad T14', '#d97706'),
     specs: {
       cpu: 'Intel Core i5-1135G7',
       ram: '16GB DDR4',
@@ -166,7 +246,7 @@ export const PRODUCTS: Product[] = [
     brand: 'DELL',
     shortSpec: 'i5-1145G7 16GB 256GB FHD W10P',
     description: 'Durable 14-inch enterprise laptop with Thunderbolt 4, smartcard reader and long battery backup.',
-    imageUrl: 'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f8fafc', 'notebook', 'DELL Latitude 5420', '#d97706'),
     specs: {
       cpu: 'Intel Core i5-1145G7',
       ram: '16GB DDR4',
@@ -190,7 +270,7 @@ export const PRODUCTS: Product[] = [
     brand: 'HP',
     shortSpec: 'i5-8265U 8GB 256GB FHD W10P',
     description: 'Sleek aluminum ultra-portable business notebook with Bang & Olufsen audio.',
-    imageUrl: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f1f5f9', 'notebook', 'HP EliteBook 840', '#d97706'),
     specs: {
       cpu: 'Intel Core i5-8265U Quad-Core',
       ram: '8GB DDR4 (Expandable)',
@@ -214,7 +294,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Lenovo',
     shortSpec: 'Ryzen 5 7520U 16GB 512GB W11',
     description: 'Brand new Lenovo 15.6" laptop for work and university. AMD Ryzen 5 processor and modern full keyboard.',
-    imageUrl: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f8fafc', 'notebook', 'Lenovo V15 Gen 4'),
     specs: {
       cpu: 'AMD Ryzen 5 7520U',
       ram: '16GB LPDDR5',
@@ -238,7 +318,7 @@ export const PRODUCTS: Product[] = [
     brand: 'HP',
     shortSpec: 'i5-12450H 16GB 512GB RTX3050',
     description: 'Great entry gaming laptop with 144Hz IPS display and NVIDIA RTX 3050 graphics.',
-    imageUrl: 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#0f172a', 'notebook', 'HP Pavilion Gaming', '#2563eb'),
     specs: {
       cpu: 'Intel Core i5-12450H (8 Cores)',
       ram: '16GB DDR4 3200MHz',
@@ -264,7 +344,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Apple',
     shortSpec: 'Apple M1 8-Core 8GB 256GB Retina',
     description: 'Iconic silent fanless laptop with groundbreaking Apple M1 chip. Battery life up to 18 hours.',
-    imageUrl: 'https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f8fafc', 'apple', 'MacBook Air M1'),
     specs: {
       cpu: 'Apple M1 chip (8-core CPU, 7-core GPU)',
       ram: '8GB Unified Memory',
@@ -289,7 +369,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Apple',
     shortSpec: 'Intel i5 8GB 128GB SSD macOS',
     description: 'Lightweight MacBook Air for students and browser tasks. Aluminum chassis, battery status good.',
-    imageUrl: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f1f5f9', 'apple', 'MacBook Air 13', '#d97706'),
     specs: {
       cpu: 'Intel Core i5 1.8GHz Dual-Core',
       ram: '8GB 1600MHz LPDDR3',
@@ -313,7 +393,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Apple',
     shortSpec: 'Apple M1 8-Core 8GB 256GB SSD',
     description: 'Compact desktop Mac with high single-core performance and low power consumption.',
-    imageUrl: 'https://images.unsplash.com/photo-1629429408209-1f912961dbd8?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f8fafc', 'desktop', 'Apple Mac Mini M1', '#d97706'),
     specs: {
       cpu: 'Apple M1 8-core CPU',
       ram: '8GB Unified RAM',
@@ -337,7 +417,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Apple',
     shortSpec: 'i5 2.8GHz 8GB 1TB HDD macOS',
     description: 'Elegant All-in-One computer for home display or reception desks. Clean condition with wireless mouse/kbd.',
-    imageUrl: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f1f5f9', 'monitor', 'Apple iMac 21.5"', '#d97706'),
     specs: {
       cpu: 'Intel Quad-Core i5 2.8GHz',
       ram: '8GB DDR3',
@@ -348,7 +428,7 @@ export const PRODUCTS: Product[] = [
     },
   },
 
-  // 4. Monitors (New & Used)
+  // 4. Monitorid
   {
     id: 'mon-01',
     title: 'Dell SE2422H 23.8" Full HD (Uus)',
@@ -362,7 +442,7 @@ export const PRODUCTS: Product[] = [
     brand: 'DELL',
     shortSpec: '23.8" FHD 75Hz HDMI VGA VA',
     description: 'Clean frameless monitor with anti-glare screen and HDMI input. Ideal for dual monitor setups.',
-    imageUrl: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f8fafc', 'monitor', 'DELL 23.8" Full HD'),
     specs: {
       screen: '23.8" (60.5 cm) Full HD (1920x1080)',
       refreshRate: '75Hz',
@@ -385,7 +465,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Samsung',
     shortSpec: '27" 2560x1440 165Hz 1ms Curved',
     description: 'Curved gaming monitor with 1000R curvature, Quad HD resolution and fast 1ms response time.',
-    imageUrl: 'https://images.unsplash.com/photo-1585792180666-f7347c490ee2?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#0f172a', 'monitor', 'Samsung Odyssey 27"', '#2563eb'),
     specs: {
       screen: '27" Curved WQHD (2560x1440)',
       refreshRate: '165Hz',
@@ -407,7 +487,7 @@ export const PRODUCTS: Product[] = [
     brand: 'LG',
     shortSpec: '27" 4K UHD 3840x2160 IPS HDR400',
     description: 'Sharp 4K monitor with VESA DisplayHDR 400 and 99% sRGB color gamut for designers.',
-    imageUrl: 'https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f1f5f9', 'monitor', 'LG 27" 4K UHD IPS'),
     specs: {
       screen: '27" 4K UHD (3840x2160)',
       panel: 'IPS 99% sRGB',
@@ -430,7 +510,7 @@ export const PRODUCTS: Product[] = [
     brand: 'HP',
     shortSpec: '21.5" FHD 1920x1080 DVI VGA',
     description: 'Budget office monitor with crisp Full HD resolution. Cables included.',
-    imageUrl: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f8fafc', 'monitor', 'HP ProDisplay 21.5"', '#d97706'),
     specs: {
       screen: '21.5" Full HD LED (1920x1080)',
       inputs: 'DVI-D, VGA',
@@ -452,7 +532,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Brother',
     shortSpec: 'Mono Laser Wi-Fi Duplex 30ppm',
     description: 'Compact monochrome wireless laser printer with automatic duplex double-sided printing.',
-    imageUrl: 'https://images.unsplash.com/photo-1612815150338-0eb98a722e03?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f8fafc', 'printer', 'Brother Mono Laser'),
     specs: {
       type: 'Monochrome Laser Printer',
       speed: 'Up to 30 ppm',
@@ -475,7 +555,7 @@ export const PRODUCTS: Product[] = [
     brand: 'HP',
     shortSpec: 'Laser MFP Print Scan Copy Fax Wi-Fi',
     description: 'Heavy duty office multifunction laser printer with low page counter and fresh toner.',
-    imageUrl: 'https://images.unsplash.com/photo-1612815150338-0eb98a722e03?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f1f5f9', 'printer', 'HP LaserJet MFP', '#d97706'),
     specs: {
       type: 'All-in-One Laser MFP',
       speed: 'Up to 38 ppm',
@@ -499,7 +579,7 @@ export const PRODUCTS: Product[] = [
     brand: 'AMD',
     shortSpec: '6 Cores / 12 Threads 3.5GHz AM4 Box',
     description: 'Popular AM4 CPU with 6 cores, 12 threads and included Wraith Stealth cooler.',
-    imageUrl: 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f8fafc', 'component', 'AMD RYZEN 5'),
     specs: {
       socket: 'AM4',
       cores: '6 Cores, 12 Threads',
@@ -523,7 +603,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Intel',
     shortSpec: '6 Cores / 12 Threads up to 4.4GHz',
     description: 'High efficiency Intel 12th gen CPU for gaming builds. Requires dedicated graphics card.',
-    imageUrl: 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f1f5f9', 'component', 'INTEL CORE i5'),
     specs: {
       socket: 'LGA1700',
       cores: '6 Performance Cores',
@@ -532,7 +612,7 @@ export const PRODUCTS: Product[] = [
     },
   },
 
-  // 7. Arvutiosad - RAM
+  // 7. Arvutiosad - RAM & Storage
   {
     id: 'ram-01',
     title: 'Kingston Fury Beast 16GB (2x8GB) DDR4 3200MHz (Uus)',
@@ -547,7 +627,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Kingston',
     shortSpec: '16GB (2x8GB) DDR4 CL16 Black',
     description: 'High performance dual-channel DDR4 memory with sleek black aluminum heat spreader.',
-    imageUrl: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f8fafc', 'component', '16GB DDR4 RAM'),
     specs: {
       capacity: '16GB (2x8GB)',
       type: 'DDR4 SDRAM',
@@ -569,7 +649,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Corsair',
     shortSpec: '32GB (2x16GB) DDR5 6000MHz CL36',
     description: 'Extreme speed DDR5 RAM optimized for Intel XMP 3.0 and AMD EXPO profiles.',
-    imageUrl: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#0f172a', 'component', '32GB DDR5 RAM', '#2563eb'),
     specs: {
       capacity: '32GB (2x16GB)',
       type: 'DDR5',
@@ -577,77 +657,6 @@ export const PRODUCTS: Product[] = [
       warranty: 'Eluaegne',
     },
   },
-  {
-    id: 'ram-03',
-    title: 'Crucial 8GB DDR4 3200MHz SODIMM Laptop (Uus)',
-    categoryL1: 'Arvutiosad',
-    categoryL2: 'Mälu Notebook',
-    categoryL3: 'DDR4 SODIMM',
-    price: 24,
-    oldPrice: 29,
-    condition: 'Uus',
-    stock: 'Laos',
-    stockCount: 20,
-    brand: 'Crucial',
-    shortSpec: '8GB DDR4 3200MHz CL22 Laptop RAM',
-    description: 'Easy performance upgrade for laptops and mini PCs.',
-    imageUrl: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      capacity: '8GB',
-      formFactor: '260-Pin SODIMM',
-      speed: '3200MHz',
-      warranty: '10 aastat',
-    },
-  },
-
-  // 8. Arvutiosad - Videokaardid
-  {
-    id: 'gpu-01',
-    title: 'MSI GeForce RTX 4060 Ventus 2X 8GB OC (Uus)',
-    categoryL1: 'Arvutiosad',
-    categoryL2: 'Videokaardid',
-    categoryL3: 'NVIDIA',
-    price: 319,
-    oldPrice: 349,
-    condition: 'Uus',
-    stock: 'Laos',
-    stockCount: 4,
-    brand: 'MSI',
-    shortSpec: 'RTX 4060 8GB GDDR6 DLSS 3',
-    description: 'Ada Lovelace architecture graphics card with Ray Tracing and DLSS 3 support.',
-    imageUrl: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      gpu: 'NVIDIA GeForce RTX 4060',
-      vram: '8GB GDDR6 (128-bit)',
-      outputs: '3x DisplayPort 1.4a, 1x HDMI 2.1a',
-      power: '115W (8-pin connector)',
-      warranty: '36 kuud',
-    },
-    isPopular: true,
-  },
-  {
-    id: 'gpu-02',
-    title: 'Gigabyte Radeon RX 6600 Eagle 8GB (Uus)',
-    categoryL1: 'Arvutiosad',
-    categoryL2: 'Videokaardid',
-    categoryL3: 'AMD',
-    price: 219,
-    oldPrice: 245,
-    condition: 'Uus',
-    stock: 'Laos',
-    stockCount: 6,
-    brand: 'Gigabyte',
-    shortSpec: 'RX 6600 8GB GDDR6 1080p Gaming',
-    description: 'Excellent value 1080p graphics card with low noise triple-fan cooling system.',
-    imageUrl: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      gpu: 'AMD Radeon RX 6600',
-      vram: '8GB GDDR6',
-      warranty: '36 kuud',
-    },
-  },
-
-  // 9. Arvutiosad - SSD & HDD
   {
     id: 'ssd-01',
     title: 'Samsung 980 1TB M.2 NVMe SSD (Uus)',
@@ -662,7 +671,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Samsung',
     shortSpec: '1TB M.2 PCIe 3.0 Up to 3500MB/s',
     description: 'Reliable high-speed PCIe NVMe SSD drive from Samsung.',
-    imageUrl: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f8fafc', 'component', '1TB NVMe SSD'),
     specs: {
       capacity: '1TB',
       interface: 'PCIe 3.0 x4, NVMe 1.4',
@@ -671,50 +680,8 @@ export const PRODUCTS: Product[] = [
       warranty: '60 kuud (5 aastat)',
     },
   },
-  {
-    id: 'ssd-02',
-    title: 'Kingston A400 480GB 2.5" SATA SSD (Uus)',
-    categoryL1: 'Arvutiosad',
-    categoryL2: 'SSD',
-    categoryL3: 'SATA',
-    price: 36,
-    oldPrice: 42,
-    condition: 'Uus',
-    stock: 'Laos',
-    stockCount: 18,
-    brand: 'Kingston',
-    shortSpec: '480GB 2.5" SATA 7mm Up to 500MB/s',
-    description: 'Cost-effective 2.5-inch SATA SSD upgrade for older PCs and laptops.',
-    imageUrl: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      capacity: '480GB',
-      formFactor: '2.5 inch SATA 3.0',
-      warranty: '36 kuud',
-    },
-  },
-  {
-    id: 'hdd-01',
-    title: 'Seagate BarraCuda 2TB 3.5" HDD (Uus)',
-    categoryL1: 'Arvutiosad',
-    categoryL2: 'HDD',
-    price: 58,
-    oldPrice: 65,
-    condition: 'Uus',
-    stock: 'Laos',
-    stockCount: 7,
-    brand: 'Seagate',
-    shortSpec: '2TB 3.5" SATA3 7200RPM 256MB',
-    description: 'Spacious 2TB hard disk drive for backup and large file storage.',
-    imageUrl: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      capacity: '2TB',
-      speed: '7200 RPM',
-      cache: '256MB',
-      warranty: '24 kuud',
-    },
-  },
 
-  // 10. Lisaseadmed (Keyboards, Mice, Headsets, Webcams, USB sticks)
+  // 8. Lisaseadmed
   {
     id: 'acc-01',
     title: 'Logitech MX Master 3S Wireless Mouse (Uus)',
@@ -728,7 +695,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Logitech',
     shortSpec: '8K DPI Quiet Clicks Bluetooth + Bolt',
     description: 'Ergonomic flagship wireless mouse with MagSpeed electromagnetic scroll wheel and quiet switches.',
-    imageUrl: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f8fafc', 'peripheral', 'MX Master 3S'),
     specs: {
       sensor: '8000 DPI Darkfield',
       connectivity: 'Bluetooth Low Energy / Logi Bolt',
@@ -750,7 +717,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Logitech',
     shortSpec: 'Wireless 2.4GHz Estonian layout',
     description: 'Reliable wireless desktop set with Estonian key labels and long battery lifespan.',
-    imageUrl: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f1f5f9', 'peripheral', 'MK270 Combo'),
     specs: {
       layout: 'Estonian (EST)',
       connection: '2.4GHz USB Dongle',
@@ -770,7 +737,7 @@ export const PRODUCTS: Product[] = [
     brand: 'SteelSeries',
     shortSpec: 'High Fidelity Drivers ClearCast Mic 3.5mm',
     description: 'Lightweight multi-platform headset with retractable noise-cancelling microphone.',
-    imageUrl: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#0f172a', 'peripheral', 'Arctis Headset', '#2563eb'),
     specs: {
       audio: '40mm Neodymium Drivers',
       mic: 'ClearCast Gen 2 Retractable',
@@ -791,35 +758,13 @@ export const PRODUCTS: Product[] = [
     brand: 'Logitech',
     shortSpec: 'Full HD 1080p 30fps Dual Stereo Mic',
     description: 'Industry standard webcam for Teams, Zoom and video calls with autofocus glass lens.',
-    imageUrl: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f8fafc', 'peripheral', 'Logitech 1080p Webcam'),
     specs: {
       resolution: '1080p / 30fps',
       mic: 'Dual omni-directional stereo',
       warranty: '24 kuud',
     },
   },
-  {
-    id: 'acc-05',
-    title: 'Kingston DataTraveler Exodia 64GB USB 3.2 (Uus)',
-    categoryL1: 'Lisaseadmed',
-    categoryL2: 'USB sticks',
-    price: 8.90,
-    oldPrice: 11,
-    condition: 'Uus',
-    stock: 'Laos',
-    stockCount: 30,
-    brand: 'Kingston',
-    shortSpec: '64GB USB 3.2 Gen 1 Flash Drive',
-    description: 'Handy flash drive with protective cap and key ring loop.',
-    imageUrl: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      capacity: '64GB',
-      interface: 'USB 3.2 Gen 1',
-      warranty: '60 kuud',
-    },
-  },
-
-  // 11. Toiteseadmed (UPS, Chargers, Batteries)
   {
     id: 'pwr-01',
     title: 'Eaton 5E 850i USB DIN UPS (Uus)',
@@ -833,316 +778,12 @@ export const PRODUCTS: Product[] = [
     brand: 'Eaton',
     shortSpec: '850VA / 480W Line-Interactive USB',
     description: 'Compact line-interactive battery backup power supply protecting PCs against power outages and surges.',
-    imageUrl: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80',
+    imageUrl: createSvgImage('#f1f5f9', 'desktop', 'Eaton 850i UPS'),
     specs: {
       rating: '850 VA / 480 W',
       outlets: 'DIN Schuko sockets',
       communication: 'USB port',
       warranty: '24 kuud',
-    },
-  },
-  {
-    id: 'pwr-02',
-    title: 'Corsair RM750x 750W 80 Plus Gold Power Supply (Uus)',
-    categoryL1: 'Toiteseadmed',
-    categoryL2: 'Toiteplokid',
-    price: 129,
-    oldPrice: 145,
-    condition: 'Uus',
-    stock: 'Laos',
-    stockCount: 5,
-    brand: 'Corsair',
-    shortSpec: '750W Fully Modular 80+ Gold Zero RPM',
-    description: 'Quiet fully modular power supply with Japanese 105°C capacitors and 80 PLUS Gold efficiency.',
-    imageUrl: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      wattage: '750 Watts',
-      efficiency: '80 PLUS Gold',
-      modularity: 'Fully Modular',
-      warranty: '120 kuud (10 aastat)',
-    },
-  },
-  {
-    id: 'pwr-03',
-    title: 'Universal 65W USB-C Laptop Charger / Adapter (Uus)',
-    categoryL1: 'Toiteseadmed',
-    categoryL2: 'Sülearvuti akud',
-    price: 29,
-    oldPrice: 35,
-    condition: 'Uus',
-    stock: 'Laos',
-    stockCount: 15,
-    brand: 'Canman',
-    shortSpec: '65W USB-C Power Delivery 20V 3.25A',
-    description: 'Universal USB Power Delivery charger for Lenovo, DELL, HP, MacBooks and Asus laptops.',
-    imageUrl: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      power: '65W MAX (5V/9V/15V/20V)',
-      connector: 'USB-C Cable included',
-      warranty: '24 kuud',
-    },
-  },
-  
-  // More additional products to bring total count to ~40 diverse items
-  {
-    id: 'pc-06',
-    title: 'DELL OptiPlex 3080 Micro (Kasutatud)',
-    categoryL1: 'Arvutid kasutatud',
-    categoryL2: 'Desktop used',
-    price: 275,
-    oldPrice: 320,
-    condition: 'Kasutatud',
-    grade: 'A',
-    stock: 'Laos',
-    stockCount: 5,
-    brand: 'DELL',
-    shortSpec: 'i3-10100T 8GB 256GB NVMe W11P',
-    description: 'Compact 10th generation micro computer. Silent operation and high power efficiency.',
-    imageUrl: 'https://images.unsplash.com/photo-1547082299-de196ea013d6?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      cpu: 'Intel Core i3-10100T Quad-Core',
-      ram: '8GB DDR4',
-      storage: '256GB NVMe SSD',
-      os: 'Windows 11 Pro',
-      warranty: '12 kuud',
-    },
-  },
-  {
-    id: 'nb-06',
-    title: 'Lenovo ThinkPad X1 Carbon Gen 8 (Kasutatud)',
-    categoryL1: 'Arvutid kasutatud',
-    categoryL2: 'Notebooks used',
-    price: 590,
-    oldPrice: 690,
-    condition: 'Kasutatud',
-    grade: 'A',
-    stock: 'Viimased eksemplarid',
-    stockCount: 2,
-    brand: 'Lenovo',
-    shortSpec: 'i7-10510U 16GB 512GB FHD 1.09kg W11P',
-    description: 'Ultra-lightweight carbon fiber flagship business laptop weighing just 1.09 kg.',
-    imageUrl: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      cpu: 'Intel Core i7-10510U',
-      ram: '16GB LPDDR3',
-      storage: '512GB PCIe NVMe SSD',
-      screen: '14" FHD IPS Low Power (400 nits)',
-      weight: '1.09 kg',
-      os: 'Windows 11 Pro',
-      warranty: '12 kuud',
-    },
-  },
-  {
-    id: 'mb-01',
-    title: 'ASUS PRIME B550M-A Wi-Fi II (Uus)',
-    categoryL1: 'Arvutiosad',
-    categoryL2: 'Emaplaadid',
-    categoryL3: 'AMD',
-    price: 109,
-    oldPrice: 125,
-    condition: 'Uus',
-    stock: 'Laos',
-    stockCount: 4,
-    brand: 'ASUS',
-    shortSpec: 'AM4 Micro-ATX PCIe 4.0 Wi-Fi 6',
-    description: 'Reliable AM4 motherboard with Wi-Fi 6, PCIe 4.0 and dual M.2 slots.',
-    imageUrl: 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      socket: 'AM4 (Ryzen 3000/4000/5000)',
-      formFactor: 'Micro-ATX',
-      features: 'Wi-Fi 6, Bluetooth 5.2, USB 3.2 Gen 2',
-      warranty: '36 kuud',
-    },
-  },
-  {
-    id: 'mb-02',
-    title: 'MSI PRO B760M-P DDR4 LGA1700 (Uus)',
-    categoryL1: 'Arvutiosad',
-    categoryL2: 'Emaplaadid',
-    categoryL3: 'Intel',
-    price: 105,
-    oldPrice: 119,
-    condition: 'Uus',
-    stock: 'Laos',
-    stockCount: 3,
-    brand: 'MSI',
-    shortSpec: 'LGA1700 mATX DDR4 PCIe 4.0',
-    description: 'Motherboard supporting Intel 12th, 13th and 14th gen processors.',
-    imageUrl: 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      socket: 'LGA1700',
-      ramSupport: '4x DDR4 up to 4800MHz(OC)',
-      warranty: '36 kuud',
-    },
-  },
-  {
-    id: 'case-01',
-    title: 'DeepCool CC560 V2 ARGB Black Case (Uus)',
-    categoryL1: 'Arvutiosad',
-    categoryL2: 'Korpused',
-    price: 59,
-    oldPrice: 68,
-    condition: 'Uus',
-    stock: 'Laos',
-    stockCount: 6,
-    brand: 'DeepCool',
-    shortSpec: 'ATX Mid-Tower Tempered Glass 4x ARGB Fans',
-    description: 'High airflow computer case with mesh front panel and 4 pre-installed ARGB fans.',
-    imageUrl: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      sidePanel: 'Tempered Glass',
-      includedFans: '4x 120mm ARGB Fans',
-      warranty: '24 kuud',
-    },
-  },
-  {
-    id: 'cool-01',
-    title: 'Thermalright Peerless Assassin 120 SE (Uus)',
-    categoryL1: 'Arvutiosad',
-    categoryL2: 'Jahutid',
-    price: 42,
-    oldPrice: 48,
-    condition: 'Uus',
-    stock: 'Laos',
-    stockCount: 8,
-    brand: 'Thermalright',
-    shortSpec: 'Dual Tower 6 Heatpipes 2x 120mm PWM Fans',
-    description: 'Top rated dual-tower CPU cooler offering liquid cooler performance at fraction of price.',
-    imageUrl: 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      compatibility: 'LGA1700 / AM4 / AM5',
-      fans: '2x 120mm PWM Quiet Fans',
-      warranty: '24 kuud',
-    },
-  },
-  {
-    id: 'aio-01',
-    title: 'HP ProOne 440 G6 23.8" All-in-One (Kasutatud)',
-    categoryL1: 'Arvutid kasutatud',
-    categoryL2: 'Desktop used',
-    price: 430,
-    oldPrice: 510,
-    condition: 'Kasutatud',
-    grade: 'A',
-    stock: 'Viimased eksemplarid',
-    stockCount: 2,
-    brand: 'HP',
-    shortSpec: 'i5-10500 16GB 512GB SSD 23.8" FHD W11P',
-    description: 'Sleek All-in-One PC with thin bezels, retractable webcam and fast 10th gen i5 processor.',
-    imageUrl: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      cpu: 'Intel Core i5-10500 6-Core',
-      ram: '16GB DDR4',
-      storage: '512GB NVMe SSD',
-      screen: '23.8" IPS Full HD Touch/Matte',
-      os: 'Windows 11 Pro',
-      warranty: '12 kuud',
-    },
-  },
-  {
-    id: 'acc-06',
-    title: 'Creative Pebble 2.0 USB Speakers Black (Uus)',
-    categoryL1: 'Lisaseadmed',
-    categoryL2: 'Speakers',
-    price: 24.90,
-    oldPrice: 29,
-    condition: 'Uus',
-    stock: 'Laos',
-    stockCount: 11,
-    brand: 'Creative',
-    shortSpec: 'USB Powered 4.4W RMS 45° Far-field Drivers',
-    description: 'Compact orb desktop speakers with 45-degree elevated sound stage.',
-    imageUrl: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      power: 'USB Bus Powered (3.5mm Aux input)',
-      output: '4.4W RMS',
-      warranty: '24 kuud',
-    },
-  },
-  {
-    id: 'pr-03',
-    title: 'Epson EcoTank L3250 Wi-Fi Inkjet (Uus)',
-    categoryL1: 'Printerid',
-    categoryL2: 'Inkjet',
-    price: 189,
-    oldPrice: 215,
-    condition: 'Uus',
-    stock: 'Laos',
-    stockCount: 3,
-    brand: 'Epson',
-    shortSpec: 'Color Tank Printer Print/Scan/Copy Wi-Fi',
-    description: 'Refillable ink tank printer offering ultra-low cost per page printing. Includes ink bottles.',
-    imageUrl: 'https://images.unsplash.com/photo-1612815150338-0eb98a722e03?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      type: 'Color Ink Tank 3-in-1',
-      yield: 'Up to 8,100 black and 6,500 color pages',
-      warranty: '36 kuud (registreerimisel)',
-    },
-  },
-  {
-    id: 'nb-07',
-    title: 'DELL XPS 13 9305 Ultrabook (Kasutatud)',
-    categoryL1: 'Arvutid kasutatud',
-    categoryL2: 'Notebooks used',
-    price: 540,
-    oldPrice: 620,
-    condition: 'Kasutatud',
-    grade: 'A',
-    stock: 'Viimased eksemplarid',
-    stockCount: 1,
-    brand: 'DELL',
-    shortSpec: 'i5-1135G7 8GB 512GB FHD InfinityEdge',
-    description: 'Premium aluminum ultrabook with near borderless InfinityEdge screen.',
-    imageUrl: 'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      cpu: 'Intel Core i5-1135G7',
-      ram: '8GB LPDDR4x',
-      storage: '512GB NVMe SSD',
-      screen: '13.3" FHD (1920x1080) InfinityEdge',
-      os: 'Windows 11 Home',
-      warranty: '12 kuud',
-    },
-  },
-  {
-    id: 'mon-05',
-    title: 'Lenovo ThinkVision T24i-20 23.8" Ergonomic (Kasutatud)',
-    categoryL1: 'Monitorid',
-    categoryL2: 'Monitors used',
-    price: 89,
-    oldPrice: 120,
-    condition: 'Kasutatud',
-    grade: 'A',
-    stock: 'Laos',
-    stockCount: 9,
-    brand: 'Lenovo',
-    shortSpec: '23.8" Full HD IPS Pivot Stand HDMI DP VGA',
-    description: 'Ergonomic business monitor with full height adjustment, tilt, swivel and 90° pivot.',
-    imageUrl: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      screen: '23.8" FHD IPS (1920x1080)',
-      inputs: 'HDMI, DisplayPort, VGA, 4x USB Hub',
-      stand: 'Height, Pivot, Swivel, Tilt',
-      warranty: '12 kuud',
-    },
-  },
-  {
-    id: 'pwr-04',
-    title: 'Varta Longlife Power AA Patareid 12-pack (Uus)',
-    categoryL1: 'Toiteseadmed',
-    categoryL2: 'Patareid',
-    price: 8.50,
-    oldPrice: 10,
-    condition: 'Uus',
-    stock: 'Laos',
-    stockCount: 50,
-    brand: 'Varta',
-    shortSpec: 'Alkaline AA LR06 1.5V 12-Pack',
-    description: 'Long lasting German engineered alkaline AA batteries for mice, keyboards and remotes.',
-    imageUrl: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80',
-    specs: {
-      type: 'AA / LR06 Alkaline',
-      quantity: '12 pcs box',
-      warranty: '10 years shelf life',
     },
   },
 ];
