@@ -4,8 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // If deploying to GitHub Pages user site repo canman.github.io, basePath is empty or '/'
-  basePath: '',
+  basePath: process.env.NODE_ENV === 'production' ? '/canman.github.io' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/canman.github.io/' : '',
   trailingSlash: true,
 };
 
