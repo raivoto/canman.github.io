@@ -17,43 +17,63 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Custom scrollbar for category sidebar */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
-}
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
-/* Smooth transitions */
 .transition-category {
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Print styles for Invoice */
+/* ===== PRINT STYLES FOR INVOICE ===== */
 @media print {
-  body * {
-    visibility: hidden;
+  /* 1. Hide the entire page */
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
   }
-  #printable-invoice, #printable-invoice * {
-    visibility: visible;
+
+  /* 2. Hide everything */
+  body > * {
+    display: none !important;
   }
+
+  /* 3. Make the modal overlay printable */
+  #invoice-print-root {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    background: white !important;
+  }
+
+  #invoice-print-root * {
+    visibility: visible !important;
+  }
+
+  /* 4. Hide the action bar buttons */
+  .no-print {
+    display: none !important;
+  }
+
+  /* 5. Format the invoice container itself */
   #printable-invoice {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    margin: 0;
-    padding: 20px;
-    background: white;
-    color: black;
+    display: block !important;
+    visibility: visible !important;
+    position: static !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: white !important;
+    color: black !important;
+    font-size: 11px !important;
+    page-break-inside: avoid;
+  }
+
+  /* 6. A4 page size */
+  @page {
+    size: A4 portrait;
+    margin: 12mm;
   }
 }
