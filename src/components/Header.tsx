@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -29,7 +29,7 @@ export const Header: React.FC<HeaderProps> = ({
               IT Teenused
             </span>
             <span className="truncate">
-              IT abi, väljakutsed, remont teenused Tallinnas
+              IT abi, vÃ¤ljakutsed, remont teenused Tallinnas
             </span>
             <button
               onClick={onOpenServicesModal}
@@ -51,7 +51,7 @@ export const Header: React.FC<HeaderProps> = ({
             <span className="hidden sm:inline text-blue-400">|</span>
             <span className="hidden sm:flex items-center">
               <MapPin className="w-3.5 h-3.5 mr-1 text-blue-300" />
-              Lille 14 Tallinn 10614
+              Lille 14-4 Tallinn 10614 Harjumaa
             </span>
             <span className="hidden md:inline text-blue-400">|</span>
             <a
@@ -74,7 +74,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
           <div>
             <div className="text-2xl font-black tracking-tight text-[#0e4da4] leading-none flex items-center gap-1">
-              CANMAN<span className="text-red-500 font-bold text-xs bg-red-50 px-1 py-0.5 rounded border border-red-200">EE</span>
+              CANMAN<span className="text-red-600 font-black text- bg-red-50 px-1.5 py-0.5 rounded border border-red-200 tracking-wide">ARVUTID</span>
             </div>
             <p className="text-[11px] text-slate-500 font-medium tracking-wide">
               Arvutid, Osad & IT Remont Tallinnas
@@ -98,7 +98,7 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={() => setSearchQuery('')}
                 className="absolute right-3 text-slate-400 hover:text-slate-600 text-xs bg-slate-200 hover:bg-slate-300 rounded-full w-4 h-4 flex items-center justify-center"
               >
-                ✕
+                âœ•
               </button>
             )}
           </div>
@@ -134,3 +134,5 @@ export const Header: React.FC<HeaderProps> = ({
     </header>
   );
 };
+
+
