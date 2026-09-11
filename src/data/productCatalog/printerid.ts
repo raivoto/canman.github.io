@@ -1,2 +1,1 @@
-﻿import { Product } from '../../types';
-export const printerid: Product[] = [];
+﻿export const printerid: any[] = [];
