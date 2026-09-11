@@ -1,4 +1,3 @@
-@'
 'use client';
 import React from 'react';
 import { Printer, CheckCircle, ArrowLeft, Mail } from 'lucide-react';
@@ -25,11 +24,6 @@ export const InvoiceView: React.FC<InvoiceViewProps> = ({ order, onClose }) => {
             table { width: 100%; border-collapse: collapse; }
             th { background: #0e4da4; color: white; padding: 10px; text-align: left; font-size: 11px; }
             td { padding: 10px; border-bottom: 1px solid #e2e8f0; }
-           .header { display:flex; justify-content:space-between; border-bottom: 2px solid #0e4da4; padding-bottom: 20px; margin-bottom: 20px; }
-           .box { background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; margin-bottom: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-           .totals { display:flex; justify-content:flex-end; margin-top: 20px; }
-           .totals-inner { background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; width: 260px; }
-           .pay { background: #eff6ff; border: 1px solid #bfdbfe; padding: 16px; border-radius: 12px; margin-top: 20px; }
             @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
           </style>
         </head>
@@ -50,7 +44,7 @@ export const InvoiceView: React.FC<InvoiceViewProps> = ({ order, onClose }) => {
               <CheckCircle className="w-5 h-5 text-emerald-400" />
               <span className="font-bold text-sm">Tellimus #{order.orderNumber} esitatud õnnestunult!</span>
             </div>
-            <div className="text- text-blue-100 flex items-center gap-1 mt-0.5">
+            <div className="text-[11px] text-blue-100 flex items-center gap-1 mt-0.5">
               <Mail className="w-3.5 h-3.5 text-yellow-300" />
               <span>Teavitus saadetud: <strong>{order.customer.email}</strong> ja <strong>canman.systems@gmail.com</strong></span>
             </div>
@@ -66,9 +60,8 @@ export const InvoiceView: React.FC<InvoiceViewProps> = ({ order, onClose }) => {
             </button>
           </div>
         </div>
-
         <div id="printable-invoice" className="p-8 text-slate-800 text-xs bg-white print:!p-0">
-          <div className="header flex justify-between items-start border-b-2 border-[#0e4da4] pb-6 mb-6">
+          <div className="flex justify-between items-start border-b-2 border-[#0e4da4] pb-6 mb-6">
             <div>
               <h1 className="text-3xl font-black text-[#0e4da4] tracking-tight mb-1">CANMAN<span className="text-red-500 font-bold text-base ml-1">OÜ</span></h1>
               <p className="text-slate-500 text-xs font-semibold">Arvutid, Lisaseadmed & IT Teenused Tallinnas</p>
@@ -81,35 +74,32 @@ export const InvoiceView: React.FC<InvoiceViewProps> = ({ order, onClose }) => {
             </div>
             <div className="text-right">
               <div className="inline-block bg-blue-50 border border-blue-200 px-4 py-2 rounded-lg mb-2">
-                <div className="text- uppercase font-bold text-blue-800">{order.paymentMethod === 'arve'? 'ETTEMAKSUARVE (INVOICE)' : 'TELLIMUSE KINNITUS'}</div>
+                <div className="text-[10px] uppercase font-bold text-blue-800">{order.paymentMethod === 'arve'? 'ETTEMAKSUARVE (INVOICE)' : 'TELLIMUSE KINNITUS'}</div>
                 <div className="text-lg font-black text-[#0e4da4]">#{order.orderNumber}</div>
               </div>
               <p className="text-slate-500">Kuupäev: <strong>{new Date(order.createdAt).toLocaleDateString('et-EE')}</strong></p>
               <p className="text-slate-500">Maksetähtaeg: <strong>{new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toLocaleDateString('et-EE')}</strong></p>
             </div>
           </div>
-
-          <div className="box grid grid-cols-2 gap-6 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <div className="grid grid-cols-2 gap-6 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200">
             <div>
-              <h3 className="font-bold text-[#0e4da4] uppercase text- mb-2 border-b border-slate-200 pb-1">OSTJA (CUSTOMER):</h3>
+              <h3 className="font-bold text-[#0e4da4] uppercase text-[11px] mb-2 border-b border-slate-200 pb-1">OSTJA (CUSTOMER):</h3>
               <p className="font-bold text-sm text-slate-900">{order.customer.fullName}</p>
               {order.customer.companyName && <p className="font-semibold text-slate-700">{order.customer.companyName}</p>}
               <p className="text-slate-600 mt-1">E-post: {order.customer.email}</p>
               <p className="text-slate-600">Tel: {order.customer.phone}</p>
-              <p className="text-slate-600">{order.customer.address}, {order.customer.city} {order.customer.postalCode}</p>
             </div>
             <div>
-              <h3 className="font-bold text-[#0e4da4] uppercase text- mb-2 border-b border-slate-200 pb-1">TARNE JA MAKSE:</h3>
+              <h3 className="font-bold text-[#0e4da4] uppercase text-[11px] mb-2 border-b border-slate-200 pb-1">TARNE JA MAKSE:</h3>
               <p className="text-slate-700">Tarneviis: <strong>{order.deliveryMethod === 'pakk'? 'Omniva / DPD Pakiautomaat' : 'Kätte saamine poest (Lille 14, Tallinn)'}</strong></p>
               {order.deliveryMethod === 'pakk' && <p className="text-slate-800 font-semibold mt-1">Pakiautomaat: {order.customer.address}</p>}
               <p className="text-slate-700 mt-1">Makseviis: <strong>{order.paymentMethod === 'arve'? 'Pangaülekanne (Arve)' : 'Sularaha / Kaart kohapeal'}</strong></p>
             </div>
           </div>
-
           <div className="mb-6">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-[#0e4da4] text-white text- uppercase font-bold">
+                <tr className="bg-[#0e4da4] text-white text-[11px] uppercase font-bold">
                   <th className="py-2.5 px-3">Toode</th>
                   <th className="py-2.5 px-3">Spec</th>
                   <th className="py-2.5 px-3 text-center">Kogus</th>
@@ -120,8 +110,8 @@ export const InvoiceView: React.FC<InvoiceViewProps> = ({ order, onClose }) => {
               <tbody className="divide-y divide-slate-200 text-xs">
                 {order.items.map(({ product, quantity }) => (
                   <tr key={product.id}>
-                    <td className="py-3 px-3 font-bold text-slate-900">{product.title}<span className="block text- text-slate-500 font-normal">Seisukord: {product.condition}</span></td>
-                    <td className="py-3 px-3 font-mono text- text-slate-600">{product.shortSpec}</td>
+                    <td className="py-3 px-3 font-bold text-slate-900">{product.title}<span className="block text-[10px] text-slate-500 font-normal">Seisukord: {product.condition}</span></td>
+                    <td className="py-3 px-3 font-mono text-[11px] text-slate-600">{product.shortSpec}</td>
                     <td className="py-3 px-3 text-center font-bold">{quantity}</td>
                     <td className="py-3 px-3 text-right">€{product.price.toFixed(2)}</td>
                     <td className="py-3 px-3 text-right font-bold text-slate-900">€{(product.price * quantity).toFixed(2)}</td>
@@ -138,16 +128,14 @@ export const InvoiceView: React.FC<InvoiceViewProps> = ({ order, onClose }) => {
               </tbody>
             </table>
           </div>
-
-          <div className="totals flex justify-end mb-8">
-            <div className="totals-inner w-64 space-y-1.5 text-xs bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <div className="flex justify-end mb-8">
+            <div className="w-64 space-y-1.5 text-xs bg-slate-50 p-4 rounded-xl border border-slate-200">
               <div className="flex justify-between text-slate-600"><span>Vahesumma käibemaksuta:</span><span>€{(order.total - order.tax).toFixed(2)}</span></div>
               <div className="flex justify-between text-slate-600"><span>Käibemaks 22% (KM):</span><span>€{order.tax.toFixed(2)}</span></div>
               <div className="flex justify-between text-slate-900 font-extrabold text-base pt-2 border-t border-slate-300"><span>KOKKU TASUDA:</span><span className="text-[#0e4da4]">€{order.total.toFixed(2)}</span></div>
             </div>
           </div>
-
-          <div className="pay bg-blue-50 border border-blue-200 rounded-xl p-4 text-xs text-blue-900">
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-xs text-blue-900">
             <div className="font-bold text-blue-950 mb-1">Maksejuhis (Payment Instructions):</div>
             {order.paymentMethod === 'arve'? (
               <>
@@ -163,8 +151,3 @@ export const InvoiceView: React.FC<InvoiceViewProps> = ({ order, onClose }) => {
     </div>
   );
 };
-'@ | Set-Content.\src\components\InvoiceView.tsx -Encoding UTF8
-
-git add.
-git commit -m "Fix invoice PDF - new window print, fixes 5 blank pages bug"
-git push origin main
