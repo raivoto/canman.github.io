@@ -3,3 +3,4 @@ import { komponendid } from './komponendid';
 import { printerid } from './printerid';
 export const allProducts = [...arvutid, ...komponendid, ...printerid];
 export const products = allProducts;
+export const PRODUCTS = allProducts;
