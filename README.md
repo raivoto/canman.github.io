@@ -22,7 +22,7 @@ Full-featured e-commerce platform for **Canman OÜ** - Tallinn computer shop sel
   - `localStorage` cart persistence.
   - **Payment Options**: `[ ] Arve (Invoice)` (Generates printable proforma invoice PDF) and `[ ] Sularahas (Cash)` (Store pickup).
   - **Delivery Options**: `[ ] Paki saatmine (Omniva/DPD €4.90)` and `[ ] Kätte saamine Lille 14, Tallinn 10614 (Free)`.
-- **Top Bar & Footer Contact Info**: `IT abi, väljakutsed, remont teenused Tallinnas | Tel. 372 5652062 | Lille 14 Tallinn 10614 | canman@canman.ee`.
+- **Top Bar & Footer Contact Info**: `IT abi, väljakutsed, remont teenused Tallinnas | Tel. 372 5652062 | Lille 14 Tallinn 10614 | canman.systems@gmail.com`.
 
 ---
 
@@ -88,5 +88,5 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 - **Company**: Canman OÜ
 - **Address**: Lille 14, Tallinn 10614, Estonia
 - **Phone**: +372 5652062
-- **Email**: canman@canman.ee
+- **Email**: canman.systems@gmail.com
 - **Services**: Computer sales, repairs, OS installation, hardware upgrades, and technician visits in Tallinn.

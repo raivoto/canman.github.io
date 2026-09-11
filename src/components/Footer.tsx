@@ -53,8 +53,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenServicesModal }) => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                <a href="mailto:canman@canman.ee" className="hover:text-white transition">
-                  <strong>E-post:</strong> canman@canman.ee
+                <a href="mailto:canman.systems@gmail.com" className="hover:text-white transition">
+                  <strong>E-post:</strong> canman.systems@gmail.com
                 </a>
               </div>
               <div className="flex items-center space-x-2 text-slate-400 text-[11px] pt-1">
@@ -107,7 +107,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenServicesModal }) => {
         {/* Bottom Banner Required Text */}
         <div className="pt-6 flex flex-col md:flex-row justify-between items-center text-slate-500 text-[11px] gap-2">
           <div>
-            IT abi, väljakutsed, remont teenused Tallinnas | Tel. 372 5652062 | Lille 14 Tallinn 10614 | canman@canman.ee
+            IT abi, väljakutsed, remont teenused Tallinnas | Tel. 372 5652062 | Lille 14 Tallinn 10614 | canman.systems@gmail.com
           </div>
           <div>
             © {new Date().getFullYear()} Canman.github.io. Kõik õigused kaitstud.

@@ -57,11 +57,11 @@ export const ServicesModal: React.FC<ServicesModalProps> = ({ isOpen, onClose })
                 <span>Helista: +372 5652062</span>
               </a>
               <a
-                href="mailto:canman@canman.ee"
+                href="mailto:canman.systems@gmail.com"
                 className="bg-white border border-blue-300 text-[#0e4da4] hover:bg-blue-100 font-semibold px-4 py-1.5 rounded-lg text-xs transition text-center flex items-center justify-center gap-1.5"
               >
                 <Mail className="w-3.5 h-3.5" />
-                <span>canman@canman.ee</span>
+                <span>canman.systems@gmail.com</span>
               </a>
             </div>
           </div>

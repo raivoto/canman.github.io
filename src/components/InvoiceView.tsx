@@ -57,7 +57,7 @@ export const InvoiceView: React.FC<InvoiceViewProps> = ({ order, onClose }) => {
               <div className="mt-3 space-y-0.5 text-slate-600 text-xs">
                 <p>Reg. kood: 12489620 | KMKR: EE101684920</p>
                 <p>Aadress: Lille 14, Tallinn 10614, Harjumaa</p>
-                <p>Tel: +372 5652062 | E-post: canman@canman.ee</p>
+                <p>Tel: +372 5652062 | E-post: canman.systems@gmail.com</p>
                 <p className="font-semibold text-[#0e4da4]">
                   Pank IBAN: EE55220022105652062 (Swedbank AS)
                 </p>

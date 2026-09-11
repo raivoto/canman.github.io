@@ -55,11 +55,11 @@ export const Header: React.FC<HeaderProps> = ({
             </span>
             <span className="hidden md:inline text-blue-400">|</span>
             <a
-              href="mailto:canman@canman.ee"
+              href="mailto:canman.systems@gmail.com"
               className="hidden md:flex items-center hover:text-white transition"
             >
               <Mail className="w-3.5 h-3.5 mr-1 text-blue-300" />
-              canman@canman.ee
+              canman.systems@gmail.com
             </a>
           </div>
         </div>
