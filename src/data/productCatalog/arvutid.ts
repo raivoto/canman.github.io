@@ -1,0 +1,11 @@
+﻿import { Product } from '../../types';
+export const arvutid: Product[] = [
+  { id: "wp-320001", name: "Fujitsu ESPRIMO P700", price: 90, category: "Kasutatud arvutid", brand: "Fujitsu", image: "/images/placeholder.jpg", stock: 1, featured: false, description: "ESPRIMO P700 E90+ B630/4GB/320GB/DVDRW", specs: { "SKU": "320001" } },
+  { id: "wp-320002", name: "ESPRIMO P700 i5-2500", price: 110, category: "Kasutatud arvutid", brand: "Fujitsu", image: "/images/placeholder.jpg", stock: 1, featured: false, description: "ESPRIMO P700 i5-2500/4GB/320GB", specs: { "SKU": "320002" } },
+  { id: "wp-320075", name: "ORDI Metal i3-3220", price: 50, category: "Kasutatud arvutid", brand: "ORDI", image: "https://canman.ee/wp-content/uploads/2025/05/Ordi-Metal-must.jpg", stock: 1, featured: true, description: "ORDI i3-3220/4GB/500GB", specs: { "SKU": "320075" } },
+  { id: "wp-320103", name: "DELL OptiPlex 3010 SFF", price: 40, oldPrice: 90, category: "Kasutatud arvutid", brand: "DELL", image: "/images/placeholder.jpg", stock: 1, featured: false, description: "i3-3220, 8GB, 500GB", specs: { "SKU": "320103" } },
+  { id: "wp-320100", name: "HP 6300 PRO SFF", price: 40, oldPrice: 45, category: "Kasutatud arvutid", brand: "HP", image: "/images/placeholder.jpg", stock: 2, featured: false, description: "HP 6300 Pro SFF", specs: { "SKU": "320100" } },
+  { id: "wp-320101", name: "HP ProDesk G1 i5-4570", price: 40, oldPrice: 90, category: "Kasutatud arvutid", brand: "HP", image: "/images/placeholder.jpg", stock: 1, featured: false, description: "i5 4570, 8GB RAM, 500GB", specs: { "SKU": "320101" } },
+  { id: "wp-320102", name: "DELL OptiPlex 7020 SFF", price: 55, oldPrice: 60, category: "Kasutatud arvutid", brand: "DELL", image: "/images/placeholder.jpg", stock: 1, featured: false, description: "i3-4150, 8GB, 500GB", specs: { "SKU": "320102" } },
+  { id: "wp-320120", name: "HP ProDesk 600 G3 SFF i5-7500", price: 100, category: "Kasutatud arvutid", brand: "HP", image: "/images/placeholder.jpg", stock: 1, featured: true, description: "i5-7500 7-gen", specs: { "SKU": "320120" } }
+];
