@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -64,7 +64,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
           <div className="p-6 flex flex-col justify-between max-h-[80vh] overflow-y-auto">
             <div>
               <div className="text-xs text-blue-700 font-semibold uppercase tracking-wider mb-1">
-                {product.brand} • {product.categoryL1} / {product.categoryL2}
+                {product.brand} â€¢ {product.categoryL1} / {product.categoryL2}
               </div>
 
               <h2 className="text-xl font-bold text-slate-900 leading-snug mb-2">
@@ -73,18 +73,18 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
 
               {/* Short Spec Highlight Box */}
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-2.5 mb-4 text-xs font-mono text-blue-900">
-                <span className="font-semibold block text-blue-950 mb-0.5">Tehniline kokkuvõte:</span>
+                <span className="font-semibold block text-blue-950 mb-0.5">Tehniline kokkuvÃµte:</span>
                 {product.shortSpec}
               </div>
 
               {/* Price & Stock */}
               <div className="flex items-baseline space-x-3 mb-4">
                 <span className="text-2xl font-extrabold text-[#0e4da4]">
-                  €{product.price.toFixed(2)}
+                  â‚¬{product.price.toFixed(2)}
                 </span>
                 {product.oldPrice && (
                   <span className="text-sm text-slate-400 line-through">
-                    €{product.oldPrice.toFixed(2)}
+                    â‚¬{product.oldPrice.toFixed(2)}
                   </span>
                 )}
                 <span className="text-xs text-slate-500 font-normal">sis. 22% KM</span>
@@ -115,11 +115,11 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
               <div className="space-y-2 text-xs mb-6">
                 <div className="flex items-center text-slate-700 space-x-2">
                   <MapPin className="w-4 h-4 text-[#0e4da4] flex-shrink-0" />
-                  <span>Kätte saamine poest: <strong>Lille 14, Tallinn 10614</strong> (Kohapeal laos)</span>
+                  <span>KÃ¤tte saamine poest: <strong>Lille 14-4 Tallinn 10614 Harjumaa</strong> (Kohapeal laos)</span>
                 </div>
                 <div className="flex items-center text-slate-700 space-x-2">
                   <Truck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Kuller / Pakiautomaat: <strong>Omniva & DPD (€4.90)</strong> 1-2 tööpäeva</span>
+                  <span>Kuller / Pakiautomaat: <strong>Omniva & DPD (â‚¬4.90)</strong> 1-2 tÃ¶Ã¶pÃ¤eva</span>
                 </div>
                 <div className="flex items-center text-slate-700 space-x-2">
                   <ShieldCheck className="w-4 h-4 text-amber-600 flex-shrink-0" />
@@ -153,7 +153,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
                 className="flex-1 bg-[#0e4da4] hover:bg-[#0a3a7d] text-white font-bold py-2.5 px-4 rounded-lg text-sm transition shadow flex items-center justify-center space-x-2"
               >
                 <ShoppingBag className="w-4 h-4" />
-                <span>Lisa ostukorvi (€{(product.price * quantity).toFixed(2)})</span>
+                <span>Lisa ostukorvi (â‚¬{(product.price * quantity).toFixed(2)})</span>
               </button>
             </div>
           </div>
@@ -162,3 +162,4 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
     </div>
   );
 };
+

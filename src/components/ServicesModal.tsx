@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import { X, Wrench, Phone, MapPin, Mail, ShieldCheck, Check, Clock, Laptop, Cpu, HardDrive } from 'lucide-react';
@@ -22,7 +22,7 @@ export const ServicesModal: React.FC<ServicesModalProps> = ({ isOpen, onClose })
               <h2 className="text-xl font-bold">IT Remont & Teenused Tallinnas</h2>
             </div>
             <p className="text-xs text-blue-100 mt-1">
-              Professionaalne arvutiabi, riistvara remont ja tehniku väljakutsed
+              Professionaalne arvutiabi, riistvara remont ja tehniku vÃ¤ljakutsed
             </p>
           </div>
           <button
@@ -38,10 +38,10 @@ export const ServicesModal: React.FC<ServicesModalProps> = ({ isOpen, onClose })
           {/* Top Banner Contacts */}
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 flex flex-col md:flex-row justify-between items-center gap-3">
             <div className="space-y-1">
-              <div className="font-bold text-sm text-[#0e4da4]">Canman OÜ Arvutitöökoda</div>
+              <div className="font-bold text-sm text-[#0e4da4]">Canman OÃœ ArvutitÃ¶Ã¶koda</div>
               <p className="text-slate-600 flex items-center gap-1">
                 <MapPin className="w-3.5 h-3.5 text-[#0e4da4]" />
-                Lille 14, Tallinn 10614 (Kristiine)
+                Lille 14-4 Tallinn 10614 Harjumaa
               </p>
               <p className="text-slate-600 flex items-center gap-1">
                 <Clock className="w-3.5 h-3.5 text-[#0e4da4]" />
@@ -69,14 +69,14 @@ export const ServicesModal: React.FC<ServicesModalProps> = ({ isOpen, onClose })
           {/* Services Price Table Grid */}
           <div>
             <h3 className="font-bold text-sm text-slate-900 mb-3 border-b border-slate-200 pb-1">
-              Remonditööde ja IT-Abi Hinnakiri (Tallinn)
+              RemonditÃ¶Ã¶de ja IT-Abi Hinnakiri (Tallinn)
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 space-y-1">
                 <div className="font-bold text-slate-900 text-sm flex justify-between">
                   <span>Arvuti diagnostika</span>
-                  <span className="text-[#0e4da4]">15 €</span>
+                  <span className="text-[#0e4da4]">15 â‚¬</span>
                 </div>
                 <p className="text-slate-500 text-[11px]">
                   Rikke tuvastamine ja remondihinna kalkulatsioon. Remondi korral diagnostika tasuta!
@@ -86,50 +86,50 @@ export const ServicesModal: React.FC<ServicesModalProps> = ({ isOpen, onClose })
               <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 space-y-1">
                 <div className="font-bold text-slate-900 text-sm flex justify-between">
                   <span>Windows / Linux Paigaldus</span>
-                  <span className="text-[#0e4da4]">25 € - 35 €</span>
+                  <span className="text-[#0e4da4]">25 â‚¬ - 35 â‚¬</span>
                 </div>
                 <p className="text-slate-500 text-[11px]">
-                  Operatsioonisüsteemi paigaldus koos kõigi vajalike drosselite, viirusetõrje ja draiveritega.
+                  OperatsioonisÃ¼steemi paigaldus koos kÃµigi vajalike drosselite, viirusetÃµrje ja draiveritega.
                 </p>
               </div>
 
               <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 space-y-1">
                 <div className="font-bold text-slate-900 text-sm flex justify-between">
                   <span>SSD & RAM Uuendamine</span>
-                  <span className="text-[#0e4da4]">20 €</span>
+                  <span className="text-[#0e4da4]">20 â‚¬</span>
                 </div>
                 <p className="text-slate-500 text-[11px]">
-                  Vana arvuti kiiruse tõstmine SSD kettaga ja mälumahulise lahendusega. Andmete kloonimine.
+                  Vana arvuti kiiruse tÃµstmine SSD kettaga ja mÃ¤lumahulise lahendusega. Andmete kloonimine.
                 </p>
               </div>
 
               <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 space-y-1">
                 <div className="font-bold text-slate-900 text-sm flex justify-between">
-                  <span>Tehniku Väljakutse Tallinnas</span>
-                  <span className="text-[#0e4da4]">35 € / tund</span>
+                  <span>Tehniku VÃ¤ljakutse Tallinnas</span>
+                  <span className="text-[#0e4da4]">35 â‚¬ / tund</span>
                 </div>
                 <p className="text-slate-500 text-[11px]">
-                  IT-spetsialisti väljasõit koju või kontorisse Tallinnas ja Harjumaal. Võrgu ja printerite seadistus.
+                  IT-spetsialisti vÃ¤ljasÃµit koju vÃµi kontorisse Tallinnas ja Harjumaal. VÃµrgu ja printerite seadistus.
                 </p>
               </div>
 
               <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 space-y-1">
                 <div className="font-bold text-slate-900 text-sm flex justify-between">
                   <span>Tolmust puhastus & Termopasta</span>
-                  <span className="text-[#0e4da4]">25 € - 40 €</span>
+                  <span className="text-[#0e4da4]">25 â‚¬ - 40 â‚¬</span>
                 </div>
                 <p className="text-slate-500 text-[11px]">
-                  Sülearvutite ja lauaarvutite jahutussüsteemi hooldus, müra vähendamine ja ülekuumenemise vältimine.
+                  SÃ¼learvutite ja lauaarvutite jahutussÃ¼steemi hooldus, mÃ¼ra vÃ¤hendamine ja Ã¼lekuumenemise vÃ¤ltimine.
                 </p>
               </div>
 
               <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 space-y-1">
                 <div className="font-bold text-slate-900 text-sm flex justify-between">
                   <span>Andmete Taastamine (Data Recovery)</span>
-                  <span className="text-[#0e4da4]">alates 30 €</span>
+                  <span className="text-[#0e4da4]">alates 30 â‚¬</span>
                 </div>
                 <p className="text-slate-500 text-[11px]">
-                  Kustutatud või kahjustatud kõvakettalt, mälukaardilt ja USB pulgalt failide taastamine.
+                  Kustutatud vÃµi kahjustatud kÃµvakettalt, mÃ¤lukaardilt ja USB pulgalt failide taastamine.
                 </p>
               </div>
             </div>
@@ -145,11 +145,11 @@ export const ServicesModal: React.FC<ServicesModalProps> = ({ isOpen, onClose })
               </li>
               <li className="flex items-center space-x-1.5">
                 <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                <span>Kiire teostus — enamik remonte valmib 24-48 tunni jooksul.</span>
+                <span>Kiire teostus â€” enamik remonte valmib 24-48 tunni jooksul.</span>
               </li>
               <li className="flex items-center space-x-1.5">
                 <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                <span>Kõikidele tehtud töödele ja vahetatud varuosadele garantii.</span>
+                <span>KÃµikidele tehtud tÃ¶Ã¶dele ja vahetatud varuosadele garantii.</span>
               </li>
             </ul>
           </div>
@@ -158,3 +158,4 @@ export const ServicesModal: React.FC<ServicesModalProps> = ({ isOpen, onClose })
     </div>
   );
 };
+

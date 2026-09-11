@@ -116,7 +116,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       deliveryMethod,
       subtotal,
       deliveryFee,
-      tax: Math.round((totalAmount * 0.22 / 1.22) * 100) / 100, // 22% KM inclusive
+      tax: Math.round((totalAmount * 0.24 / 1.24) * 100) / 100, // 24% KM inclusive
       total: totalAmount,
     };
 

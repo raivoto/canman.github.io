@@ -68,8 +68,8 @@ export const InvoiceView: React.FC<InvoiceViewProps> = ({ order, onClose }) => {
               <h1 className="text-2xl font-black text-[#0e4da4] tracking-tight mb-1">CANMAN SYSTEMS<span className="text-red-600 font-bold text-sm ml-1">OÜ</span></h1>
               <div className="mt-2 space-y-0.5 text-slate-700 text-xs leading-tight">
                 <p><strong>Reg.nr.</strong> 12147369 | <strong>K/M</strong> EE101478366</p>
-                <p>Lille 14-4 Tallinn 10614 | Tel. 372 5652062</p>
-                <p>E-post: canman.systems@gmail.com</p>
+                <p>Lille 14-4 Tallinn 10614 Harjumaa</p>
+                <p>Tel. 372 5652062 | canman.systems@gmail.com</p>
                 <p className="font-bold text-[#0e4da4]">Pank: EE517700771001586069</p>
               </div>
             </div>
@@ -93,7 +93,7 @@ export const InvoiceView: React.FC<InvoiceViewProps> = ({ order, onClose }) => {
             </div>
             <div>
               <h3 className="font-bold text-[#0e4da4] uppercase text-[11px] mb-2 border-b border-slate-200 pb-1">TARNE / DELIVERY:</h3>
-              <p className="text-slate-700 text-xs">Tarneviis: <strong>{order.deliveryMethod === 'pakk'? 'Omniva / DPD Pakiautomaat' : 'Kätte saamine poest'}</strong></p>
+              <p className="text-slate-700 text-xs">Tarneviis: <strong>{order.deliveryMethod === 'pakk'? 'Omniva / DPD Pakiautomaat' : 'Kätte saamine: Lille 14-4 Tallinn 10614 Harjumaa'}</strong></p>
               {order.deliveryMethod === 'pakk' && <p className="text-slate-800 font-semibold mt-1 text-xs">Pakiautomaat: {order.customer.address}</p>}
               <p className="text-slate-700 mt-1 text-xs">Makseviis: <strong>{order.paymentMethod === 'arve'? 'Pangaülekanne (ettemaks)' : 'Sularaha / Kaart'}</strong></p>
             </div>
@@ -132,18 +132,18 @@ export const InvoiceView: React.FC<InvoiceViewProps> = ({ order, onClose }) => {
           </div>
           <div className="flex justify-between items-start mb-5">
             <div className="text-[11px] text-slate-600 max-w-[55%] bg-amber-50 border border-amber-200 rounded-lg p-2.5">
-              <p className="font-bold text-amber-900 text-xs mb-1">TÄHELEPANU / ATTENTION:</p>
-              <p>See on ettemaksu arve / preforma invoice. Lõplik arve saadetakse koos kaubaga pärast makse laekumist.</p>
+              <p className="font-bold text-amber-900 text-xs mb-1">TÄHELEPANU:</p>
+              <p>See on ettemaksu arve. Lõplik arve saadetakse koos kaubaga pärast makse laekumist.</p>
               <p className="mt-1.5">Arve tasumise tähtaja ületamisel nõustun maksma leppetrahvi 0,5% päevas.</p>
             </div>
             <div className="w-60 space-y-1 text-xs bg-slate-50 p-3 rounded-xl border border-slate-200">
               <div className="flex justify-between text-slate-600"><span>Neto:</span><span>€{(order.total - order.tax).toFixed(2)}</span></div>
-              <div className="flex justify-between text-slate-600"><span>KM 22%:</span><span>€{order.tax.toFixed(2)}</span></div>
+              <div className="flex justify-between text-slate-600"><span>KM 24%:</span><span>€{order.tax.toFixed(2)}</span></div>
               <div className="flex justify-between text-slate-900 font-extrabold text-sm pt-1.5 border-t border-slate-300"><span>KOKKU / TOTAL:</span><span className="text-[#0e4da4]">€{order.total.toFixed(2)}</span></div>
             </div>
           </div>
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-3 text-xs text-blue-900 mb-5">
-            <p><strong>Maksejuhis:</strong> Palun tasuda <strong>€{order.total.toFixed(2)}</strong> arvele <strong>EE517700771001586069</strong> (Canman Systems OÜ). Selgitus: <strong>Nr. {order.orderNumber}</strong>. Kaup pannakse teele pärast laekumist.</p>
+            <p><strong>Maksejuhis:</strong> Palun tasuda <strong>€{order.total.toFixed(2)}</strong> arvele <strong>EE517700771001586069</strong> (Canman Systems OÜ). Selgitus: <strong>Nr. {order.orderNumber}</strong>.</p>
           </div>
           <div className="border-t border-slate-300 pt-4 grid grid-cols-2 gap-10 text-xs">
             <div>
@@ -152,10 +152,6 @@ export const InvoiceView: React.FC<InvoiceViewProps> = ({ order, onClose }) => {
                 <div className="flex gap-2"><span className="w-16">Allkiri:</span><span className="flex-1 border-b border-slate-400"></span></div>
                 <div className="flex gap-2"><span className="w-16">Kuupäev:</span><span className="flex-1 border-b border-slate-400"></span><span className="ml-2 text-slate-400">. . . . . . .</span></div>
               </div>
-            </div>
-            <div className="text-right text-[10px] text-slate-400">
-              <p>Canman Systems OÜ 12147369</p>
-              <p>Lille 14-4 Tallinn 10614</p>
             </div>
           </div>
         </div>

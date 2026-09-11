@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState, useMemo } from 'react';
 import { Header } from '../components/Header';
@@ -187,8 +187,8 @@ export default function Home() {
                 <MapPin className="w-5 h-5 text-yellow-300" />
               </div>
               <div>
-                <h4 className="font-bold text-xs">Kauplus Lille 14, Tallinn</h4>
-                <p className="text-[11px] text-blue-100">Kaubale saab ise tasuta järele tulla</p>
+                <h4 className="font-bold text-xs">Lille 14-4 Tallinn 10614 Harjumaa</h4>
+                <p className="text-[11px] text-blue-100">Kaubale saab ise tasuta jÃ¤rele tulla</p>
               </div>
             </div>
 
@@ -197,8 +197,8 @@ export default function Home() {
                 <Truck className="w-5 h-5 text-yellow-300" />
               </div>
               <div>
-                <h4 className="font-bold text-xs">Kiire Tarne 1-2 Tööpäeva</h4>
-                <p className="text-[11px] text-blue-100">Omniva & DPD pakiautomaadid (€4.90)</p>
+                <h4 className="font-bold text-xs">Kiire Tarne 1-2 TÃ¶Ã¶pÃ¤eva</h4>
+                <p className="text-[11px] text-blue-100">Omniva & DPD pakiautomaadid (â‚¬4.90)</p>
               </div>
             </div>
 
@@ -208,7 +208,7 @@ export default function Home() {
               </div>
               <div>
                 <h4 className="font-bold text-xs">Arvutiremont & IT-Abi</h4>
-                <p className="text-[11px] text-blue-100">Tel. +372 5652062 • Canman töökoda</p>
+                <p className="text-[11px] text-blue-100">Tel. +372 5652062 â€¢ Canman tÃ¶Ã¶koda</p>
               </div>
             </div>
           </div>

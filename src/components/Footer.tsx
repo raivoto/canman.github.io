@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -25,11 +25,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenServicesModal }) => {
               </span>
             </div>
             <p className="text-slate-400 text-xs leading-relaxed">
-              Kvaliteetsed uued ja kasutatud sülearvutid, lauaarvutid, arvutiosad ja lisaseadmed. Professionaalne IT remont ja abi Tallinnas.
+              Kvaliteetsed uued ja kasutatud sÃ¼learvutid, lauaarvutid, arvutiosad ja lisaseadmed. Professionaalne IT remont ja abi Tallinnas.
             </p>
             <div className="pt-2 text-[11px] text-slate-400 space-y-1">
-              <p>Canman OÜ • Reg: 12489620</p>
-              <p>KMKR: EE101684920</p>
+              <p>Canman OÃœ â€¢ Reg: 12489620</p>
+              <p>KMKR: EE101478366</p>
             </div>
           </div>
 
@@ -42,7 +42,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenServicesModal }) => {
               <div className="flex items-start space-x-2">
                 <MapPin className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
                 <span>
-                  <strong>Kauplus:</strong> Lille 14, Tallinn 10614 (Kristiine)
+                  <strong>Aadress:</strong> Lille 14-4 Tallinn 10614 Harjumaa
                 </span>
               </div>
               <div className="flex items-center space-x-2">
@@ -70,10 +70,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenServicesModal }) => {
               IT Remont Tallinnas
             </h4>
             <ul className="space-y-1.5 text-slate-400">
-              <li>• Arvutite diagnostika & puhastus</li>
-              <li>• Windows & draiverite paigaldus</li>
-              <li>• SSD ketta & mälude laiendus</li>
-              <li>• Väljakutsed Tallinnas ja lähiümbruses</li>
+              <li>â€¢ Arvutite diagnostika & puhastus</li>
+              <li>â€¢ Windows & draiverite paigaldus</li>
+              <li>â€¢ SSD ketta & mÃ¤lude laiendus</li>
+              <li>â€¢ VÃ¤ljakutsed Tallinnas ja lÃ¤hiÃ¼mbruses</li>
             </ul>
             <button
               onClick={onOpenServicesModal}
@@ -91,10 +91,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenServicesModal }) => {
             </h4>
             <div className="space-y-2 text-slate-400">
               <p>
-                <strong>Makseviisid:</strong> Pangaülekanne (Arve), Sularahas või kaardiga kaupluses.
+                <strong>Makseviisid:</strong> PangaÃ¼lekanne (Arve), Sularahas vÃµi kaardiga kohapeal.
               </p>
               <p>
-                <strong>Tarneviisid:</strong> Omniva & DPD pakiautomaadid (€4.90) või tasuta kättesaamine Lille 14.
+                <strong>Tarneviisid:</strong> Omniva & DPD pakiautomaadid (â‚¬4.90) vÃµi tasuta kÃ¤ttesaamine Lille 14.
               </p>
               <div className="pt-2 flex items-center space-x-2 text-slate-300 font-semibold">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
@@ -107,13 +107,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenServicesModal }) => {
         {/* Bottom Banner Required Text */}
         <div className="pt-6 flex flex-col md:flex-row justify-between items-center text-slate-500 text-[11px] gap-2">
           <div>
-            IT abi, väljakutsed, remont teenused Tallinnas | Tel. 372 5652062 | Lille 14 Tallinn 10614 | canman.systems@gmail.com
+            IT abi, vÃ¤ljakutsed, remont teenused Tallinnas | Tel. 372 5652062 | Lille 14-4 Tallinn 10614 Harjumaa | canman.systems@gmail.com
           </div>
           <div>
-            © {new Date().getFullYear()} Canman.github.io. Kõik õigused kaitstud.
+            Â© {new Date().getFullYear()} Canman.github.io. KÃµik Ãµigused kaitstud.
           </div>
         </div>
       </div>
     </footer>
   );
 };
+

@@ -127,8 +127,8 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ onOpenCheckout }) => {
                   <span className="font-semibold text-slate-800">€{subtotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-slate-500 text-[11px]">
-                  <span>Käibemaks 22% (KM):</span>
-                  <span>€{(subtotal * 0.22 / 1.22).toFixed(2)}</span>
+                  <span>Käibemaks 24% (KM):</span>
+                  <span>€{(subtotal * 0.24 / 1.24).toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-slate-900 font-extrabold text-base pt-2 border-t border-slate-200">
                   <span>Kokku (Total):</span>
