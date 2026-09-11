@@ -10,8 +10,12 @@ interface InvoiceViewProps {
 }
 
 export const InvoiceView: React.FC<InvoiceViewProps> = ({ order, onClose }) => {
-  const handlePrint = () => {
-    window.print();
+   const handlePrint = () => {
+    const style = document.createElement('style');
+    style.id = 'print-fix';
+    style.innerHTML = '@media print { html,body{background:white!important} body *{visibility:hidden!important} #printable-invoice,#printable-invoice *{visibility:visible!important} #printable-invoice{position:absolute!important;left:0!important;top:0!important;width:100%!important;padding:20px!important;background:white!important} @page{margin:10mm;size:A4} }';
+    document.head.appendChild(style);
+    setTimeout(() => { window.print(); setTimeout(()=>{document.getElementById('print-fix')?.remove()},500); }, 100);
   };
 
   return (
