@@ -1,87 +1,121 @@
 import fs from 'fs';
 import path from 'path';
-import * as XLSX from 'xlsx';
+import pkg from 'xlsx';
+const XLSX = pkg;
 
-const IMPORT_DIR = 'data/import';
-const OUT_BASE = 'src/data/products';
-const MERGED_FILE = 'src/data/products.ts'; // avalehe jaoks!
+const POSSIBLE_DIRS = ['data', 'src/data', '.', 'public/data'];
+const OUT_ROOT = 'src/data/products';
 
-function ensureDir(p){ fs.mkdirSync(p, {recursive:true}); }
+function parseImageCell(cell) {
+  if (!cell) return [];
+  let str = String(cell).trim().replace(/^["']+|["']+$/g, '');
+  if (!str) return [];
+  return str.split(/[,;|\n]+/).map(s=>s.trim()).filter(Boolean);
+}
+
+function findImageValue(row) {
+  const variants = ['image','images','pilt','pildid','foto','picture','img'];
+  for (const key of Object.keys(row)) {
+    const lk = key.toLowerCase().trim();
+    for (const v of variants) {
+      if (lk === v || lk.includes(v)) {
+        const val = row[key];
+        if (val && String(val).trim()) return String(val).trim();
+      }
+    }
+  }
+  const keys = Object.keys(row);
+  for (let i = keys.length-1; i >= Math.max(0, keys.length-3); i--) {
+    const s = String(row[keys[i]]||'').trim();
+    if (s && (s.includes('.jpg') || s.includes('.png') || s.includes('.jpeg') || s.includes('http') || s.includes('.webp'))) {
+      return s;
+    }
+  }
+  return '';
+}
+
+function findXlsFiles() {
+  let files = [];
+  for (const dir of POSSIBLE_DIRS) {
+    if (!fs.existsSync(dir)) continue;
+    try {
+      const entries = fs.readdirSync(dir, {withFileTypes:true});
+      for (const e of entries) {
+        const p = path.join(dir, e.name);
+        if (e.isDirectory()) {
+          try {
+            const sub = fs.readdirSync(p).filter(f=>f.toLowerCase().endsWith('.xls')||f.toLowerCase().endsWith('.xlsx')).map(f=>path.join(p,f));
+            files.push(...sub);
+          } catch {}
+        } else if (e.name.toLowerCase().endsWith('.xls') || e.name.toLowerCase().endsWith('.xlsx')) {
+          files.push(p);
+        }
+      }
+    } catch {}
+  }
+  return [...new Set(files)];
+}
 
 function convertFile(filePath) {
-  const wb = XLSX.readFile(filePath);
-  const sheet = wb.Sheets[wb.SheetNames[0]];
-  const rows = XLSX.utils.sheet_to_json(sheet);
-  const fileName = path.basename(filePath, path.extname(filePath)).toLowerCase();
-
-  // topCategory = failinimi ilma numbriteta, subCategory = Exceli C veerg või failinimi
-  let products = rows.map((r,i) => ({
-    sku: String(r.SKU || r.sku || r.Kood || `SKU-${i}`),
-    title: String(r.Title || r.title || r.Nimetus || r.Toode || ''),
-    brand: String(r.Brand || r.brand || r.Mark || ''),
-    categoryL1: String(r.CategoryL1 || r.categoryL1 || r.Kategooria1 || fileName).trim(),
-    categoryL2: String(r.CategoryL2 || r.categoryL2 || r.Kategooria2 || fileName).trim(),
-    categoryL3: String(r.CategoryL3 || r.categoryL3 || r.Kategooria3 || ''),
-    topCategory: fileName,
-    subCategory: String(r.SubCategory || r.subCategory || r.Alamkategooria || fileName),
-    price: Number(r.Price || r.price || r.Hind || 0),
-    salePrice: r.SalePrice? Number(r.SalePrice) : undefined,
-    finalPrice: Number(r.FinalPrice || r.finalPrice || r.Price || r.price || 0),
-    stock: Number(r.Stock || r.stock || r.Ladu || 0),
-    condition: 'used',
-    shortSpec: String(r.ShortSpec || r.shortSpec || ''),
-    description: String(r.Description || r.description || ''),
-    shortDescription: String(r.ShortDescription || ''),
-    images: [String(r.Image || r.image || `/images/placeholder.jpg`)].filter(Boolean),
-    isPopular: false,
-  })).filter(p=>p.title);
-
-  // Grupeeri alamkategooria järgi
-  const groups = {};
-  for(const p of products){
-    const sub = (p.subCategory || fileName).toLowerCase().replace(/\s+/g,'-');
-    if(!groups[sub]) groups[sub]=[];
-    groups[sub].push(p);
+  if (!fs.existsSync(filePath)) {
+    console.warn(`⚠️  Faili ei leitud (vahele jäetud): ${filePath}`);
+    return;
   }
-  ensureDir(path.join(OUT_BASE, fileName));
-  for(const [sub, list] of Object.entries(groups)){
-    fs.writeFileSync(path.join(OUT_BASE, fileName, `${sub}.json`), JSON.stringify(list, null, 2));
-  }
-  return products;
-}
+  try {
+    console.log(`\n📥 ${path.basename(filePath)}`);
+    const wb = XLSX.readFile(filePath);
+    for (const sheetName of wb.SheetNames) {
+      try {
+        const sheet = wb.Sheets[sheetName];
+        const rows = XLSX.utils.sheet_to_json(sheet, { defval: '', raw: false });
+        if (!rows.length) {
+          console.warn(`  ⚠️  ${sheetName} tühi`);
+          continue;
+        }
+        console.log(`  📄 Sheet "${sheetName}": ${rows.length} rida | Veerud: ${Object.keys(rows[0]).join(' | ')}`);
+        const testImg = findImageValue(rows[0]);
+        if (testImg) console.log(`     ✅ Pildi veerg: ${testImg.substring(0,80)}`);
+        else console.log(`     ❌ Pildi veergu ei leitud`);
 
-let allProducts = [];
-if(fs.existsSync(IMPORT_DIR)){
-  for(const f of fs.readdirSync(IMPORT_DIR)){
-    if(f.endsWith('.xlsx')||f.endsWith('.xls')){
-      console.log('Import:', f);
-      allProducts.push(...convertFile(path.join(IMPORT_DIR, f)));
+        const products = rows.map((row, idx) => {
+          const rawImage = findImageValue(row);
+          const images = parseImageCell(rawImage);
+          return {
+            id: String(row['id'] || row['ID'] || row['sku'] || `${sheetName}-${idx}`),
+            sku: String(row['sku'] || row['id'] || ''),
+            title: String(row['title'] || row['name'] || row['Toode'] || ''),
+            name: String(row['name'] || row['title'] || ''),
+            stock: Number(row['stock'] || 1),
+            price: Number(row['price'] || row['Hind'] || 0),
+            salePrice: row['salePrice'] ? Number(row['salePrice']) : undefined,
+            topCategory: String(row['topCategory'] || row['category'] || sheetName),
+            subCategory: 'general',
+            categoryPath: [String(row['topCategory'] || sheetName)],
+            brand: String(row['brand'] || ''),
+            image: images[0] || '',
+            images: images,
+            rawImages: images,
+            description: String(row['description'] || ''),
+            shortDescription: String(row['shortDescription'] || ''),
+          };
+        }).filter(p => p.title);
+
+        const safeName = sheetName.toLowerCase().replace(/[^a-z0-9äöüõ]+/g,'-').replace(/^-|-$/g,'');
+        const outDir = path.join(OUT_ROOT, safeName);
+        fs.mkdirSync(outDir, {recursive:true});
+        const outFile = path.join(outDir, `${safeName}.json`);
+        fs.writeFileSync(outFile, JSON.stringify(products, null, 2));
+        console.log(`     💾 ${outFile}: ${products.length} toodet, ${products.filter(p=>p.images.length>0).length} pildiga`);
+      } catch (e) {
+        console.warn(`  ⚠️  Sheet ${sheetName} viga: ${e.message}`);
+      }
     }
+  } catch (e) {
+    console.warn(`⚠️  Fail ${filePath} viga (vahele jäetud): ${e.message}`);
   }
 }
-// lisa ka olemasolevad JSON-id (desktop-used jne)
-if(fs.existsSync(OUT_BASE)){
-  for(const top of fs.readdirSync(OUT_BASE)){
-    const topPath = path.join(OUT_BASE, top);
-    if(!fs.statSync(topPath).isDirectory()) continue;
-    for(const jf of fs.readdirSync(topPath)){
-      if(!jf.endsWith('.json')) continue;
-      try{ allProducts.push(...JSON.parse(fs.readFileSync(path.join(topPath, jf),'utf8'))); }catch{}
-    }
-  }
-}
-// eemalda duplikaadid SKU järgi
-const map = new Map();
-for(const p of allProducts){ if(!map.has(p.sku)) map.set(p.sku, p); }
-allProducts = Array.from(map.values());
 
-// Kirjuta avalehe jaoks src/data/products.ts
-const tsContent = `// AUTO-GENERATED - ära muuda käsitsi
-import { Product } from '../types';
-export const PRODUCTS: Product[] = ${JSON.stringify(allProducts, null, 2)};
-`;
-fs.writeFileSync(MERGED_FILE, tsContent);
-// Genereeri autoProducts.ts
-import { execSync } from 'child_process';
-execSync('node scripts/generate-catalog.mjs', {stdio:'inherit'});
-console.log('Wrote', MERGED_FILE, 'total', allProducts.length);
+const xlsFiles = findXlsFiles();
+console.log('Leitud XLS:', xlsFiles);
+for (const f of xlsFiles) convertFile(f);
+console.log('\n✅ Import valmis - kõik sama süsteemiga (image/images/pilt)!');
