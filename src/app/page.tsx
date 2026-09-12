@@ -69,8 +69,28 @@ export default function Home() {
         const matchesCat = safeLower(p.categoryL1 || p.topCategory || p.category).includes(query) || safeLower(p.categoryL2 || p.subCategory).includes(query);
         if (!matchesTitle && !matchesBrand && !matchesSpecs && !matchesCat) return false;
       }
-      if (selectedL1 && safeLower(p.categoryL1 || p.topCategory || p.category) !== safeLower(selectedL1)) return false;
-      if (selectedL2 && safeLower(p.categoryL2 || p.subCategory) !== safeLower(selectedL2)) return false;
+      
+      // L1 - grupeeritud Desktop
+      if (selectedL1) {
+        const sel = safeLower(selectedL1);
+        const pL1 = safeLower(p.categoryL1 || p.topCategory || p.category);
+        if (sel.includes('desktop kasutatud')) {
+          if (!pL1.startsWith('desktop kasutatud')) return false;
+        } else {
+          if (pL1 !== sel) return false;
+        }
+      }
+      
+      // L2 - gen võib olla L1 sees või L2 sees
+      if (selectedL2) {
+        const sel = safeLower(selectedL2);
+        const pL1 = safeLower(p.categoryL1 || p.topCategory || p.category);
+        const pL2 = safeLower(p.categoryL2 || p.subCategory);
+        const genInL1 = pL1.includes(sel);
+        const genInL2 = pL2.includes(sel);
+        if (!genInL1 && !genInL2) return false;
+      }
+      
       if (selectedL3 && p.categoryL3 && safeLower(p.categoryL3) !== safeLower(selectedL3)) return false;
       if (conditionFilter !== 'all' && p.condition !== conditionFilter) return false;
       if (selectedBrand && String(p.brand) !== selectedBrand) return false;
