@@ -13,7 +13,7 @@ import { ServicesModal } from '../components/ServicesModal';
 import { Footer } from '../components/Footer';
 import { allProducts as PRODUCTS } from '../data/productCatalog';
 import { Product, Condition, OrderDetails } from '../types';
-import { Wrench, ShieldCheck, Truck, MapPin, ChevronRight } from 'lucide-react';
+import { Wrench, Truck, MapPin, ChevronRight } from 'lucide-react';
 
 const safeLower = (v: any) => String(v || '').toLowerCase();
 const safeStr = (v: any) => String(v || '');
@@ -53,7 +53,7 @@ export default function Home() {
 
   const availableBrands = useMemo(() => {
     const brandsSet = new Set<string>();
-    PRODUCTS.forEach((p: any) => {
+    (PRODUCTS as any[]).forEach((p: any) => {
       if (p.brand) brandsSet.add(String(p.brand));
     });
     return Array.from(brandsSet).sort();
@@ -67,25 +67,13 @@ export default function Home() {
         const matchesBrand = safeLower(p.brand).includes(query);
         const matchesSpecs = safeLower(p.shortSpec || p.shortDescription || p.description).includes(query);
         const matchesCat = safeLower(p.categoryL1 || p.topCategory || p.category).includes(query) || safeLower(p.categoryL2 || p.subCategory).includes(query);
-        if (!matchesTitle &&!matchesBrand &&!matchesSpecs &&!matchesCat) {
-          return false;
-        }
+        if (!matchesTitle && !matchesBrand && !matchesSpecs && !matchesCat) return false;
       }
-      if (selectedL1 && safeLower(p.categoryL1 || p.topCategory || p.category)!== safeLower(selectedL1)) {
-        return false;
-      }
-      if (selectedL2 && safeLower(p.categoryL2 || p.subCategory)!== safeLower(selectedL2)) {
-        return false;
-      }
-      if (selectedL3 && safeLower(p.categoryL3)!== safeLower(selectedL3)) {
-        return false;
-      }
-      if (conditionFilter!== 'all' && p.condition!== conditionFilter) {
-        return false;
-      }
-      if (selectedBrand && String(p.brand)!== selectedBrand) {
-        return false;
-      }
+      if (selectedL1 && safeLower(p.categoryL1 || p.topCategory || p.category) !== safeLower(selectedL1)) return false;
+      if (selectedL2 && safeLower(p.categoryL2 || p.subCategory) !== safeLower(selectedL2)) return false;
+      if (selectedL3 && p.categoryL3 && safeLower(p.categoryL3) !== safeLower(selectedL3)) return false;
+      if (conditionFilter !== 'all' && p.condition !== conditionFilter) return false;
+      if (selectedBrand && String(p.brand) !== selectedBrand) return false;
       if (minPrice > 0 && Number(p.price) < minPrice) return false;
       if (maxPrice < 1000 && Number(p.price) > maxPrice) return false;
       return true;
@@ -93,7 +81,7 @@ export default function Home() {
       if (sortBy === 'price-asc') return Number(a.price) - Number(b.price);
       if (sortBy === 'price-desc') return Number(b.price) - Number(a.price);
       if (sortBy === 'name-asc') return safeStr(a.title || a.name).localeCompare(safeStr(b.title || b.name));
-      if (sortBy === 'popular') return (b.isPopular? 1 : 0) - (a.isPopular? 1 : 0);
+      if (sortBy === 'popular') return (b.isPopular ? 1 : 0) - (a.isPopular ? 1 : 0);
       return 0;
     });
   }, [searchQuery, selectedL1, selectedL2, selectedL3, conditionFilter, selectedBrand, minPrice, maxPrice, sortBy]);
@@ -110,9 +98,9 @@ export default function Home() {
             {selectedL3 && <><ChevronRight className="w-3 h-3 text-slate-400" /><span className="font-bold text-[#0e4da4]">{selectedL3}</span></>}
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 bg-gradient-to-r from-[#0e4da4] to-[#0c3a7a] text-white rounded-xl p-4 shadow-sm">
-            <div className="flex items-center space-x-3"><div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0"><MapPin className="w-5 h-5 text-yellow-300" /></div><div><h4 className="font-bold text-xs">Lille 14-4 Tallinn 10614 Harjumaa</h4><p className="text- text-blue-100">Kaubale saab ise tasuta järele tulla</p></div></div>
-            <div className="flex items-center space-x-3"><div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0"><Truck className="w-5 h-5 text-yellow-300" /></div><div><h4 className="font-bold text-xs">Kiire Tarne 1-2 Tööpäeva</h4><p className="text- text-blue-100">Omniva & DPD pakiautomaadid (€4.90)</p></div></div>
-            <div className="flex items-center space-x-3"><div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0"><Wrench className="w-5 h-5 text-yellow-300" /></div><div><h4 className="font-bold text-xs">Arvutiremont & IT-Abi</h4><p className="text- text-blue-100">Tel. +372 5652062 • Canman töökoda</p></div></div>
+            <div className="flex items-center space-x-3"><div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0"><MapPin className="w-5 h-5 text-yellow-300" /></div><div><h4 className="font-bold text-xs">Lille 14-4 Tallinn 10614 Harjumaa</h4><p className="text-[11px] text-blue-100">Kaubale saab ise tasuta järele tulla</p></div></div>
+            <div className="flex items-center space-x-3"><div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0"><Truck className="w-5 h-5 text-yellow-300" /></div><div><h4 className="font-bold text-xs">Kiire Tarne 1-2 Tööpäeva</h4><p className="text-[11px] text-blue-100">Omniva & DPD pakiautomaadid (€4.90)</p></div></div>
+            <div className="flex items-center space-x-3"><div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0"><Wrench className="w-5 h-5 text-yellow-300" /></div><div><h4 className="font-bold text-xs">Arvutiremont & IT-Abi</h4><p className="text-[11px] text-blue-100">Tel. +372 5652062 • Canman töökoda</p></div></div>
           </div>
         </div>
         <div className="flex flex-col lg:flex-row gap-6">
