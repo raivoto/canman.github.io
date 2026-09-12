@@ -32,7 +32,7 @@ function convertFile(filePath) {
     shortSpec: String(r.ShortSpec || r.shortSpec || ''),
     description: String(r.Description || r.description || ''),
     shortDescription: String(r.ShortDescription || ''),
-    images: [String(r.Image || r.image || `/images/${r.SKU || ''}.jpg`)].filter(Boolean),
+    images: [String(r.Image || r.image || `/images/placeholder.jpg`)].filter(Boolean),
     isPopular: false,
   })).filter(p=>p.title);
 
