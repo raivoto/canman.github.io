@@ -1,0 +1,26 @@
+name: Generate Catalog
+on:
+  push:
+    paths:
+      - 'src/data/products/**'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Generate
+        run: node scripts/generate-catalog.mjs
+      - name: Commit
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add src/data/productCatalog/autoProducts.ts
+          git commit -m "auto: generate autoProducts.ts" || echo "no changes"
+          git push
