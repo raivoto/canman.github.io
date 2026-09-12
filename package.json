@@ -2,18 +2,22 @@
   "name": "canman-ecommerce",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
+   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/generate-autoProducts.mjs && node scripts/fix-all.cjs && next build",
+    "build": "node scripts/import-xls.mjs && node scripts/generate-autoProducts.mjs && node scripts/fix-all.cjs && next build",
     "start": "next start",
     "lint": "next lint",
-    "generate": "node scripts/generate-autoProducts.mjs"
+    "generate": "node scripts/generate-autoProducts.mjs",
+    "import:xls": "node scripts/import-xls.mjs",
+    "convert:webp": "node scripts/convert-to-webp.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",
     "next": "^14.2.5",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "sharp": "^0.33.4",
+"xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/node": "^20.11.24",
