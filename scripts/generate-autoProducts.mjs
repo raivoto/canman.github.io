@@ -1,129 +1,104 @@
- 
 import fs from 'fs';
 import path from 'path';
 
 const PRODUCTS_ROOT = 'src/data/products';
 const OUT_FILE = 'src/data/productCatalog/autoProducts.ts';
 
-// Grupi placeholderid - pane /public/images/ kausta need pildid
-const GROUP_PLACEHOLDERS = {
-  'desktop': '/images/placeholder-desktop.jpg',
-  'laptop': '/images/placeholder-laptop.jpg',
-  'monitor': '/images/placeholder-monitor.jpg',
-  'arvutid': '/images/placeholder-desktop.jpg',
-  'mäl': '/images/placeholder-ram.jpg',
-  'ram': '/images/placeholder-ram.jpg',
-  'dimm': '/images/placeholder-ram.jpg',
-  'combo': '/images/placeholder-combo.jpg',
-  'protsessor': '/images/placeholder-cpu.jpg',
-  'default': '/images/placeholder.jpg'
-};
-
-function getGroupPlaceholder(categoryL1, categoryL2, categoryL3) {
-  const all = `${categoryL1 || ''} ${categoryL2 || ''} ${categoryL3 || ''}`.toLowerCase();
-  for (const key of Object.keys(GROUP_PLACEHOLDERS)) {
-    if (all.includes(key)) return GROUP_PLACEHOLDERS[key];
-  }
-  return GROUP_PLACEHOLDERS.default;
-}
-
 function parseImageColumn(raw) {
   if (!raw) return [];
-  if (Array.isArray(raw)) return raw.filter(Boolean).map(s => String(s).trim());
-  
-  let str = String(raw).trim();
+  if (Array.isArray(raw)) return raw.map(s=>String(s).trim()).filter(Boolean);
+  const str = String(raw).trim();
   if (!str) return [];
-  
-  // WP stiilis: "img1.jpg, img2.jpg, img3.jpg" või "img1.jpg|img2.jpg" või reavahetus
-  // Toetame: , ; | \n 
-  const parts = str.split(/[,;|\n]+/).map(s => s.trim()).filter(Boolean);
-  
-  // Kui on ainult 1 ja see sisaldab tühikuid mitte koma - ära spliti
-  if (parts.length === 1 && str.includes(' ') && !str.includes('http')) {
-    // Võib olla 1 failinimi tühikuga? Jäta nagu on
-    return [str];
+  return str.split(/[,;|\n]+/).map(s=>s.trim()).filter(Boolean);
+}
+
+function findImages(p) {
+  const vals = [p.image, p.imageUrl, p.images, p.rawImages, p.photo, p.picture, p.Pilt];
+  for (const v of vals) {
+    const arr = parseImageColumn(v);
+    if (arr.length) return arr;
   }
-  
-  return parts;
+  return [];
 }
 
 function getAllJsons(dir) {
   let out = [];
-  if(!fs.existsSync(dir)) return out;
-  for(const e of fs.readdirSync(dir, {withFileTypes:true})) {
-    const p = path.join(dir, e.name);
-    if(e.isDirectory()) out.push(...getAllJsons(p));
-    else if(e.name.endsWith('.json')) out.push(p);
+  if(!fs.existsSync(dir)) {
+    console.warn(`⚠️  Kausta ei leitud (vahele jäetud): ${dir}`);
+    return out;
+  }
+  try {
+    for(const e of fs.readdirSync(dir, {withFileTypes:true})) {
+      const p = path.join(dir, e.name);
+      if(e.isDirectory()) {
+        out.push(...getAllJsons(p));
+      } else if(e.name.endsWith('.json')) {
+        out.push(p);
+      }
+    }
+  } catch(e) {
+    console.warn(`⚠️  Kausta lugemine ebaõnnestus ${dir}: ${e.message}`);
   }
   return out;
 }
 
+function placeholder(title, cat) {
+  const t = encodeURIComponent((title||'Desktop').substring(0,22));
+  const c = (cat||'').toLowerCase();
+  let bg = '3B82F6';
+  if (c.includes('3-gen')) bg = '1E40AF';
+  else if (c.includes('monitor')) bg = '8B5CF6';
+  else if (c.includes('laptop')) bg = '10B981';
+  return `https://via.placeholder.co/400x300/${bg}/FFFFFF?text=${t}`;
+}
+
 const files = getAllJsons(PRODUCTS_ROOT);
+if (files.length === 0) {
+  console.warn(`⚠️  JSON tooteid ei leitud kaustast ${PRODUCTS_ROOT} - teen tühja kataloogi`);
+}
+
 let all = [];
 for(const f of files) {
   try {
     const j = JSON.parse(fs.readFileSync(f,'utf8'));
     const arr = Array.isArray(j)? j : [j];
     all.push(...arr);
-  } catch(e){ console.log('skip',f,e.message)}
+  } catch(e){
+    console.warn(`⚠️  Fail vigane (vahele jäetud): ${f} - ${e.message}`);
+  }
 }
 
 all = all.map(p => {
-  // 1. Loe image veerg - seal võib olla 5 pilti
-  const rawImage = p.image || p.imageUrl || p.images || '';
-  const parsedImages = parseImageColumn(rawImage);
-  
-  // 2. Kui images array juba olemas, ühenda
-  let allImages = [...parsedImages];
-  if (Array.isArray(p.images) && p.images.length) {
-    // Lisa need mis pole juba sees
-    for (const img of p.images) {
-      const s = String(img).trim();
-      if (s && !allImages.includes(s)) allImages.push(s);
-    }
-  }
-  
-  // 3. Grupi placeholder kui pilti pole
-  const placeholder = getGroupPlaceholder(p.categoryL1, p.categoryL2, p.categoryL3);
-  const finalImages = allImages.length ? allImages : [placeholder];
-  
-  // 4. Esimene pilt = Grid thumb (väiksem vaade)
-  const thumb = finalImages[0];
-  const gridThumb = thumb; // hiljem saad teha /thumbs/ versiooni kui tahad
+  const imgs = findImages(p);
+  const has = imgs.length > 0;
+  const cat = p.topCategory || p.categoryL1 || (p.categoryPath && p.categoryPath[0]) || '';
+  const thumb = has ? imgs[0] : placeholder(p.title || p.name, cat);
+  const finalImgs = has ? imgs : [thumb];
   
   return {
     ...p,
-    // Hinnad kindlasti numbrid - ei crashi toFixed
     price: Number(p.price || p.finalPrice || p.salePrice || 0),
     salePrice: p.salePrice != null ? Number(p.salePrice) : undefined,
     finalPrice: p.finalPrice != null ? Number(p.finalPrice) : undefined,
-    
-    // WP stiilis pildid
-    image: thumb, // grid view esimene
+    image: thumb,
     imageUrl: thumb,
-    thumbnail: gridThumb, // grid thumb
-    gridImage: gridThumb,
-    images: finalImages, // kõik 5 pilti detailvaates
-    gallery: finalImages, // WP gallery
-    
-    // Info kas placeholder
-    isPlaceholder: finalImages[0] === placeholder,
-    placeholderType: allImages.length ? null : placeholder
+    thumbnail: thumb,
+    gridImage: thumb,
+    images: finalImgs,
+    gallery: finalImgs,
+    isPlaceholder: !has,
   };
 });
 
-const content = `// AUTO-GENERATED WP-STYLE - ${new Date().toISOString()}
-// ${files.length} failist, ${all.length} toodet
-// image veerg = 5 pilti, esimene = grid thumb, kui puudub -> grupi placeholder
-
+const content = `// AUTO-GENERATED ${new Date().toISOString()} - ${files.length} failist, ${all.length} toodet
 export const autoProducts: any[] = ${JSON.stringify(all, null, 2)};
 `;
 
-fs.mkdirSync(path.dirname(OUT_FILE), {recursive:true});
-fs.writeFileSync(OUT_FILE, content);
-console.log(`✅ Genereeritud ${OUT_FILE}`);
-console.log(`📦 ${all.length} toodet ${files.length} failist`);
-console.log(`🖼️  Näited:`);
-all.slice(0,3).forEach(x => {
-  console.log(`- ${x.title || x.name}: ${x.images.length} pilti, thumb=${x.thumbnail}, placeholder=${x.isPlaceholder}`);
-});
+try {
+  fs.mkdirSync(path.dirname(OUT_FILE), {recursive:true});
+  fs.writeFileSync(OUT_FILE, content);
+  console.log(`✅ ${OUT_FILE} -> ${all.length} toodet, ${all.filter(x=>x.isPlaceholder).length} placeholderiga`);
+} catch(e) {
+  console.warn(`⚠️  Väljundfaili kirjutamine ebaõnnestus (vahele jäetud): ${e.message}`);
+}
+console.log('✅ generate-autoProducts valmis');
