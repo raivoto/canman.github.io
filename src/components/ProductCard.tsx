@@ -48,8 +48,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     <div className="group bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between relative hover:border-blue-300">
       {/* Top Image & Badges */}
       <div className="relative w-full pt-[75%] bg-slate-50 overflow-hidden cursor-pointer" onClick={() => onSelectProduct(product)}>
-        <Image
-          src={product.imageUrl}
+         <Image
+          src={`/canman.github.io${product.imageUrl || product.images?.[0] || '/images/placeholder.jpg'}`}
           alt={product.title}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
