@@ -188,7 +188,7 @@ export default function Home() {
               </div>
               <div>
                 <h4 className="font-bold text-xs">Lille 14-4 Tallinn 10614 Harjumaa</h4>
-                <p className="text-[11px] text-blue-100">Kaubale saab ise tasuta jÃ¤rele tulla</p>
+                <p className="text-[11px] text-blue-100">Kaubale saab ise tasuta järele tulla</p>
               </div>
             </div>
 
@@ -197,7 +197,7 @@ export default function Home() {
                 <Truck className="w-5 h-5 text-yellow-300" />
               </div>
               <div>
-                <h4 className="font-bold text-xs">Kiire Tarne 1-2 TööpÃ¤eva</h4>
+                <h4 className="font-bold text-xs">Kiire Tarne 1-2 Tööpäeva</h4>
                 <p className="text-[11px] text-blue-100">Omniva & DPD pakiautomaadid (â‚¬4.90)</p>
               </div>
             </div>
@@ -288,4 +288,5 @@ export default function Home() {
     </div>
   );
 }
+
 
