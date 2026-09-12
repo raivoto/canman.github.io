@@ -73,8 +73,8 @@ export const Header: React.FC<HeaderProps> = ({
             <Laptop className="w-6 h-6" />
           </div>
           <div>
-            <div className="text-2xl font-black tracking-tight text-[#0e4da4] leading-none flex items-center gap-1">
-              CANMAN<span className="text-red-600 font-black text- bg-red-50 px-1.5 py-0.5 rounded border border-red-200 tracking-wide">ARVUTID</span>
+            <div className="text-2xl font-black tracking-tight text-[#0e4da4] leading-none">
+  CANMAN ARVUTID
             </div>
             <p className="text-[11px] text-slate-500 font-medium tracking-wide">
               Arvutid, Osad & IT Remont Tallinnas
@@ -134,5 +134,7 @@ export const Header: React.FC<HeaderProps> = ({
     </header>
   );
 };
+
+
 
 

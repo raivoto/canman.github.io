@@ -1,120 +1,47 @@
-﻿'use client';
-
 import React from 'react';
-import Link from 'next/link';
-import { Phone, Mail, MapPin, Wrench, Laptop, ShieldCheck, Clock } from 'lucide-react';
 
-interface FooterProps {
-  onOpenServicesModal: () => void;
-}
-
-export const Footer: React.FC<FooterProps> = ({ onOpenServicesModal }) => {
+export const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-900 text-slate-300 pt-10 pb-6 mt-16 border-t border-slate-800 text-xs">
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-800">
-          {/* Col 1: Store Intro */}
-          <div className="space-y-3">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-[#0e4da4] rounded-lg flex items-center justify-center text-white">
-                <Laptop className="w-5 h-5" />
-              </div>
-              <span className="text-xl font-black text-white tracking-tight">
-                CANMAN<span className="text-red-500 font-bold text-xs">EE</span>
-              </span>
+    <footer className="bg-[#0a1931] text-slate-300 py-10 mt-10">
+      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+        <div>
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-8 h-8 bg-[#0e4da4] rounded-lg flex items-center justify-center text-white">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
             </div>
-            <p className="text-slate-400 text-xs leading-relaxed">
-              Kvaliteetsed uued ja kasutatud sÃ¼learvutid, lauaarvutid, arvutiosad ja lisaseadmed. Professionaalne IT remont ja abi Tallinnas.
-            </p>
-            <div className="pt-2 text-[11px] text-slate-400 space-y-1">
-              <p>Canman OÃœ â€¢ Reg: 12489620</p>
-              <p>KMKR: EE101478366</p>
+            <div className="text-xl font-black tracking-tight text-white leading-none">
+              CANMAN ARVUTID
             </div>
           </div>
-
-          {/* Col 2: Required Contact Details */}
-          <div className="space-y-2.5">
-            <h4 className="text-white font-bold uppercase tracking-wider text-xs border-b border-slate-800 pb-1.5">
-              Kontaktid & Asukoht
-            </h4>
-            <div className="space-y-2 text-slate-300">
-              <div className="flex items-start space-x-2">
-                <MapPin className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
-                <span>
-                  <strong>Aadress:</strong> Lille 14-4 Tallinn 10614 Harjumaa
-                </span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                <a href="tel:+3725652062" className="hover:text-white transition">
-                  <strong>Tel:</strong> +372 5652062
-                </a>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                <a href="mailto:canman.systems@gmail.com" className="hover:text-white transition">
-                  <strong>E-post:</strong> canman.systems@gmail.com
-                </a>
-              </div>
-              <div className="flex items-center space-x-2 text-slate-400 text-[11px] pt-1">
-                <Clock className="w-3.5 h-3.5 text-blue-400" />
-                <span>E-R 10:00 - 18:00 | L-P Kokkuleppel</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Col 3: Services Summary */}
-          <div className="space-y-2.5">
-            <h4 className="text-white font-bold uppercase tracking-wider text-xs border-b border-slate-800 pb-1.5">
-              IT Remont Tallinnas
-            </h4>
-            <ul className="space-y-1.5 text-slate-400">
-              <li>â€¢ Arvutite diagnostika & puhastus</li>
-              <li>â€¢ Windows & draiverite paigaldus</li>
-              <li>â€¢ SSD ketta & mÃ¤lude laiendus</li>
-              <li>â€¢ VÃ¤ljakutsed Tallinnas ja lÃ¤hiÃ¼mbruses</li>
-            </ul>
-            <button
-              onClick={onOpenServicesModal}
-              className="mt-2 inline-flex items-center space-x-1 text-xs font-semibold text-yellow-400 hover:text-yellow-300 underline"
-            >
-              <Wrench className="w-3.5 h-3.5" />
-              <span>Vaata IT-teenuste hinnakirja &rarr;</span>
-            </button>
-          </div>
-
-          {/* Col 4: Payment & Shipping */}
-          <div className="space-y-2.5">
-            <h4 className="text-white font-bold uppercase tracking-wider text-xs border-b border-slate-800 pb-1.5">
-              Makse & Tarne
-            </h4>
-            <div className="space-y-2 text-slate-400">
-              <p>
-                <strong>Makseviisid:</strong> PangaÃ¼lekanne (Arve), Sularahas vÃµi kaardiga kohapeal.
-              </p>
-              <p>
-                <strong>Tarneviisid:</strong> Omniva & DPD pakiautomaadid (â‚¬4.90) vÃµi tasuta kÃ¤ttesaamine Lille 14.
-              </p>
-              <div className="pt-2 flex items-center space-x-2 text-slate-300 font-semibold">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span>Garantii uutele 24k / kasutatud 12k</span>
-              </div>
-            </div>
+          <p className="text-slate-400 text- leading-relaxed">
+            Kvaliteetsed uued ja kasutatud sülearvutid, lauaarvutid, arvutiosad ja lisaseadmed. Professionaalne IT remont ja abi Tallinnas.
+          </p>
+          <div className="mt-4 text- text-slate-400 space-y-1">
+            <p>Canman Systems OÜ Reg: 12147369</p>
+            <p>KMKR: EE101478366</p>
           </div>
         </div>
-
-        {/* Bottom Banner Required Text */}
-        <div className="pt-6 flex flex-col md:flex-row justify-between items-center text-slate-500 text-[11px] gap-2">
-          <div>
-            IT abi, vÃ¤ljakutsed, remont teenused Tallinnas | Tel. 372 5652062 | Lille 14-4 Tallinn 10614 Harjumaa | canman.systems@gmail.com
-          </div>
-          <div>
-            Â© {new Date().getFullYear()} Canman.github.io. KÃµik Ãµigused kaitstud.
+        <div>
+          <h4 className="font-bold text-white mb-3 text-sm">Kontakt</h4>
+          <div className="space-y-2 text- text-slate-400">
+            <p><strong className="text-slate-200">Aadress:</strong> Lille 14-4 Tallinn 10614 Harjumaa</p>
+            <p>IT abi, väljakutsed, remont teenused Tallinnas | Tel. 372 5652062 | Lille 14-4 Tallinn 10614 Harjumaa | canman.systems@gmail.com</p>
+            <p className="mt-3"><strong className="text-slate-200">Makseviisid:</strong> Pangaülekanne (Arve), Sularahas või kaardiga kohapeal.</p>
           </div>
         </div>
+        <div>
+          <h4 className="font-bold text-white mb-3 text-sm">Lahtiolekuajad</h4>
+          <div className="space-y-1 text- text-slate-400">
+            <p>E-R 10:00 - 18:00</p>
+            <p>L 10:00 - 15:00 (kokkuleppel)</p>
+            <p>P Suletud</p>
+            <p className="mt-3 text-yellow-400 font-semibold">Lille 14-4 Tallinn 10614 Harjumaa - Kohapeal laos olemas!</p>
+          </div>
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 mt-8 pt-6 border-t border-slate-800 text- text-slate-500 text-center">
+        © {new Date().getFullYear()} Canman Systems OÜ - Kõik õigused kaitstud | Lille 14-4 Tallinn 10614 Harjumaa
       </div>
     </footer>
   );
 };
-
