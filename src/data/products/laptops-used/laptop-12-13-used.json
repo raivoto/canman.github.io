@@ -1,0 +1,210 @@
+[
+  {
+    "id": "340005",
+    "sku": "340005",
+    "title": "Notebook Latitude E6330 used",
+    "name": "Notebook Latitude E6330 used",
+    "stock": 1,
+    "price": 50,
+    "salePrice": null,
+    "finalPrice": 50,
+    "topCategory": "Laptops used",
+    "subCategory": "Laptop 12\"-13\" used",
+    "categoryPath": [
+      "Laptops used",
+      "Laptop 12\"-13\" used"
+    ],
+    "brand": "DELL",
+    "tags": "Latitude",
+    "color": "Black Silver",
+    "images": [
+      "/images/DELL-E6330_W10.jpg"
+    ],
+    "rawImages": [
+      "DELL-E6330_W10.jpg"
+    ],
+    "description": "Notebook Latitude E6330 14\" i5-3340M DDR3-4GB 500GB WIN10P ID Card Screen WXGA 1366x768 matte",
+    "shortDescription": "",
+    "specs": ""
+  },
+  {
+    "id": "340003",
+    "sku": "340003",
+    "title": "Notebook Latitude E6220 used",
+    "name": "Notebook Latitude E6220 used",
+    "stock": 1,
+    "price": 50,
+    "salePrice": null,
+    "finalPrice": 50,
+    "topCategory": "Laptops used",
+    "subCategory": "Laptop 12\"-13\" used",
+    "categoryPath": [
+      "Laptops used",
+      "Laptop 12\"-13\" used"
+    ],
+    "brand": "DELL",
+    "tags": "Latitude",
+    "color": "Black Silver",
+    "images": [
+      "/images/DELL-E6220.jpg",
+      "/images/DELL-E6220_3h.jpg",
+      "/images/DELL-E6220_W7P_4_250HDD.jpg"
+    ],
+    "rawImages": [
+      "DELL-E6220.jpg",
+      "DELL-E6220_3h.jpg",
+      "DELL-E6220_W7P_4_250HDD.jpg"
+    ],
+    "description": "Notebook Latitude E6220 12,5\" i5-2520M DDR3-4GB 500GB WIN10P ID Card Screen WXGA 1366x768 matte",
+    "shortDescription": "",
+    "specs": ""
+  },
+  {
+    "id": "340004",
+    "sku": "340004",
+    "title": "Notebook Latitude E6320 used",
+    "name": "Notebook Latitude E6320 used",
+    "stock": 1,
+    "price": 50,
+    "salePrice": null,
+    "finalPrice": 50,
+    "topCategory": "Laptops used",
+    "subCategory": "Laptop 12\"-13\" used",
+    "categoryPath": [
+      "Laptops used",
+      "Laptop 12\"-13\" used"
+    ],
+    "brand": "DELL",
+    "tags": "Latitude",
+    "color": "Black Silver",
+    "images": [
+      "/images/DELL-E6320_EST.jpg",
+      "/images/DELL-E6320_EST_alt.jpg"
+    ],
+    "rawImages": [
+      "DELL-E6320_EST.jpg",
+      "DELL-E6320_EST_alt.jpg"
+    ],
+    "description": "Notebook Latitude E6320 12,5\" i5-2520M DDR3-4GB 500GB WIN10P ID Card Screen WXGA 1366x768 matte",
+    "shortDescription": "",
+    "specs": ""
+  },
+  {
+    "id": "340002",
+    "sku": "340002",
+    "title": "Notebook Latitude E4310 used",
+    "name": "Notebook Latitude E4310 used",
+    "stock": 1,
+    "price": 50,
+    "salePrice": null,
+    "finalPrice": 50,
+    "topCategory": "Laptops used",
+    "subCategory": "Laptop 12\"-13\" used",
+    "categoryPath": [
+      "Laptops used",
+      "Laptop 12\"-13\" used"
+    ],
+    "brand": "DELL",
+    "tags": "Latitude",
+    "color": "Black Silver",
+    "images": [
+      "/images/DELL-E4310.jpg",
+      "/images/DELL-E4310_pealt.jpg"
+    ],
+    "rawImages": [
+      "DELL-E4310.jpg",
+      "DELL-E4310_pealt.jpg"
+    ],
+    "description": "Notebook Latitude E4310 14,1\" i5-520M DDR3-4GB 320GB WIN10P DVDRW ID Card Screen WXGA 1400x900 matte",
+    "shortDescription": "",
+    "specs": ""
+  },
+  {
+    "id": "340006",
+    "sku": "340006",
+    "title": "Latitude E4320",
+    "name": "Latitude E4320",
+    "stock": 1,
+    "price": 50,
+    "salePrice": null,
+    "finalPrice": 50,
+    "topCategory": "Laptops used",
+    "subCategory": "Laptop 12\"-13\" used",
+    "categoryPath": [
+      "Laptops used",
+      "Laptop 12\"-13\" used"
+    ],
+    "brand": "DELL",
+    "tags": "Latitude",
+    "color": "Black",
+    "images": [
+      "/images/Dell-E4320.jpg"
+    ],
+    "rawImages": [
+      "Dell-E4320.jpg"
+    ],
+    "description": "13,3\" matt ekraan, prots. i5-2520M, DDR3-4GB RAM, 320HDD, DVDRW, ID kaardi lugeja, aku umbes 1h20m, Windows 10",
+    "shortDescription": "I5-2520M 13,3\" 4GB, 320GB",
+    "specs": ""
+  },
+  {
+    "id": "340010",
+    "sku": "340010",
+    "title": "Lenovo X250",
+    "name": "Lenovo X250 used",
+    "stock": 1,
+    "price": 110,
+    "salePrice": null,
+    "finalPrice": 110,
+    "topCategory": "Laptops used",
+    "subCategory": "Laptop 12\"-13\" used",
+    "categoryPath": [
+      "Laptops used",
+      "Laptop 12\"-13\" used"
+    ],
+    "brand": "Lenovo",
+    "tags": "Lenovo",
+    "color": "Black",
+    "images": [
+      "/images/Lenovo-x250.jpg"
+    ],
+    "rawImages": [
+      "Lenovo-x250.jpg"
+    ],
+    "description": "Lenovo X250 8GB RAM, 240 SSD, 12.5\" HD (1366x768) LED matt, Webcam, Klaviatuur EST valgustusega, Mälukaardilugeja, ID lugeja, VGA, Ethernet (RJ-45), USB 3.0, MiniDP, Dock pesa. Aku umbes 2h. Windows 10 Pro. Uus ”konoomne Windowsi install, mis tästab arvuti väärtust. Eemaldatud ballast, telemeetria, suurendatud turvalisust ja eluiga. Lisatud kontori tarkvara",
+    "shortDescription": "Lenovo X250, 8GB RAM, 240 GB SSD",
+    "specs": ""
+  },
+  {
+    "id": "340012",
+    "sku": "340012",
+    "title": "Lenovo X260 13,3” i5-6300U Windows10",
+    "name": "Lenovo X260",
+    "stock": 1,
+    "price": 120,
+    "salePrice": 90,
+    "finalPrice": 90,
+    "topCategory": "Laptops used",
+    "subCategory": "Laptop 12\"-13\" used",
+    "categoryPath": [
+      "Laptops used",
+      "Laptop 12\"-13\" used"
+    ],
+    "brand": "Lenovo",
+    "tags": "Lenovo",
+    "color": "Black",
+    "images": [
+      "/images/Lenovo-X260.jpg",
+      "/images/Leno_i5_6300U_6h_W10.jpg",
+      "/images/Leno_i5_6300U_6h_W10_900px.jpg"
+    ],
+    "rawImages": [
+      "Lenovo-X260.jpg",
+      "Leno_i5_6300U_6h_W10.jpg",
+      "Leno_i5_6300U_6h_W10_900px.jpg"
+    ],
+    "description": "i5-6300U, 8-250 GB, 13,3\" matt, EE klaviatuur, orig. laadija, kaks akut. Windows 10 puhastatud kiire, lisatud programmid ja Office. aku näitab 4h",
+    "shortDescription": "Lenovo X260 13,3” i5-6300U Windows10",
+    "specs": ""
+  }
+]

@@ -1,0 +1,117 @@
+[
+  {
+    "id": "320001",
+    "sku": "320001",
+    "title": "Fujitsu ESPRIMO P700",
+    "name": "Fujitsu ESPRIMO P700",
+    "stock": 1,
+    "price": 60,
+    "salePrice": 90,
+    "finalPrice": 90,
+    "topCategory": "Desktop kasutatud / used, 3-gen",
+    "subCategory": "general",
+    "categoryPath": [
+      "Desktop kasutatud / used, 3-gen"
+    ],
+    "brand": "Fujitsu",
+    "tags": "Desktop, Fsprimo",
+    "color": "Gray",
+    "images": [],
+    "rawImages": [],
+    "description": "ESPRIMO P700 E90+ Intel B630/4GB/320GB/DVDRW Miditower W7P",
+    "shortDescription": "Fujitsu ESPRIMO P700 E90+ B630 W7P",
+    "specs": ""
+  },
+  {
+    "id": "320075",
+    "sku": "320075",
+    "title": "ORDI Metal i3-3220",
+    "name": "ORDI Metal i3-3220",
+    "stock": 1,
+    "price": 50,
+    "salePrice": null,
+    "finalPrice": 50,
+    "topCategory": "Desktop kasutatud / used, 3-gen",
+    "subCategory": "general",
+    "categoryPath": [
+      "Desktop kasutatud / used, 3-gen"
+    ],
+    "brand": "ORDI",
+    "tags": "Desktop, i3, ORDI",
+    "color": "Black",
+    "images": [],
+    "rawImages": [],
+    "description": "ORDI i3-3220/4GB/500GB/DVDRW/ID reader/KB/Mouse",
+    "shortDescription": "I3-3220/4/500 Windows 10",
+    "specs": ""
+  },
+  {
+    "id": "320103",
+    "sku": "320103",
+    "title": "DELL OptiPlex 3/3010 SFF",
+    "name": "DELL OptiPlex 3/3010 SFF",
+    "stock": 1,
+    "price": 90,
+    "salePrice": 40,
+    "finalPrice": 40,
+    "topCategory": "Desktop kasutatud / used, 3-gen",
+    "subCategory": "general",
+    "categoryPath": [
+      "Desktop kasutatud / used, 3-gen"
+    ],
+    "brand": "DELL",
+    "tags": "DELL, i3, Optiplex",
+    "color": "Gray",
+    "images": [],
+    "rawImages": [],
+    "description": "i3-3220, 8GB, 500GB, DVDRW, W10P",
+    "shortDescription": "",
+    "specs": ""
+  },
+  {
+    "id": "320100",
+    "sku": "320100",
+    "title": "HP 6300 PRO SFF",
+    "name": "HP 6300 PRO SFF",
+    "stock": 2,
+    "price": 45,
+    "salePrice": 40,
+    "finalPrice": 40,
+    "topCategory": "Desktop kasutatud / used, 3-gen",
+    "subCategory": "general",
+    "categoryPath": [
+      "Desktop kasutatud / used, 3-gen"
+    ],
+    "brand": "HP",
+    "tags": "Desktop, i3",
+    "color": "",
+    "images": [],
+    "rawImages": [],
+    "description": "The HP Compaq Pro 6300 Small Form Factor PC is with Intel Q75 Express chipset supporting Intel 2nd and 3rd generation core processors featuring Intel HD Graphics Intel 82579LM GbE integrated network connection, DDR3 Synchronous Dynamic Random Access Memory (SDRAM). It has dual independent monitor support via VGA and digital DisplayPort 1.1a video interfaces",
+    "shortDescription": "HP Compaq Pro 6300 SFF, Intel Core i3-3220 ",
+    "specs": ""
+  },
+  {
+    "id": "320000",
+    "sku": "320000",
+    "title": "Kasutatud Desktop 2-3 gen",
+    "name": "Kasutatud Desktop 2-3 gen",
+    "stock": 4,
+    "price": 50,
+    "salePrice": 30,
+    "finalPrice": 30,
+    "topCategory": "Desktop kasutatud / used, 3-gen",
+    "subCategory": "general",
+    "categoryPath": [
+      "Desktop kasutatud / used, 3-gen"
+    ],
+    "brand": "ORDI",
+    "tags": "Desktop, ",
+    "color": "",
+    "images": [],
+    "rawImages": [],
+    "description": "Kasutatud Desktop 2-3 gen",
+    "shortDescription": "Kasutatud Desktop 2-3 gen",
+    "specs": ""
+  }
+]

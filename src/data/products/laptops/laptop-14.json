@@ -1,0 +1,34 @@
+[
+  {
+    "id": "340075",
+    "sku": "340075",
+    "title": "Lenovo IdeaPad Slim 5 16ARP10",
+    "name": "Lenovo IdeaPad Slim 5 16ARP10",
+    "stock": 1,
+    "price": 799,
+    "salePrice": 745,
+    "finalPrice": 745,
+    "topCategory": "Laptops",
+    "subCategory": "Laptop 14",
+    "categoryPath": [
+      "Laptops",
+      "Laptop 14"
+    ],
+    "brand": "Lenovo",
+    "tags": "Lenovo",
+    "color": "Silver",
+    "images": [
+      "/images/IdeaPad-Slim-5_R5.jpg",
+      "/images/IdeaPad-Slim-5_R5_2.jpg",
+      "/images/IdeaPad-Slim-5_R5_left.jpg"
+    ],
+    "rawImages": [
+      "IdeaPad-Slim-5_R5.jpg",
+      "IdeaPad-Slim-5_R5_2.jpg",
+      "IdeaPad-Slim-5_R5_left.jpg"
+    ],
+    "description": "AMD Ryzen 5 7535HS | 16GB DDR5 | 512GB SSD | Radeon 660M | Windows 11 Home ",
+    "shortDescription": "AMD Ryzen 5 7535HS | 16GB DDR5 | 512GB SSD | Radeon 660M | Windows 11 Home ",
+    "specs": ""
+  }
+]

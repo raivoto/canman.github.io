@@ -1,0 +1,62 @@
+[
+  {
+    "id": "555005",
+    "sku": "555005",
+    "title": "Monitor 24\" Sam SyncMaster SA450 HD reg. kõrgusega          ",
+    "name": "Monitor 24\" Sam SyncMaster SA450 HD reg. kõrgusega          ",
+    "stock": 1,
+    "price": 40,
+    "salePrice": null,
+    "finalPrice": 40,
+    "topCategory": "Monitorid",
+    "subCategory": "Monitorid 22-25",
+    "categoryPath": [
+      "Monitorid",
+      "Monitorid 22-25"
+    ],
+    "brand": "Samsung",
+    "tags": "Samsung, Monitor",
+    "color": "",
+    "images": [
+      "/images/Sam-S24E450b.jpg",
+      "/images/Sam-S24E450b_label.jpg"
+    ],
+    "rawImages": [
+      "Sam-S24E450b.jpg",
+      "Sam-S24E450b_label.jpg"
+    ],
+    "description": "Monitor 24\" Sam SyncMaster SA450 HD reg. kõrgusega          ",
+    "shortDescription": "Monitor 24\" Sam SyncMaster SA450 HD reg. kõrgusega          ",
+    "specs": ""
+  },
+  {
+    "id": "555009",
+    "sku": "555009",
+    "title": "Monitor 22 ViwSonic",
+    "name": "Monitor 22 ViwSonic",
+    "stock": 1,
+    "price": 10,
+    "salePrice": null,
+    "finalPrice": 10,
+    "topCategory": "Monitorid",
+    "subCategory": "Monitorid 22-25",
+    "categoryPath": [
+      "Monitorid",
+      "Monitorid 22-25"
+    ],
+    "brand": "",
+    "tags": "",
+    "color": "",
+    "images": [
+      "/images/ViewSonic_22_eest_odav.jpg",
+      "/images/ViewSonic_22_taga_odav.jpg"
+    ],
+    "rawImages": [
+      "ViewSonic_22_eest_odav.jpg",
+      "ViewSonic_22_taga_odav.jpg"
+    ],
+    "description": "Monitor 22 ViwSonic",
+    "shortDescription": "Monitor 22 ViwSonic",
+    "specs": ""
+  }
+]

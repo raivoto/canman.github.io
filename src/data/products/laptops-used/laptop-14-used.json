@@ -1,0 +1,154 @@
+[
+  {
+    "id": "340001",
+    "sku": "340001",
+    "title": "Notebook Latitude E6410 used",
+    "name": "Notebook Latitude E6410",
+    "stock": 1,
+    "price": 40,
+    "salePrice": null,
+    "finalPrice": 40,
+    "topCategory": "Laptops used",
+    "subCategory": "Laptop 14\" used",
+    "categoryPath": [
+      "Laptops used",
+      "Laptop 14\" used"
+    ],
+    "brand": "DELL",
+    "tags": "Latitude",
+    "color": "Black",
+    "images": [
+      "/images/E6410_4_250.jpg",
+      "/images/E6410_RU.jpg"
+    ],
+    "rawImages": [
+      "E6410_4_250.jpg",
+      "E6410_RU.jpg"
+    ],
+    "description": "Notebook Latitude E6410 14,1\" i5-560 DDR3-4GB 500GB WIN10P DVDRW ID Card Screen WXGA 1400x900 matte",
+    "shortDescription": "Notebook Latitude E6410 i5-560",
+    "specs": ""
+  },
+  {
+    "id": "340019",
+    "sku": "340019",
+    "title": "Notebook Latitude E6430 used",
+    "name": "Notebook Latitude E6430 used",
+    "stock": 1,
+    "price": 50,
+    "salePrice": null,
+    "finalPrice": 50,
+    "topCategory": "Laptops used",
+    "subCategory": "Laptop 14\" used",
+    "categoryPath": [
+      "Laptops used",
+      "Laptop 14\" used"
+    ],
+    "brand": "DELL",
+    "tags": "Latitude",
+    "color": "Black",
+    "images": [
+      "/images/DELL-E6420_W10.jpg",
+      "/images/DELL-E6420_ees.jpg"
+    ],
+    "rawImages": [
+      "DELL-E6420_W10.jpg",
+      "DELL-E6420_ees.jpg"
+    ],
+    "description": "Notebook Latitude E6420 14\" i5-2520M DDR3-4GB 500GB WIN10P DVDRW ID Card Screen WXGA 1366x768 matte",
+    "shortDescription": "Notebook Latitude E6430 14\" i5",
+    "specs": ""
+  },
+  {
+    "id": "340015",
+    "sku": "340015",
+    "title": "Latitude E6420 14\" i5-2520M, 8 RAM, 240SSD, DVDRW",
+    "name": "Latitude E6420",
+    "stock": 1,
+    "price": 80,
+    "salePrice": 50,
+    "finalPrice": 50,
+    "topCategory": "Laptops used",
+    "subCategory": "Laptop 14\" used",
+    "categoryPath": [
+      "Laptops used",
+      "Laptop 14\" used"
+    ],
+    "brand": "",
+    "tags": "",
+    "color": "",
+    "images": [
+      "/images/DELL-E6420.jpg"
+    ],
+    "rawImages": [
+      "DELL-E6420.jpg"
+    ],
+    "description": "Latitude 14\" i5-2520M, 8 RAM, 240SSD, DVDRW, HDMI väljund, aku kuni 2h., matt ekraan, kaamera, ID kaardi lugeja, EST klaviatuur, laadija. Äriklassi arvuti, hea klaviatuur. Uus Windowsi install, eemaldatud Windowsi ballast, seadistatud ökonoomseks, lisatud kontori tarkvara, Microsoft Office, pilditöötlus programmid. Parandatud arvuti suurimat ohtu browseri turvalisust. Firefoxil muudetud 5 turvasetingut paremaks. Tänu seadistusele töötab suhteliselt kiiresti. Välimus korras. Võimalik lisada Doc, klaviatuur, hiir. ",
+    "shortDescription": "Latitude 14\" i5-2520M, 8 RAM, 240SSD, DVDRW",
+    "specs": ""
+  },
+  {
+    "id": "340016",
+    "sku": "340016",
+    "title": "DELL Latitude E5470 i5-6440HQ",
+    "name": "DELL Latitude E5470 i5-6440HQ",
+    "stock": 1,
+    "price": 140,
+    "salePrice": 125,
+    "finalPrice": 125,
+    "topCategory": "Laptops used",
+    "subCategory": "Laptop 14\" used",
+    "categoryPath": [
+      "Laptops used",
+      "Laptop 14\" used"
+    ],
+    "brand": "DELL",
+    "tags": "DELL",
+    "color": "Black",
+    "images": [
+      "/images/DELL-E5470.jpg",
+      "/images/DELL-E5470_at.jpg"
+    ],
+    "rawImages": [
+      "DELL-E5470.jpg",
+      "DELL-E5470_at.jpg"
+    ],
+    "description": "DELL Latitude E5470 i5-6440HQ 8GB RAM, 250 GB SSD, 14” FHD Graphics Radeon 7 M360 + Intel HD Graphics 530, Windows 10, puhastatud kiire, lisatud kontori tarkvara",
+    "shortDescription": "DELL Latitude E5470 i5-6440HQ",
+    "specs": ""
+  },
+  {
+    "id": "340018",
+    "sku": "340018",
+    "title": "E7440 8 RAM, 256 SSD, 14\" Full HD 1920 x 1080 pixels ",
+    "name": "Lenovo Latitude E7440",
+    "stock": 1,
+    "price": null,
+    "salePrice": 110,
+    "finalPrice": 110,
+    "topCategory": "Laptops used",
+    "subCategory": "Laptop 14\" used",
+    "categoryPath": [
+      "Laptops used",
+      "Laptop 14\" used"
+    ],
+    "brand": "Lenovo",
+    "tags": "Lenovo",
+    "color": "Black",
+    "images": [
+      "/images/DELL-E7440_ees.jpg",
+      "/images/DELL-E7440_eest.jpg",
+      "/images/DELL-E7440_pealt.jpg",
+      "/images/DELL-E7440_taga.jpg"
+    ],
+    "rawImages": [
+      "DELL-E7440_ees.jpg",
+      "DELL-E7440_eest.jpg",
+      "DELL-E7440_pealt.jpg",
+      "DELL-E7440_taga.jpg"
+    ],
+    "description": "E7440 i5-4300U 8 RAM, 256 SSD, 14\" Full HD 1920 x 1080 pixels LED backlight 16:9 Intel® HD Graphics 4400, Ethernet LAN (RJ-45) port, 3x USB3, HDMI, Mini DisplayPort. Aku 1h, laadija. Soovikorral Dok, klaviatuur. Windows 11 + kontori tarkvara. Uus puhas ",
+    "shortDescription": "E7440 8 RAM, 256 SSD, 14\" Full HD 1920 x 1080 pixels ",
+    "specs": ""
+  }
+]

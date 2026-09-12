@@ -1,0 +1,32 @@
+[
+  {
+    "id": "510168",
+    "sku": "510168",
+    "title": "Motherboard AM4-880GMA",
+    "name": "Motherboard AM4-880GMA",
+    "stock": 1,
+    "price": 20,
+    "salePrice": null,
+    "finalPrice": 20,
+    "topCategory": "Lauarvuti osad kasut.",
+    "subCategory": "Emaplaat",
+    "categoryPath": [
+      "Lauarvuti osad kasut.",
+      "Emaplaat"
+    ],
+    "brand": "MSI",
+    "tags": "MSI",
+    "color": "",
+    "images": [
+      "/images/Motherboard_AM4-880GMA_in.jpg",
+      "/images/Motherboard_AM4-880GMA.jpg"
+    ],
+    "rawImages": [
+      "Motherboard_AM4-880GMA_in.jpg",
+      "Motherboard_AM4-880GMA.jpg"
+    ],
+    "description": "Motherboard AM4-880GMA",
+    "shortDescription": "Motherboard AM4-880GMA",
+    "specs": ""
+  }
+]
