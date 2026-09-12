@@ -21,14 +21,16 @@ function findImageValue(row) {
       const val=row[k]; if (val && String(val).trim()) return String(val).trim();
     }
   }
-  const keys=Object.keys(row);
-  for (let i=keys.length-1;i>=Math.max(0,keys.length-3);i--) {
-    const s=String(row[keys[i]]||'').trim();
-    if (s && (s.includes('.jpg')||s.includes('.png')||s.includes('.webp')||s.includes('.avif')||s.includes('http'))) return s;
-  }
   return '';
 }
-function getSku(row, idx, sheetName) { return String(row['sku']||row['SKU']||row['id']||`${sheetName}-${idx}`).trim(); }
+function getSku(row, idx, sheetName) {
+  return String(row['sku']||row['SKU']||row['kood']||row['title']||row['name']||`${sheetName}-${idx}`).trim();
+}
+function getId(row) {
+  const raw = row['id'] ?? row['ID'] ?? row['Id'] ?? '';
+  return String(raw).trim();
+}
+
 function loadAllProducts() {
   const map = new Map(); const fileMap = new Map();
   if (!fs.existsSync(OUT_ROOT)) return {globalMap: map, fileMap};
@@ -51,9 +53,29 @@ function loadAllProducts() {
       }
     } catch {}
   }
-  console.log(`📂 Olemas ${map.size} toodet`);
   return {globalMap: map, fileMap};
 }
+
+function deleteProductAndImages(sku, globalMap, fileMap) {
+  const entry = globalMap.get(sku);
+  if (!entry) { console.log(`  ⚠️ Kustutamiseks ei leitud SKU ${sku}`); return; }
+  // kustuta pildid
+  const imgs = entry.product.images || [entry.product.image];
+  for (const img of imgs) {
+    if (!img) continue;
+    const imgPath = path.join(IMAGES_DIR, path.basename(img));
+    if (fs.existsSync(imgPath)) {
+      fs.unlinkSync(imgPath);
+      console.log(`  🗑️ Kustutatud pilt: ${imgPath}`);
+    }
+  }
+  // kustuta jsonist
+  const fm = fileMap.get(entry.filePath);
+  if (fm) fm.delete(sku);
+  globalMap.delete(sku);
+  console.log(`  🗑️ Kustutatud kaup SKU ${sku} failist ${path.relative('.', entry.filePath)}`);
+}
+
 function convertFile(filePath, globalMap, fileMap) {
   console.log(`\n📥 ${path.basename(filePath)}`);
   const wb = XLSX.readFile(filePath);
@@ -61,54 +83,88 @@ function convertFile(filePath, globalMap, fileMap) {
     const sheet = wb.Sheets[sheetName];
     const rows = XLSX.utils.sheet_to_json(sheet, { defval: '', raw: false });
     if (!rows.length) continue;
-    const safeName = sheetName.toLowerCase().replace(/[^a-z0-9äöüõ]+/g,'-').replace(/^-|-$/g,'');
-    let added=0, moved=0;
     for (let idx=0; idx<rows.length; idx++) {
-      const row = rows[idx]; const sku = getSku(row, idx, sheetName); if (!sku) continue;
+      const row = rows[idx];
+      const rawId = getId(row);
+      const sku = getSku(row, idx, sheetName);
+      if (!sku && rawId !== '_' && rawId !== '-') continue;
+
+      // ERINEVAD ID REEGLID
+      if (rawId === '_') {
+        // KUSTUTA - SKU on sku veerus
+        const targetSku = String(row['sku']||row['SKU']||sku).trim();
+        deleteProductAndImages(targetSku, globalMap, fileMap);
+        continue;
+      }
+      if (rawId === '-') {
+        // PEIDA - ära näita
+        console.log(`  🙈 Peidetud (ID=-): ${sku} - ${row['title']||''}`);
+        // kustuta olemasolevast kui oli avalik
+        if (globalMap.has(sku)) {
+          const entry = globalMap.get(sku);
+          const fm = fileMap.get(entry.filePath);
+          if (fm) fm.delete(sku);
+          globalMap.delete(sku);
+        }
+        continue;
+      }
+
       const rawImage = findImageValue(row);
       const images = parseImageCell(rawImage);
-      if (rawImage.includes(' ')) console.log(`  🔧 "${rawImage}" -> "${images.join(',')}"`);
-      const newTopCat = String(row['topCategory'] || row['category'] || row['Kategooria'] || sheetName).trim();
+      const newTopCat = String(row['topCategory'] || row['category'] || sheetName).trim();
       const newSafeCat = newTopCat.toLowerCase().replace(/[^a-z0-9äöüõ]+/g,'-').replace(/^-|-$/g,'');
+      
+      // KATEGOORIA LIIKUMINE
       const existingEntry = globalMap.get(sku);
-      if (existingEntry && existingEntry.category !== newSafeCat) {
+      if (existingEntry && existingEntry.category !== newSafeCat && rawId !== '5') {
         const oldFileMap = fileMap.get(existingEntry.filePath);
-        if (oldFileMap) { oldFileMap.delete(sku); moved++; console.log(`  📦 Liigutatud ${sku}: ${existingEntry.category} -> ${newSafeCat}`); }
+        if (oldFileMap) { oldFileMap.delete(sku); console.log(`  📦 Liigutatud ${sku}: ${existingEntry.category} -> ${newSafeCat}`); }
       }
+
+      const isFavorite = rawId === '5';
       const newProduct = {
         id: sku, sku: sku,
         title: String(row['title'] || row['name'] || '').trim(),
         name: String(row['name'] || row['title'] || '').trim(),
         stock: Number(row['stock'] || 1), price: Number(row['price'] || 0),
         salePrice: row['salePrice'] ? Number(row['salePrice']) : undefined,
-        topCategory: newTopCat, subCategory: String(row['subCategory'] || 'general'),
-        categoryPath: [newTopCat], brand: String(row['brand'] || '').trim(),
+        topCategory: isFavorite ? 'favorites' : newTopCat,
+        subCategory: String(row['subCategory'] || 'general'),
+        categoryPath: isFavorite ? ['favorites', newTopCat] : [newTopCat],
+        brand: String(row['brand'] || '').trim(),
         image: images[0] || '', images: images, rawImages: images,
         description: String(row['description'] || ''), shortDescription: String(row['shortDescription'] || ''),
+        isFavorite: isFavorite,
+        featured: isFavorite,
+        hidden: false,
       };
       if (!newProduct.title) continue;
-      const targetFile = path.join(OUT_ROOT, newSafeCat, `${newSafeCat}.json`);
-      if (!fileMap.has(targetFile)) { fs.mkdirSync(path.join(OUT_ROOT, newSafeCat), {recursive:true}); fileMap.set(targetFile, new Map()); }
+
+      const targetCat = isFavorite ? 'favorites' : newSafeCat;
+      const targetFile = path.join(OUT_ROOT, targetCat, `${targetCat}.json`);
+      if (!fileMap.has(targetFile)) { fs.mkdirSync(path.join(OUT_ROOT, targetCat), {recursive:true}); fileMap.set(targetFile, new Map()); }
       const targetMap = fileMap.get(targetFile);
-      if (!globalMap.has(sku)) added++;
       targetMap.set(sku, {...(globalMap.get(sku)?.product || {}), ...newProduct});
-      globalMap.set(sku, {filePath: targetFile, category: newSafeCat, product: newProduct});
+      globalMap.set(sku, {filePath: targetFile, category: targetCat, product: newProduct});
+      
+      if (isFavorite) console.log(`  ⭐ Lemmik (ID=5) esilehele: ${sku} ${newProduct.title}`);
     }
-    console.log(`  ${safeName}: +${added} uut, 📦 ${moved} liigutatud`);
   }
 }
-console.log('🔧 Fixin tühikud -> _ kaustas', IMAGES_DIR);
+
+// 1. Fix tühikud -> _
 if (fs.existsSync(IMAGES_DIR)) {
   for (const f of fs.readdirSync(IMAGES_DIR)) {
     if (f.includes(' ')) {
-      const newName = f.trim().replace(/\s+/g, '_').replace(/__+/g, '_');
+      const newName = sanitizeFileName(f);
       if (f !== newName) {
         const oldPath = path.join(IMAGES_DIR, f); const newPath = path.join(IMAGES_DIR, newName);
-        if (!fs.existsSync(newPath)) { fs.renameSync(oldPath, newPath); console.log(`  📝 "${f}" -> "${newName}"`); }
+        if (!fs.existsSync(newPath)) fs.renameSync(oldPath, newPath);
       }
     }
   }
 }
+
 const {globalMap, fileMap} = loadAllProducts();
 const dirs=['data','.','public/data']; let files=[];
 for (const d of dirs) if (fs.existsSync(d)) { try { fs.readdirSync(d).filter(f=>f.toLowerCase().endsWith('.xls')||f.toLowerCase().endsWith('.xlsx')).forEach(f=>files.push(path.join(d,f))); } catch {} }
@@ -119,4 +175,4 @@ for (const [fp, skuMap] of fileMap.entries()) {
   const arr = Array.from(skuMap.values()); fs.mkdirSync(path.dirname(fp), {recursive:true});
   fs.writeFileSync(fp, JSON.stringify(arr, null, 2)); console.log(`  ${path.relative('.',fp)}: ${arr.length}`);
 }
-console.log('\n✅ Valmis! Tühik -> _ tehtud!');
+console.log('\n✅ Valmis! - = peidetud, _ = kustutatud, 5 = favorites!');
