@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-"build": "node scripts/generate-autoProducts.mjs && node scripts/fix-all.cjs && next build",
+    "build": "node scripts/generate-autoProducts.mjs && node scripts/fix-all.cjs && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate": "node scripts/generate-autoProducts.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",
