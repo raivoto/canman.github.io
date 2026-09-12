@@ -48,7 +48,7 @@ export default function Page({ params }: { params: { top: string; sub: string } 
           <div key={prod.sku} className="border rounded-xl p-4 hover:shadow-lg transition bg-white">
             <div className="aspect-[4/3] bg-gray-50 rounded-lg mb-3 overflow-hidden flex items-center justify-center">
               {prod.images?.[0]? (
-                <img src={prod.images[0]} alt={prod.title} className="object-contain w-full h-full" />
+               <img src={`/canman.github.io${prod.images[0]}`} alt={prod.title} className="object-contain w-full h-full" />
               ) : (
                 <span className="text-gray-400">Pilt puudub</span>
               )}
