@@ -81,4 +81,7 @@ import { Product } from '../types';
 export const PRODUCTS: Product[] = ${JSON.stringify(allProducts, null, 2)};
 `;
 fs.writeFileSync(MERGED_FILE, tsContent);
+// Genereeri autoProducts.ts
+import { execSync } from 'child_process';
+execSync('node scripts/generate-catalog.mjs', {stdio:'inherit'});
 console.log('Wrote', MERGED_FILE, 'total', allProducts.length);
