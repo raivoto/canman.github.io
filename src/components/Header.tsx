@@ -1,46 +1,56 @@
-import { ShoppingCart, Wrench, Search } from 'lucide-react';
+'use client';
 import React from 'react';
 
-type HeaderProps = {
-  searchQuery?: string;
-  setSearchQuery?: React.Dispatch<React.SetStateAction<string>>;
-  onOpenServicesModal?: () => void;
-  cartCount?: number;
-  onCartOpen?: () => void;
-  onServicesOpen?: () => void;
-};
-
-export const Header: React.FC<HeaderProps> = ({
-  searchQuery = '',
-  setSearchQuery,
-  onOpenServicesModal,
-  cartCount = 0,
-  onCartOpen,
-  onServicesOpen
-}) => {
-  const handleServices = onServicesOpen || onOpenServicesModal || (() => {});
-  const handleCart = onCartOpen || (() => {});
+// Uus header - CANMAN ARVUTID heleda kastiga
+export function Header({ cartCount, onCartClick, search, setSearch }: any) {
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-40 border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
-        <div className="flex items-center gap-6">
-          <div className="text-2xl font-black tracking-tight text-[#0e4da4] leading-none whitespace-nowrap">CANMAN ARVUTID</div>
-          <div className="hidden md:flex items-center gap-2 text- text-slate-500">
-            <span>Lille 14-4 Tallinn 10614 Harjumaa</span><span className="w-1 h-1 bg-slate-300 rounded-full"></span><span className="text-green-600 font-semibold">E-R 10:00-18:00</span>
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
+      <div className="max-w-[1600px] mx-auto px-4 lg:px-6 py-3 flex items-center justify-between gap-4">
+        {/* Logo / Nimi heledas kastis */}
+        <div className="flex items-center gap-3">
+          <div className="bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 shadow-sm">
+            <h1 className="font-black text-[15px] tracking-[0.15em] text-[#0e4da4] leading-none">CANMAN ARVUTID</h1>
+            <p className="text-[10px] tracking-widest text-slate-400 font-medium -mt-0.5">KASUTATUD ARVUTID • GARANTII</p>
+          </div>
+          <div className="hidden lg:block h-8 w-px bg-slate-200 mx-2"></div>
+          <div className="hidden lg:block text-[11px] text-slate-500 leading-tight">
+            <div className="font-semibold text-slate-700">E-pood</div>
+            <div>{new Date().getFullYear()} kollektsioon</div>
           </div>
         </div>
-        {setSearchQuery && (
-          <div className="flex-1 max-w-md relative hidden sm:flex">
-            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-            <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Otsi arvutit..." className="w-full pl-9 pr-3 py-2 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0e4da4] focus:border-[#0e4da4]" />
+
+        {/* Search */}
+        <div className="flex-1 max-w-[500px] hidden md:block">
+          <div className="relative">
+            <input
+              value={search || ''}
+              onChange={(e) => setSearch?.(e.target.value)}
+              placeholder="Otsi tooteid, nt. Dell i5, 16GB..."
+              className="w-full bg-slate-50 border border-slate-200 rounded-full pl-10 pr-4 py-2.5 text-[13px] outline-none focus:bg-white focus:border-[#0e4da4]/30 focus:ring-4 focus:ring-[#0e4da4]/10 transition"
+            />
+            <span className="absolute left-3.5 top-2.5 text-slate-400">⌕</span>
           </div>
-        )}
-        <div className="flex items-center gap-2">
-          <button onClick={handleServices} className="hidden md:flex items-center gap-2 px-3 py-2 text-sm font-semibold text-slate-600 hover:text-[#0e4da4] hover:bg-slate-50 rounded-lg"><Wrench className="w-4 h-4" />Teenused</button>
-          <button onClick={handleCart} className="relative p-2.5 bg-[#0e4da4] text-white rounded-lg hover:bg-[#0a3a7a] flex items-center gap-2"><ShoppingCart className="w-5 h-5" /><span className="hidden sm:inline text-sm font-bold">Ostukorv</span>{cartCount > 0 && <span className="absolute -top-2 -right-2 w-5 h-5 bg-red-500 text-white text- font-bold rounded-full flex items-center justify-center">{cartCount}</span>}</button>
+        </div>
+
+        {/* Cart */}
+        <button onClick={onCartClick} className="relative bg-slate-900 text-white rounded-full px-5 py-2.5 text-[13px] font-semibold hover:bg-black transition flex items-center gap-2">
+          <span>🛒</span> Korv
+          {cartCount > 0 && <span className="bg-white text-slate-900 text-[11px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center">{cartCount}</span>}
+        </button>
+      </div>
+      
+      {/* Mobile search */}
+      <div className="md:hidden px-4 pb-3">
+        <div className="relative">
+          <input
+            value={search || ''}
+            onChange={(e) => setSearch?.(e.target.value)}
+            placeholder="Otsi tooteid..."
+            className="w-full bg-slate-50 border border-slate-200 rounded-full pl-10 pr-4 py-2.5 text-[13px] outline-none focus:bg-white focus:border-[#0e4da4]/30 transition"
+          />
+          <span className="absolute left-3.5 top-2.5 text-slate-400">⌕</span>
         </div>
       </div>
     </header>
   );
-};
-export default Header;
+}
