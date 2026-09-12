@@ -53,7 +53,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   alt={product.title}
   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300"
 />
-        />
 
         {/* Condition Badge (Uus vs Kasutatud) */}
         <div className="absolute top-2 left-2 flex flex-col gap-1 z-10">
