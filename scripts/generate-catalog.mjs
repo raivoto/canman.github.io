@@ -25,16 +25,18 @@ for(const f of files) {
   } catch(e){ console.log('skip',f,e.message)}
 }
 
-// Fix images
+// Fix images - kui pilti pole, pane placeholder
 all = all.map(p=>({
  ...p,
   images: p.images?.length? p.images : [p.imageUrl || '/images/placeholder.jpg'],
   imageUrl: p.imageUrl || p.images?.[0] || '/images/placeholder.jpg'
 }));
 
-const content = `// AUTO-GENERATED - ära muuda käsitsi
+const content = `// AUTO-GENERATED - ära muuda käsitsi! Genereeritud ${new Date().toISOString()}
+// ${files.length} failist, ${all.length} toodet
 export const autoProducts: any[] = ${JSON.stringify(all, null, 2)};
 `;
 
+fs.mkdirSync(path.dirname(OUT_FILE), {recursive:true});
 fs.writeFileSync(OUT_FILE, content);
 console.log(`Genereeritud ${OUT_FILE} -> ${all.length} toodet ${files.length} failist`);
