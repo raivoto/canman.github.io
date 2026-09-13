@@ -13,17 +13,17 @@ export const Footer: React.FC = () => {
               CANMAN ARVUTID
             </div>
           </div>
-          <p className="text-slate-400 text- leading-relaxed">
+          <p className="text-slate-400 text-[13px] leading-relaxed">
             Kvaliteetsed uued ja kasutatud sülearvutid, lauaarvutid, arvutiosad ja lisaseadmed. Professionaalne IT remont ja abi Tallinnas.
           </p>
-          <div className="mt-4 text- text-slate-400 space-y-1">
+          <div className="mt-4 text-[12px] text-slate-400 space-y-1">
             <p>Canman Systems OÜ Reg: 12147369</p>
             <p>KMKR: EE101478366</p>
           </div>
         </div>
         <div>
           <h4 className="font-bold text-white mb-3 text-sm">Kontakt</h4>
-          <div className="space-y-2 text- text-slate-400">
+          <div className="space-y-2 text-[13px] text-slate-400">
             <p><strong className="text-slate-200">Aadress:</strong> Lille 14-4 Tallinn 10614 Harjumaa</p>
             <p>IT abi, väljakutsed, remont teenused Tallinnas | Tel. 372 5652062 | Lille 14-4 Tallinn 10614 Harjumaa | canman.systems@gmail.com</p>
             <p className="mt-3"><strong className="text-slate-200">Makseviisid:</strong> Pangaülekanne (Arve), Sularahas või kaardiga kohapeal.</p>
@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
         </div>
         <div>
           <h4 className="font-bold text-white mb-3 text-sm">Lahtiolekuajad</h4>
-          <div className="space-y-1 text- text-slate-400">
+          <div className="space-y-1 text-[13px] text-slate-400">
             <p>E-R 10:00 - 18:00</p>
             <p>L 10:00 - 15:00 (kokkuleppel)</p>
             <p>P Suletud</p>
@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 mt-8 pt-6 border-t border-slate-800 text- text-slate-500 text-center">
+      <div className="max-w-7xl mx-auto px-4 mt-8 pt-6 border-t border-slate-800 text-[11px] text-slate-500 text-center">
         © {new Date().getFullYear()} Canman Systems OÜ - Kõik õigused kaitstud | Lille 14-4 Tallinn 10614 Harjumaa
       </div>
     </footer>
