@@ -38,7 +38,7 @@ export default function Home() {
     setSelectedL2(l2);
     setSelectedL3(l3);
   };
-
+const favorites = products.filter(p => p.isFavorite)
   const handleResetFilters = () => {
     setSelectedL1(null);
     setSelectedL2(null);
