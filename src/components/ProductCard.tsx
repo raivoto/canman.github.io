@@ -1,4 +1,4 @@
-export default function ProductCard({ product }: any) {
+export function ProductCard({ product }: any) {
   return (
     <div>
       <img src={product.image} alt={product.name} />
@@ -7,3 +7,5 @@ export default function ProductCard({ product }: any) {
     </div>
   )
 }
+
+export default ProductCard
