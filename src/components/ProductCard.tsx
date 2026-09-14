@@ -1,9 +1,9 @@
-// kui sul on nii:
-src={`public${product.image}`}
-// muuda:
-src={product.image}
-
-// või kui sul on:
-src={`public/images/${...}`}
-// muuda:
-src={`/images/${...}`}
+export default function ProductCard({ product }: any) {
+  return (
+    <div>
+      <img src={product.image} alt={product.name} />
+      <h3>{product.name}</h3>
+      <p>{product.price}</p>
+    </div>
+  )
+}
