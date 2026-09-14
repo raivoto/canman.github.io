@@ -50,7 +50,6 @@ export default function Page(){
       }
     } catch {}
     return { slug: top, name: realName, productCount: count, subCount: subSet.size || fs.readdirSync(topDir).filter(f=>f.endsWith('.json')).length };
-  });
 
   return (
     <div className="max-w-7xl mx-auto p-6">
