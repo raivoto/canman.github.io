@@ -1,4 +1,4 @@
-// AUTO-GENERATED - ära muuda käsitsi! Genereeritud 2026-09-14T19:31:01.712Z
+// AUTO-GENERATED - ära muuda käsitsi! Genereeritud 2026-09-14T20:02:56.700Z
 // 17 failist, 42 toodet
 export const autoProducts: any[] = [
   {
