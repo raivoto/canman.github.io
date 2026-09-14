@@ -19,13 +19,13 @@ export const autoProducts: any[] = [
     "tags": "Desktop, Fsprimo",
     "color": "Gray",
     "images": [
-      "/images/placeholder.jpg"
+      "/images/placeholder.webp"
     ],
     "rawImages": [],
     "description": "ESPRIMO P700 E90+ Intel i5-2500/4GB/320GB/DVDRW Miditower W7P",
     "shortDescription": "Fujitsu ESPRIMO P700 E90+ B630 W7P",
     "specs": "",
-    "imageUrl": "/images/placeholder.jpg"
+    "imageUrl": "/images/placeholder.webp"
   },
   {
     "id": "320001",
@@ -45,13 +45,13 @@ export const autoProducts: any[] = [
     "tags": "Desktop, Fsprimo",
     "color": "Gray",
     "images": [
-      "/images/placeholder.jpg"
+      "/images/placeholder.webp"
     ],
     "rawImages": [],
     "description": "ESPRIMO P700 E90+ Intel B630/4GB/320GB/DVDRW Miditower W7P",
     "shortDescription": "Fujitsu ESPRIMO P700 E90+ B630 W7P",
     "specs": "",
-    "imageUrl": "/images/placeholder.jpg"
+    "imageUrl": "/images/placeholder.webp"
   },
   {
     "id": "320075",
@@ -71,13 +71,13 @@ export const autoProducts: any[] = [
     "tags": "Desktop, i3, ORDI",
     "color": "Black",
     "images": [
-      "/images/placeholder.jpg"
+      "/images/placeholder.webp"
     ],
     "rawImages": [],
     "description": "ORDI i3-3220/4GB/500GB/DVDRW/ID reader/KB/Mouse",
     "shortDescription": "I3-3220/4/500 Windows 10",
     "specs": "",
-    "imageUrl": "/images/placeholder.jpg"
+    "imageUrl": "/images/placeholder.webp"
   },
   {
     "id": "320103",
@@ -97,13 +97,13 @@ export const autoProducts: any[] = [
     "tags": "DELL, i3, Optiplex",
     "color": "Gray",
     "images": [
-      "/images/placeholder.jpg"
+      "/images/placeholder.webp"
     ],
     "rawImages": [],
     "description": "i3-3220, 8GB, 500GB, DVDRW, W10P",
     "shortDescription": "",
     "specs": "",
-    "imageUrl": "/images/placeholder.jpg"
+    "imageUrl": "/images/placeholder.webp"
   },
   {
     "id": "320100",
@@ -123,13 +123,13 @@ export const autoProducts: any[] = [
     "tags": "Desktop, i3",
     "color": "",
     "images": [
-      "/images/placeholder.jpg"
+      "/images/placeholder.webp"
     ],
     "rawImages": [],
     "description": "The HP Compaq Pro 6300 Small Form Factor PC is with Intel Q75 Express chipset supporting Intel 2nd and 3rd generation core processors featuring Intel HD Graphics Intel 82579LM GbE integrated network connection, DDR3 Synchronous Dynamic Random Access Memory (SDRAM). It has dual independent monitor support via VGA and digital DisplayPort 1.1a video interfaces",
     "shortDescription": "HP Compaq Pro 6300 SFF, Intel Core i3-3220 ",
     "specs": "",
-    "imageUrl": "/images/placeholder.jpg"
+    "imageUrl": "/images/placeholder.webp"
   },
   {
     "id": "320000",
@@ -149,13 +149,13 @@ export const autoProducts: any[] = [
     "tags": "Desktop, ",
     "color": "",
     "images": [
-      "/images/placeholder.jpg"
+      "/images/placeholder.webp"
     ],
     "rawImages": [],
     "description": "Kasutatud Desktop 2-3 gen",
     "shortDescription": "Kasutatud Desktop 2-3 gen",
     "specs": "",
-    "imageUrl": "/images/placeholder.jpg"
+    "imageUrl": "/images/placeholder.webp"
   },
   {
     "id": "320101",
@@ -175,13 +175,13 @@ export const autoProducts: any[] = [
     "tags": "Desktop, i5",
     "color": "",
     "images": [
-      "/images/placeholder.jpg"
+      "/images/placeholder.webp"
     ],
     "rawImages": [],
     "description": "HP EliteDesk ProDesk i5 4570, 8GB RAM, 500GB HDD, DVDRW Window 10. New fast tiny Windows 10 install, office apps added.",
     "shortDescription": "Desktop HP EliteDesk ProDesk i5 4570",
     "specs": "",
-    "imageUrl": "/images/placeholder.jpg"
+    "imageUrl": "/images/placeholder.webp"
   },
   {
     "id": "320102",
@@ -201,13 +201,13 @@ export const autoProducts: any[] = [
     "tags": "DELL, i3, OptiPlex",
     "color": "Gray",
     "images": [
-      "/images/placeholder.jpg"
+      "/images/placeholder.webp"
     ],
     "rawImages": [],
     "description": "i3-4150, 8GB, 500GB, DVDRW, W10P",
     "shortDescription": "i3-4150, 8GB, 500GB, DVDRW, W10P",
     "specs": "",
-    "imageUrl": "/images/placeholder.jpg"
+    "imageUrl": "/images/placeholder.webp"
   },
   {
     "id": "320121",
@@ -227,13 +227,13 @@ export const autoProducts: any[] = [
     "tags": "HP ProDesk 600 SFF i5-7500",
     "color": "Silver",
     "images": [
-      "/images/placeholder.jpg"
+      "/images/placeholder.webp"
     ],
     "rawImages": [],
     "description": "HP ProDesk 600 SFF i5-6400, 8GB RAM, 240GB, Uus puhastatud, kiirendatud Windows 11 Pro install, Viirusetärje, suurendatud turvalisus, Office apps lisatud . Vike korpus. Sobib t tegemiseks. Vajadusel Windows 11 Pro ",
     "shortDescription": "HP ProDesk 600 SFF i5-6400, 8GB RAM, 240GB",
     "specs": "",
-    "imageUrl": "/images/placeholder.jpg"
+    "imageUrl": "/images/placeholder.webp"
   },
   {
     "id": "320120",
@@ -253,13 +253,13 @@ export const autoProducts: any[] = [
     "tags": "HP ProDesk 600 SFF i5-7500",
     "color": "Silver",
     "images": [
-      "/images/placeholder.jpg"
+      "/images/placeholder.webp"
     ],
     "rawImages": [],
     "description": "HP ProDesk 600 SFF i5-7500, 8GB RAM, 240GB, Uus puhastatud, kiirendatud Windows 11 Pro install, Viirusetärje, suurendatud turvalisus, Office apps lisatud . Vike korpus. Sobib t tegemiseks. Vajadusel Windows 11 Pro ",
     "shortDescription": "HP ProDesk 600 SFF i5-7500, 8GB RAM, 240GB",
     "specs": "",
-    "imageUrl": "/images/placeholder.jpg"
+    "imageUrl": "/images/placeholder.webp"
   },
   {
     "id": "340075",
@@ -280,19 +280,19 @@ export const autoProducts: any[] = [
     "tags": "Lenovo",
     "color": "Silver",
     "images": [
-      "/images/IdeaPad-Slim-5_R5.jpg",
-      "/images/IdeaPad-Slim-5_R5_2.jpg",
-      "/images/IdeaPad-Slim-5_R5_left.jpg"
+      "/images/IdeaPad-Slim-5_R5.webp",
+      "/images/IdeaPad-Slim-5_R5_2.webp",
+      "/images/IdeaPad-Slim-5_R5_left.webp"
     ],
     "rawImages": [
-      "IdeaPad-Slim-5_R5.jpg",
-      "IdeaPad-Slim-5_R5_2.jpg",
-      "IdeaPad-Slim-5_R5_left.jpg"
+      "IdeaPad-Slim-5_R5.webp",
+      "IdeaPad-Slim-5_R5_2.webp",
+      "IdeaPad-Slim-5_R5_left.webp"
     ],
     "description": "AMD Ryzen 5 7535HS | 16GB DDR5 | 512GB SSD | Radeon 660M | Windows 11 Home ",
     "shortDescription": "AMD Ryzen 5 7535HS | 16GB DDR5 | 512GB SSD | Radeon 660M | Windows 11 Home ",
     "specs": "",
-    "imageUrl": "/images/IdeaPad-Slim-5_R5.jpg"
+    "imageUrl": "/images/IdeaPad-Slim-5_R5.webp"
   },
   {
     "id": "340005",
@@ -528,17 +528,17 @@ export const autoProducts: any[] = [
     "tags": "Latitude",
     "color": "Black",
     "images": [
-      "/images/E6410_4_250.jpg",
-      "/images/E6410_RU.jpg"
+      "/images/E6410_4_250.webp",
+      "/images/E6410_RU.webp"
     ],
     "rawImages": [
-      "E6410_4_250.jpg",
-      "E6410_RU.jpg"
+      "E6410_4_250.webp",
+      "E6410_RU.webp"
     ],
     "description": "Notebook Latitude E6410 14,1\" i5-560 DDR3-4GB 500GB WIN10P DVDRW ID Card Screen WXGA 1400x900 matte",
     "shortDescription": "Notebook Latitude E6410 i5-560",
     "specs": "",
-    "imageUrl": "/images/E6410_4_250.jpg"
+    "imageUrl": "/images/E6410_4_250.webp"
   },
   {
     "id": "340019",
@@ -559,17 +559,17 @@ export const autoProducts: any[] = [
     "tags": "Latitude",
     "color": "Black",
     "images": [
-      "/images/DELL-E6420_W10.jpg",
-      "/images/DELL-E6420_ees.jpg"
+      "/images/DELL-E6420_W10.webp",
+      "/images/DELL-E6420_ees.webp"
     ],
     "rawImages": [
-      "DELL-E6420_W10.jpg",
-      "DELL-E6420_ees.jpg"
+      "DELL-E6420_W10.webp",
+      "DELL-E6420_ees.webp"
     ],
     "description": "Notebook Latitude E6420 14\" i5-2520M DDR3-4GB 500GB WIN10P DVDRW ID Card Screen WXGA 1366x768 matte",
     "shortDescription": "Notebook Latitude E6430 14\" i5",
     "specs": "",
-    "imageUrl": "/images/DELL-E6420_W10.jpg"
+    "imageUrl": "/images/DELL-E6420_W10.webp"
   },
   {
     "id": "340015",
@@ -590,15 +590,15 @@ export const autoProducts: any[] = [
     "tags": "",
     "color": "",
     "images": [
-      "/images/DELL-E6420.jpg"
+      "/images/DELL-E6420.webp"
     ],
     "rawImages": [
-      "DELL-E6420.jpg"
+      "DELL-E6420.webp"
     ],
     "description": "Latitude 14\" i5-2520M, 8 RAM, 240SSD, DVDRW, HDMI väljund, aku kuni 2h., matt ekraan, kaamera, ID kaardi lugeja, EST klaviatuur, laadija. Äriklassi arvuti, hea klaviatuur. Uus Windowsi install, eemaldatud Windowsi ballast, seadistatud ökonoomseks, lisatud kontori tarkvara, Microsoft Office, pilditöötlus programmid. Parandatud arvuti suurimat ohtu browseri turvalisust. Firefoxil muudetud 5 turvasetingut paremaks. Tänu seadistusele töötab suhteliselt kiiresti. Välimus korras. Võimalik lisada Doc, klaviatuur, hiir. ",
     "shortDescription": "Latitude 14\" i5-2520M, 8 RAM, 240SSD, DVDRW",
     "specs": "",
-    "imageUrl": "/images/DELL-E6420.jpg"
+    "imageUrl": "/images/DELL-E6420.webp"
   },
   {
     "id": "340016",
@@ -619,17 +619,17 @@ export const autoProducts: any[] = [
     "tags": "DELL",
     "color": "Black",
     "images": [
-      "/images/DELL-E5470.jpg",
-      "/images/DELL-E5470_at.jpg"
+      "/images/DELL-E5470.webp",
+      "/images/DELL-E5470_at.webp"
     ],
     "rawImages": [
-      "DELL-E5470.jpg",
-      "DELL-E5470_at.jpg"
+      "DELL-E5470.webp",
+      "DELL-E5470_at.webp"
     ],
     "description": "DELL Latitude E5470 i5-6440HQ 8GB RAM, 250 GB SSD, 14” FHD Graphics Radeon 7 M360 + Intel HD Graphics 530, Windows 10, puhastatud kiire, lisatud kontori tarkvara",
     "shortDescription": "DELL Latitude E5470 i5-6440HQ",
     "specs": "",
-    "imageUrl": "/images/DELL-E5470.jpg"
+    "imageUrl": "/images/DELL-E5470.webp"
   },
   {
     "id": "340018",
@@ -650,21 +650,21 @@ export const autoProducts: any[] = [
     "tags": "Lenovo",
     "color": "Black",
     "images": [
-      "/images/DELL-E7440_ees.jpg",
-      "/images/DELL-E7440_eest.jpg",
-      "/images/DELL-E7440_pealt.jpg",
-      "/images/DELL-E7440_taga.jpg"
+      "/images/DELL-E7440_ees.webp",
+      "/images/DELL-E7440_eest.webp",
+      "/images/DELL-E7440_pealt.webp",
+      "/images/DELL-E7440_taga.webp"
     ],
     "rawImages": [
-      "DELL-E7440_ees.jpg",
-      "DELL-E7440_eest.jpg",
-      "DELL-E7440_pealt.jpg",
-      "DELL-E7440_taga.jpg"
+      "DELL-E7440_ees.webp",
+      "DELL-E7440_eest.webp",
+      "DELL-E7440_pealt.webp",
+      "DELL-E7440_taga.webp"
     ],
     "description": "E7440 i5-4300U 8 RAM, 256 SSD, 14\" Full HD 1920 x 1080 pixels LED backlight 16:9 Intel® HD Graphics 4400, Ethernet LAN (RJ-45) port, 3x USB3, HDMI, Mini DisplayPort. Aku 1h, laadija. Soovikorral Dok, klaviatuur. Windows 11 + kontori tarkvara. Uus puhas ",
     "shortDescription": "E7440 8 RAM, 256 SSD, 14\" Full HD 1920 x 1080 pixels ",
     "specs": "",
-    "imageUrl": "/images/DELL-E7440_ees.jpg"
+    "imageUrl": "/images/DELL-E7440_ees.webp"
   },
   {
     "id": "340017",
@@ -685,15 +685,15 @@ export const autoProducts: any[] = [
     "tags": "Latitude",
     "color": "Silver",
     "images": [
-      "/images/DELL-Latitude-E5520_2h.jpg"
+      "/images/DELL-Latitude-E5520_2h.webp"
     ],
     "rawImages": [
-      "DELL-Latitude-E5520_2h.jpg"
+      "DELL-Latitude-E5520_2h.webp"
     ],
     "description": "Korralik Latitude E5520 i3-2330M 8GB RAM, 120SSD. Hea klaviatuuriga, hea matt ektaaniga 15,6\", DVDRW, HDMI, ID kaardi lugeja, SD kaart, VGA, Klaviatuur skandinaavia. Uus Windows 10, puhastatud, kiirendatud, lisatud kontori tarkvara, turvalisus parandatud. Aku u-3h. näitab vahest 7h (pildil). Kogult suur, raskem kui väksema klassi arvutid. Eeliseks just tipp tasemel Windowsi seadistus. Parandatud arvuti suurimat ohtu browseri turvalisust. Firefoxil muudetud 5 turvasetingut paremaks. ",
     "shortDescription": "Latitude E5520 i3-2330M 8GB RAM, 120SSD. ",
     "specs": "",
-    "imageUrl": "/images/DELL-Latitude-E5520_2h.jpg"
+    "imageUrl": "/images/DELL-Latitude-E5520_2h.webp"
   },
   {
     "id": "340022",
@@ -714,15 +714,15 @@ export const autoProducts: any[] = [
     "tags": "HP",
     "color": "",
     "images": [
-      "/images/HP-250_G7.jpg"
+      "/images/HP-250_G7.webp"
     ],
     "rawImages": [
-      "HP-250_G7.jpg"
+      "HP-250_G7.webp"
     ],
     "description": "I3-7020U, 8GB, 256SSD NVMe, uus Windows 11. V„he kasutatud. Aku 2-3h.",
     "shortDescription": "",
     "specs": "",
-    "imageUrl": "/images/HP-250_G7.jpg"
+    "imageUrl": "/images/HP-250_G7.webp"
   },
   {
     "id": "511110",
@@ -743,17 +743,17 @@ export const autoProducts: any[] = [
     "tags": "Combo",
     "color": "",
     "images": [
-      "/images/ASUS_P8H61_ i3_3220.jpg",
-      "/images/Ema-prose-ASUS_P8H61_ i3_3220_taga.jpg"
+      "/images/ASUS_P8H61_ i3_3220.webp",
+      "/images/Ema-prose-ASUS_P8H61_ i3_3220_taga.webp"
     ],
     "rawImages": [
-      "ASUS_P8H61_ i3_3220.jpg",
-      "Ema-prose-ASUS_P8H61_ i3_3220_taga.jpg"
+      "ASUS_P8H61_ i3_3220.webp",
+      "Ema-prose-ASUS_P8H61_ i3_3220_taga.webp"
     ],
     "description": "ASUS_P8H61_ i3_3220 cooler Intel",
     "shortDescription": "ASUS_P8H61_ i3_3220 cooler Intel",
     "specs": "",
-    "imageUrl": "/images/ASUS_P8H61_ i3_3220.jpg"
+    "imageUrl": "/images/ASUS_P8H61_ i3_3220.webp"
   },
   {
     "id": "510168",
@@ -774,17 +774,17 @@ export const autoProducts: any[] = [
     "tags": "MSI",
     "color": "",
     "images": [
-      "/images/Motherboard_AM4-880GMA_in.jpg",
-      "/images/Motherboard_AM4-880GMA.jpg"
+      "/images/Motherboard_AM4-880GMA_in.webp",
+      "/images/Motherboard_AM4-880GMA.webp"
     ],
     "rawImages": [
-      "Motherboard_AM4-880GMA_in.jpg",
-      "Motherboard_AM4-880GMA.jpg"
+      "Motherboard_AM4-880GMA_in.webp",
+      "Motherboard_AM4-880GMA.webp"
     ],
     "description": "Motherboard AM4-880GMA",
     "shortDescription": "Motherboard AM4-880GMA",
     "specs": "",
-    "imageUrl": "/images/Motherboard_AM4-880GMA_in.jpg"
+    "imageUrl": "/images/Motherboard_AM4-880GMA_in.webp"
   },
   {
     "id": "525232",
@@ -806,15 +806,15 @@ export const autoProducts: any[] = [
     "tags": "Kingston",
     "color": "",
     "images": [
-      "/images/Memory-Kingston_KVR1333_2GB.jpg"
+      "/images/Memory-Kingston_KVR1333_2GB.webp"
     ],
     "rawImages": [
-      "Memory-Kingston_KVR1333_2GB.jpg"
+      "Memory-Kingston_KVR1333_2GB.webp"
     ],
     "description": "Memory Kingston KVR1333 2GB",
     "shortDescription": "Memory Kingston KVR1333 2GB",
     "specs": "",
-    "imageUrl": "/images/Memory-Kingston_KVR1333_2GB.jpg"
+    "imageUrl": "/images/Memory-Kingston_KVR1333_2GB.webp"
   },
   {
     "id": "525099",
@@ -836,15 +836,15 @@ export const autoProducts: any[] = [
     "tags": "Kingston",
     "color": "",
     "images": [
-      "/images/Memory-Kingston_KVR1333_2GB.jpg"
+      "/images/Memory-Kingston_KVR1333_2GB.webp"
     ],
     "rawImages": [
-      "Memory-Kingston_KVR1333_2GB.jpg"
+      "Memory-Kingston_KVR1333_2GB.webp"
     ],
     "description": "Memory Kingston KVR1333 4GB",
     "shortDescription": "Memory Kingston KVR1333 4GB",
     "specs": "",
-    "imageUrl": "/images/Memory-Kingston_KVR1333_2GB.jpg"
+    "imageUrl": "/images/Memory-Kingston_KVR1333_2GB.webp"
   },
   {
     "id": "525250",
@@ -866,15 +866,15 @@ export const autoProducts: any[] = [
     "tags": "",
     "color": "",
     "images": [
-      "/images/Memory-DDR4-DIMM.jpg"
+      "/images/Memory-DDR4-DIMM.webp"
     ],
     "rawImages": [
-      "Memory-DDR4-DIMM.jpg"
+      "Memory-DDR4-DIMM.webp"
     ],
     "description": "Memory DIMM DDR4 8GB PC4-2133R-UAO-1",
     "shortDescription": "Memory DIMM DDR4 8GB PC4-2133R-UAO-1",
     "specs": "",
-    "imageUrl": "/images/Memory-DDR4-DIMM.jpg"
+    "imageUrl": "/images/Memory-DDR4-DIMM.webp"
   },
   {
     "id": "527027",
@@ -896,15 +896,15 @@ export const autoProducts: any[] = [
     "tags": "DDR2",
     "color": "",
     "images": [
-      "/images/DIMM_DDR2_1GB.jpg"
+      "/images/DIMM_DDR2_1GB.webp"
     ],
     "rawImages": [
-      "DIMM_DDR2_1GB.jpg"
+      "DIMM_DDR2_1GB.webp"
     ],
     "description": "Memory PQI  DDR2-667 1GB",
     "shortDescription": "Memory PQI  DDR2-667 1GB",
     "specs": "",
-    "imageUrl": "/images/DIMM_DDR2_1GB.jpg"
+    "imageUrl": "/images/DIMM_DDR2_1GB.webp"
   },
   {
     "id": "525174",
@@ -926,15 +926,15 @@ export const autoProducts: any[] = [
     "tags": "DDR3",
     "color": "",
     "images": [
-      "/images/Kingston_KTA-MP1066K4_8GB.jpg"
+      "/images/Kingston_KTA-MP1066K4_8GB.webp"
     ],
     "rawImages": [
-      "Kingston_KTA-MP1066K4_8GB.jpg"
+      "Kingston_KTA-MP1066K4_8GB.webp"
     ],
     "description": "Memory Kingston KTA-MP1066K4_8GB",
     "shortDescription": "Memory Kingston KTA-MP1066K4_8GB",
     "specs": "",
-    "imageUrl": "/images/Kingston_KTA-MP1066K4_8GB.jpg"
+    "imageUrl": "/images/Kingston_KTA-MP1066K4_8GB.webp"
   },
   {
     "id": "520300",
@@ -1042,17 +1042,17 @@ export const autoProducts: any[] = [
     "tags": "Samsung, Monitor",
     "color": "",
     "images": [
-      "/images/Sam-S24E450b.jpg",
-      "/images/Sam-S24E450b_label.jpg"
+      "/images/Sam-S24E450b.webp",
+      "/images/Sam-S24E450b_label.webp"
     ],
     "rawImages": [
-      "Sam-S24E450b.jpg",
-      "Sam-S24E450b_label.jpg"
+      "Sam-S24E450b.webp",
+      "Sam-S24E450b_label.webp"
     ],
     "description": "Monitor 24\" Sam SyncMaster SA450 HD reg. kõrgusega          ",
     "shortDescription": "Monitor 24\" Sam SyncMaster SA450 HD reg. kõrgusega          ",
     "specs": "",
-    "imageUrl": "/images/Sam-S24E450b.jpg"
+    "imageUrl": "/images/Sam-S24E450b.webp"
   },
   {
     "id": "555009",
@@ -1073,17 +1073,17 @@ export const autoProducts: any[] = [
     "tags": "",
     "color": "",
     "images": [
-      "/images/ViewSonic_22_eest_odav.jpg",
-      "/images/ViewSonic_22_taga_odav.jpg"
+      "/images/ViewSonic_22_eest_odav.webp",
+      "/images/ViewSonic_22_taga_odav.webp"
     ],
     "rawImages": [
-      "ViewSonic_22_eest_odav.jpg",
-      "ViewSonic_22_taga_odav.jpg"
+      "ViewSonic_22_eest_odav.webp",
+      "ViewSonic_22_taga_odav.webp"
     ],
     "description": "Monitor 22 ViwSonic",
     "shortDescription": "Monitor 22 ViwSonic",
     "specs": "",
-    "imageUrl": "/images/ViewSonic_22_eest_odav.jpg"
+    "imageUrl": "/images/ViewSonic_22_eest_odav.webp"
   },
   {
     "id": "410006",
@@ -1104,15 +1104,15 @@ export const autoProducts: any[] = [
     "tags": "HP",
     "color": "",
     "images": [
-      "/images/HP-LJ_1010.jpg"
+      "/images/HP-LJ_1010.webp"
     ],
     "rawImages": [
-      "HP-LJ_1010.jpg"
+      "HP-LJ_1010.webp"
     ],
     "description": "Printer HP LJ 110 A4 must-valge",
     "shortDescription": "Printer HP LJ 110 A4 must-valge",
     "specs": "",
-    "imageUrl": "/images/HP-LJ_1010.jpg"
+    "imageUrl": "/images/HP-LJ_1010.webp"
   },
   {
     "id": "635601",
@@ -1133,15 +1133,15 @@ export const autoProducts: any[] = [
     "tags": "HP",
     "color": "",
     "images": [
-      "/images/Toner-HP-4L_4P_4MP.jpg"
+      "/images/Toner-HP-4L_4P_4MP.webp"
     ],
     "rawImages": [
-      "Toner-HP-4L_4P_4MP.jpg"
+      "Toner-HP-4L_4P_4MP.webp"
     ],
     "description": "Toner-HP-4L_4P_4MP",
     "shortDescription": "Toner-HP-4L_4P_4MP",
     "specs": "",
-    "imageUrl": "/images/Toner-HP-4L_4P_4MP.jpg"
+    "imageUrl": "/images/Toner-HP-4L_4P_4MP.webp"
   },
   {
     "id": "635602",
@@ -1162,15 +1162,15 @@ export const autoProducts: any[] = [
     "tags": "Samsung",
     "color": "",
     "images": [
-      "/images/Cartridge-Samsung-ML1710D3.jpg"
+      "/images/Cartridge-Samsung-ML1710D3.webp"
     ],
     "rawImages": [
-      "Cartridge-Samsung-ML1710D3.jpg"
+      "Cartridge-Samsung-ML1710D3.webp"
     ],
     "description": "Cartridge-Samsung-ML1710D3",
     "shortDescription": "Cartridge-Samsung-ML1710D3",
     "specs": "",
-    "imageUrl": "/images/Cartridge-Samsung-ML1710D3.jpg"
+    "imageUrl": "/images/Cartridge-Samsung-ML1710D3.webp"
   },
   {
     "id": "635603",
@@ -1191,15 +1191,15 @@ export const autoProducts: any[] = [
     "tags": "Xerox",
     "color": "",
     "images": [
-      "/images/Toner-Xerox-3150_3120_3115_3121.jpg"
+      "/images/Toner-Xerox-3150_3120_3115_3121.webp"
     ],
     "rawImages": [
-      "Toner-Xerox-3150_3120_3115_3121.jpg"
+      "Toner-Xerox-3150_3120_3115_3121.webp"
     ],
     "description": "Toner-Xerox-3150_3120_3115_3121",
     "shortDescription": "Toner-Xerox-3150_3120_3115_3121",
     "specs": "",
-    "imageUrl": "/images/Toner-Xerox-3150_3120_3115_3121.jpg"
+    "imageUrl": "/images/Toner-Xerox-3150_3120_3115_3121.webp"
   },
   {
     "id": "635612",
@@ -1220,14 +1220,14 @@ export const autoProducts: any[] = [
     "tags": "Samsung",
     "color": "",
     "images": [
-      "/images/Toner-Smasung-ML1710_65g.jpg"
+      "/images/Toner-Smasung-ML1710_65g.webp"
     ],
     "rawImages": [
-      "Toner-Smasung-ML1710_65g.jpg"
+      "Toner-Smasung-ML1710_65g.webp"
     ],
     "description": "Toner Smasung-ML1710 65g",
     "shortDescription": "Toner Smasung-ML1710 65g",
     "specs": "",
-    "imageUrl": "/images/Toner-Smasung-ML1710_65g.jpg"
+    "imageUrl": "/images/Toner-Smasung-ML1710_65g.webp"
   }
 ];

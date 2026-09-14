@@ -18,12 +18,12 @@
     "tags": "Latitude",
     "color": "Black",
     "images": [
-      "/images/E6410_4_250.jpg",
-      "/images/E6410_RU.jpg"
+      "/images/E6410_4_250.webp",
+      "/images/E6410_RU.webp"
     ],
     "rawImages": [
-      "E6410_4_250.jpg",
-      "E6410_RU.jpg"
+      "E6410_4_250.webp",
+      "E6410_RU.webp"
     ],
     "description": "Notebook Latitude E6410 14,1\" i5-560 DDR3-4GB 500GB WIN10P DVDRW ID Card Screen WXGA 1400x900 matte",
     "shortDescription": "Notebook Latitude E6410 i5-560",
@@ -48,12 +48,12 @@
     "tags": "Latitude",
     "color": "Black",
     "images": [
-      "/images/DELL-E6420_W10.jpg",
-      "/images/DELL-E6420_ees.jpg"
+      "/images/DELL-E6420_W10.webp",
+      "/images/DELL-E6420_ees.webp"
     ],
     "rawImages": [
-      "DELL-E6420_W10.jpg",
-      "DELL-E6420_ees.jpg"
+      "DELL-E6420_W10.webp",
+      "DELL-E6420_ees.webp"
     ],
     "description": "Notebook Latitude E6420 14\" i5-2520M DDR3-4GB 500GB WIN10P DVDRW ID Card Screen WXGA 1366x768 matte",
     "shortDescription": "Notebook Latitude E6430 14\" i5",
@@ -78,10 +78,10 @@
     "tags": "",
     "color": "",
     "images": [
-      "/images/DELL-E6420.jpg"
+      "/images/DELL-E6420.webp"
     ],
     "rawImages": [
-      "DELL-E6420.jpg"
+      "DELL-E6420.webp"
     ],
     "description": "Latitude 14\" i5-2520M, 8 RAM, 240SSD, DVDRW, HDMI väljund, aku kuni 2h., matt ekraan, kaamera, ID kaardi lugeja, EST klaviatuur, laadija. Äriklassi arvuti, hea klaviatuur. Uus Windowsi install, eemaldatud Windowsi ballast, seadistatud ökonoomseks, lisatud kontori tarkvara, Microsoft Office, pilditöötlus programmid. Parandatud arvuti suurimat ohtu browseri turvalisust. Firefoxil muudetud 5 turvasetingut paremaks. Tänu seadistusele töötab suhteliselt kiiresti. Välimus korras. Võimalik lisada Doc, klaviatuur, hiir. ",
     "shortDescription": "Latitude 14\" i5-2520M, 8 RAM, 240SSD, DVDRW",
@@ -106,12 +106,12 @@
     "tags": "DELL",
     "color": "Black",
     "images": [
-      "/images/DELL-E5470.jpg",
-      "/images/DELL-E5470_at.jpg"
+      "/images/DELL-E5470.webp",
+      "/images/DELL-E5470_at.webp"
     ],
     "rawImages": [
-      "DELL-E5470.jpg",
-      "DELL-E5470_at.jpg"
+      "DELL-E5470.webp",
+      "DELL-E5470_at.webp"
     ],
     "description": "DELL Latitude E5470 i5-6440HQ 8GB RAM, 250 GB SSD, 14” FHD Graphics Radeon 7 M360 + Intel HD Graphics 530, Windows 10, puhastatud kiire, lisatud kontori tarkvara",
     "shortDescription": "DELL Latitude E5470 i5-6440HQ",
@@ -136,16 +136,16 @@
     "tags": "Lenovo",
     "color": "Black",
     "images": [
-      "/images/DELL-E7440_ees.jpg",
-      "/images/DELL-E7440_eest.jpg",
-      "/images/DELL-E7440_pealt.jpg",
-      "/images/DELL-E7440_taga.jpg"
+      "/images/DELL-E7440_ees.webp",
+      "/images/DELL-E7440_eest.webp",
+      "/images/DELL-E7440_pealt.webp",
+      "/images/DELL-E7440_taga.webp"
     ],
     "rawImages": [
-      "DELL-E7440_ees.jpg",
-      "DELL-E7440_eest.jpg",
-      "DELL-E7440_pealt.jpg",
-      "DELL-E7440_taga.jpg"
+      "DELL-E7440_ees.webp",
+      "DELL-E7440_eest.webp",
+      "DELL-E7440_pealt.webp",
+      "DELL-E7440_taga.webp"
     ],
     "description": "E7440 i5-4300U 8 RAM, 256 SSD, 14\" Full HD 1920 x 1080 pixels LED backlight 16:9 Intel® HD Graphics 4400, Ethernet LAN (RJ-45) port, 3x USB3, HDMI, Mini DisplayPort. Aku 1h, laadija. Soovikorral Dok, klaviatuur. Windows 11 + kontori tarkvara. Uus puhas ",
     "shortDescription": "E7440 8 RAM, 256 SSD, 14\" Full HD 1920 x 1080 pixels ",

@@ -18,14 +18,14 @@
     "tags": "Lenovo",
     "color": "Silver",
     "images": [
-      "/images/IdeaPad-Slim-5_R5.jpg",
-      "/images/IdeaPad-Slim-5_R5_2.jpg",
-      "/images/IdeaPad-Slim-5_R5_left.jpg"
+      "/images/IdeaPad-Slim-5_R5.webp",
+      "/images/IdeaPad-Slim-5_R5_2.webp",
+      "/images/IdeaPad-Slim-5_R5_left.webp"
     ],
     "rawImages": [
-      "IdeaPad-Slim-5_R5.jpg",
-      "IdeaPad-Slim-5_R5_2.jpg",
-      "IdeaPad-Slim-5_R5_left.jpg"
+      "IdeaPad-Slim-5_R5.webp",
+      "IdeaPad-Slim-5_R5_2.webp",
+      "IdeaPad-Slim-5_R5_left.webp"
     ],
     "description": "AMD Ryzen 5 7535HS | 16GB DDR5 | 512GB SSD | Radeon 660M | Windows 11 Home ",
     "shortDescription": "AMD Ryzen 5 7535HS | 16GB DDR5 | 512GB SSD | Radeon 660M | Windows 11 Home ",

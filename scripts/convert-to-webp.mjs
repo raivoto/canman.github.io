@@ -7,7 +7,7 @@ const QUALITY = 80; // 80 = ideaalne veebi jaoks
 
 async function convertFile(filePath) {
   const ext = path.extname(filePath).toLowerCase();
-  if (!['.jpg','.jpeg','.png'].includes(ext)) return;
+  if (!['.webp','.webp','.png'].includes(ext)) return;
   
   const webpPath = filePath.replace(/\.(jpg|jpeg|png)$/i, '.webp');
   
@@ -59,6 +59,6 @@ if (all.length === 0) {
 } else {
   console.log(`Leidsin ${all.length} pilti, konverdin WEBP-ks (quality ${QUALITY})...\n`);
   for (const f of all) await convertFile(f);
-  console.log('\n✅ Valmis! Nüüd muuda XLS-is image = .jpg -> .webp');
-  console.log('Näide: Fujitsu-P700.jpg -> Fujitsu-P700.webp');
+  console.log('\n✅ Valmis! Nüüd muuda XLS-is image = .webp -> .webp');
+  console.log('Näide: Fujitsu-P700.webp -> Fujitsu-P700.webp');
 }

@@ -12,7 +12,7 @@
     specs: { cpu: "Intel B630", ram: "4GB", storage: "320GB", os: "Ilma OS", warranty: "6 kuud", SKU: "320001" },
     shortSpec: "B630/4GB/320GB/DVDRW",
     description: "Fujitsu ESPRIMO P700 E90+ Intel B630/4GB/320GB/DVDRW - Kasutatud äriarvuti",
-    imageUrl: "/images/placeholder.jpg",
+    imageUrl: "/images/placeholder.webp",
     brand: "Fujitsu",
     isPopular: false
   },
@@ -29,7 +29,7 @@
     specs: { cpu: "i5-2500", ram: "4GB", storage: "320GB", os: "Ilma OS", warranty: "6 kuud", SKU: "320002" },
     shortSpec: "i5-2500/4GB/320GB/DVDRW",
     description: "Fujitsu ESPRIMO P700 i5-2500/4GB/320GB/DVDRW",
-    imageUrl: "/images/placeholder.jpg",
+    imageUrl: "/images/placeholder.webp",
     brand: "Fujitsu",
     isPopular: false
   },
@@ -46,7 +46,7 @@
     specs: { cpu: "i3-3220", ram: "4GB", storage: "500GB", os: "Ilma OS", warranty: "6 kuud", SKU: "320075" },
     shortSpec: "i3-3220/4GB/500GB",
     description: "ORDI Metal i3-3220/4GB/500GB - soodne kontoriarvuti",
-    imageUrl: "https://canman.ee/wp-content/uploads/2025/05/Ordi-Metal-must.jpg",
+    imageUrl: "https://canman.ee/wp-content/uploads/2025/05/Ordi-Metal-must.webp",
     brand: "ORDI",
     isPopular: true
   },
@@ -64,7 +64,7 @@
     specs: { cpu: "i3-3220", ram: "8GB", storage: "500GB", os: "Ilma OS", warranty: "3 kuud", SKU: "320103" },
     shortSpec: "i3-3220, 8GB, 500GB",
     description: "DELL OptiPlex 3010 SFF i3-3220, 8GB, 500GB",
-    imageUrl: "/images/placeholder.jpg",
+    imageUrl: "/images/placeholder.webp",
     brand: "DELL",
     isPopular: false
   },
@@ -82,7 +82,7 @@
     specs: { cpu: "i3", ram: "4GB", storage: "500GB", os: "Ilma OS", warranty: "3 kuud", SKU: "320100" },
     shortSpec: "HP 6300 Pro SFF",
     description: "HP 6300 Pro SFF - kasutatud",
-    imageUrl: "/images/placeholder.jpg",
+    imageUrl: "/images/placeholder.webp",
     brand: "HP",
     isPopular: false
   },
@@ -100,7 +100,7 @@
     specs: { cpu: "i5 4570", ram: "8GB", storage: "500GB", os: "Ilma OS", warranty: "6 kuud", SKU: "320101" },
     shortSpec: "i5 4570, 8GB RAM, 500GB HDD",
     description: "HP ProDesk 400 G1 SFF i5 4570, 8GB RAM, 500GB HDD",
-    imageUrl: "/images/placeholder.jpg",
+    imageUrl: "/images/placeholder.webp",
     brand: "HP",
     isPopular: false
   },
@@ -118,7 +118,7 @@
     specs: { cpu: "i3-4150", ram: "8GB", storage: "500GB", os: "Ilma OS", warranty: "6 kuud", SKU: "320102" },
     shortSpec: "i3-4150, 8GB, 500GB",
     description: "DELL OptiPlex 7020 SFF i3-4150, 8GB, 500GB",
-    imageUrl: "/images/placeholder.jpg",
+    imageUrl: "/images/placeholder.webp",
     brand: "DELL",
     isPopular: false
   },
@@ -135,7 +135,7 @@
     specs: { cpu: "i5-7500", ram: "8GB", storage: "256GB SSD", os: "Ilma OS", warranty: "6 kuud", SKU: "320120" },
     shortSpec: "i5-7500 7-gen, 8GB, 256GB SSD",
     description: "HP ProDesk 600 G3 SFF i5-7500 7-gen - korralik äriarvuti",
-    imageUrl: "/images/placeholder.jpg",
+    imageUrl: "/images/placeholder.webp",
     brand: "HP",
     isPopular: true
   }

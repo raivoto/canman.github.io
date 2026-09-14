@@ -28,8 +28,8 @@ for(const f of files) {
 // Fix images - kui pilti pole, pane placeholder
 all = all.map(p=>({
  ...p,
-  images: p.images?.length? p.images : [p.imageUrl || '/images/placeholder.jpg'],
-  imageUrl: p.imageUrl || p.images?.[0] || '/images/placeholder.jpg'
+  images: p.images?.length? p.images : [p.imageUrl || '/images/placeholder.webp'],
+  imageUrl: p.imageUrl || p.images?.[0] || '/images/placeholder.webp'
 }));
 
 const content = `// AUTO-GENERATED - ära muuda käsitsi! Genereeritud ${new Date().toISOString()}
