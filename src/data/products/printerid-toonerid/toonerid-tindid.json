@@ -1,0 +1,30 @@
+[
+  {
+    "id": "635612",
+    "sku": "635612",
+    "title": "Toner Smasung-ML1710 65g",
+    "name": "Toner Smasung-ML1710 65g",
+    "stock": 1,
+    "price": 5,
+    "salePrice": null,
+    "finalPrice": 5,
+    "topCategory": "Printerid, toonerid",
+    "subCategory": "Toonerid, tindid",
+    "categoryPath": [
+      "Printerid, toonerid",
+      "Toonerid, tindid"
+    ],
+    "brand": "",
+    "tags": "Samsung",
+    "color": "",
+    "images": [
+      "/images/Toner-Smasung-ML1710_65g.jpg"
+    ],
+    "rawImages": [
+      "Toner-Smasung-ML1710_65g.jpg"
+    ],
+    "description": "Toner Smasung-ML1710 65g",
+    "shortDescription": "Toner Smasung-ML1710 65g",
+    "specs": ""
+  }
+]

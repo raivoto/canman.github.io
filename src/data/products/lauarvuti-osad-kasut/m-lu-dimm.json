@@ -1,0 +1,147 @@
+[
+  {
+    "id": "525232",
+    "sku": "525232",
+    "title": "Memory Kingston KVR1333 2GB",
+    "name": "Memory Kingston KVR1333 2GB",
+    "stock": 1,
+    "price": 10,
+    "salePrice": null,
+    "finalPrice": 10,
+    "topCategory": "Lauarvuti osad kasut.",
+    "subCategory": "Mälu DIMM",
+    "categoryPath": [
+      "Lauarvuti osad kasut.",
+      "Mälu DIMM",
+      "PC3"
+    ],
+    "brand": "Kingston",
+    "tags": "Kingston",
+    "color": "",
+    "images": [
+      "/images/Memory-Kingston_KVR1333_2GB.jpg"
+    ],
+    "rawImages": [
+      "Memory-Kingston_KVR1333_2GB.jpg"
+    ],
+    "description": "Memory Kingston KVR1333 2GB",
+    "shortDescription": "Memory Kingston KVR1333 2GB",
+    "specs": ""
+  },
+  {
+    "id": "525099",
+    "sku": "525099",
+    "title": "Memory Kingston KVR1333 4GB",
+    "name": "Memory Kingston KVR1333 4GB",
+    "stock": 1,
+    "price": 15,
+    "salePrice": null,
+    "finalPrice": 15,
+    "topCategory": "Lauarvuti osad kasut.",
+    "subCategory": "Mälu DIMM",
+    "categoryPath": [
+      "Lauarvuti osad kasut.",
+      "Mälu DIMM",
+      "PC3"
+    ],
+    "brand": "Kingston",
+    "tags": "Kingston",
+    "color": "",
+    "images": [
+      "/images/Memory-Kingston_KVR1333_2GB.jpg"
+    ],
+    "rawImages": [
+      "Memory-Kingston_KVR1333_2GB.jpg"
+    ],
+    "description": "Memory Kingston KVR1333 4GB",
+    "shortDescription": "Memory Kingston KVR1333 4GB",
+    "specs": ""
+  },
+  {
+    "id": "525250",
+    "sku": "525250",
+    "title": "Memory DIMM DDR4 8GB PC4-2133R-UAO-1",
+    "name": "Memory DIMM DDR4 8GB PC4-2133R-UAO-1",
+    "stock": 1,
+    "price": 25,
+    "salePrice": null,
+    "finalPrice": 25,
+    "topCategory": "Lauarvuti osad kasut.",
+    "subCategory": "Mälu DIMM",
+    "categoryPath": [
+      "Lauarvuti osad kasut.",
+      "Mälu DIMM",
+      "PC4"
+    ],
+    "brand": "",
+    "tags": "",
+    "color": "",
+    "images": [
+      "/images/Memory-DDR4-DIMM.jpg"
+    ],
+    "rawImages": [
+      "Memory-DDR4-DIMM.jpg"
+    ],
+    "description": "Memory DIMM DDR4 8GB PC4-2133R-UAO-1",
+    "shortDescription": "Memory DIMM DDR4 8GB PC4-2133R-UAO-1",
+    "specs": ""
+  },
+  {
+    "id": "527027",
+    "sku": "527027",
+    "title": "Memory PQI  DDR2-667 1GB",
+    "name": "Memory PQI  DDR2-667 1GB",
+    "stock": 2,
+    "price": 5,
+    "salePrice": null,
+    "finalPrice": 5,
+    "topCategory": "Lauarvuti osad kasut.",
+    "subCategory": "Mälu DIMM",
+    "categoryPath": [
+      "Lauarvuti osad kasut.",
+      "Mälu DIMM",
+      "PC2"
+    ],
+    "brand": "PQI",
+    "tags": "DDR2",
+    "color": "",
+    "images": [
+      "/images/DIMM_DDR2_1GB.jpg"
+    ],
+    "rawImages": [
+      "DIMM_DDR2_1GB.jpg"
+    ],
+    "description": "Memory PQI  DDR2-667 1GB",
+    "shortDescription": "Memory PQI  DDR2-667 1GB",
+    "specs": ""
+  },
+  {
+    "id": "525174",
+    "sku": "525174",
+    "title": "Memory Kingston KTA-MP1066K4_8GB",
+    "name": "Memory Kingston KTA-MP1066K4_8GB",
+    "stock": 2,
+    "price": 20,
+    "salePrice": null,
+    "finalPrice": 20,
+    "topCategory": "Lauarvuti osad kasut.",
+    "subCategory": "Mälu DIMM",
+    "categoryPath": [
+      "Lauarvuti osad kasut.",
+      "Mälu DIMM",
+      "PC3"
+    ],
+    "brand": "Kingston",
+    "tags": "DDR3",
+    "color": "",
+    "images": [
+      "/images/Kingston_KTA-MP1066K4_8GB.jpg"
+    ],
+    "rawImages": [
+      "Kingston_KTA-MP1066K4_8GB.jpg"
+    ],
+    "description": "Memory Kingston KTA-MP1066K4_8GB",
+    "shortDescription": "Memory Kingston KTA-MP1066K4_8GB",
+    "specs": ""
+  }
+]

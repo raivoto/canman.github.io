@@ -1,0 +1,22 @@
+name: Auto XLS Import
+on:
+  push:
+    paths: ['data/import/**.xlsx','data/import/**.xls']
+  workflow_dispatch:
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - run: npm install xlsx --no-save
+      - run: node scripts/import-xls.mjs
+      - run: |
+          git config user.name "canman-import-bot"
+          git config user.email "bot@canman.ee"
+          git add src/data/products/
+          git diff --staged --quiet || git commit -m "auto import $(date +%Y-%m-%d_%H:%M)"
+          git push

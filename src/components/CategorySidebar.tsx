@@ -1,269 +1,157 @@
 'use client';
+import React, { useMemo, useState } from 'react';
 
-import React, { useState } from 'react';
-import { ChevronDown, ChevronRight, Folder, FolderOpen, Layers, Check } from 'lucide-react';
-import { CATEGORIES } from '../data/categories';
-import { Product } from '../types';
+const safeLower = (v: any) => String(v || '').toLowerCase();
 
-interface CategorySidebarProps {
-  selectedL1: string | null;
-  selectedL2: string | null;
-  selectedL3: string | null;
-  onSelectCategory: (l1: string | null, l2: string | null, l3: string | null) => void;
-  products: Product[];
+// Gruepeerib "Desktop kasutatud / used, 2-gen" -> "Desktop kasutatud" + "2-gen"
+function normalizeCategory(raw: string) {
+  const s = String(raw || 'Muu').trim();
+  if (!s) return { base: 'Muu', sub: null };
+  
+  // Desktop kasutatud / used, 2-gen
+  const desktopMatch = s.match(/^(Desktop kasutatud.*?)(?:,\s*(\d+-gen))?$/i);
+  if (desktopMatch) {
+    const base = 'Desktop kasutatud / used';
+    const sub = desktopMatch[2] ? `${desktopMatch[2]}` : null;
+    // Kui on "Desktop kasutatud / used, 2-gen" - sub on 2-gen, base on Desktop kasutatud
+    if (s.includes(',')) {
+      const parts = s.split(',').map(p => p.trim());
+      return { base: parts[0].includes('Desktop') ? 'Desktop kasutatud / used' : parts[0], sub: parts[1] || null };
+    }
+    return { base, sub };
+  }
+  
+  // Laptops used etc - jäta nagu on
+  return { base: s, sub: null };
 }
 
-export const CategorySidebar: React.FC<CategorySidebarProps> = ({
-  selectedL1,
-  selectedL2,
-  selectedL3,
-  onSelectCategory,
-  products,
-}) => {
-  // Track open state for top-level categories
-  const [openL1, setOpenL1] = useState<Record<string, boolean>>({
-    'arvutid': true,
-    'arvutid-kasutatud': true,
-    'apple-arvutid': false,
-    'lisaseadmed': false,
-    'monitorid': false,
-    'printerid': false,
-    'arvutiosad': true,
-    'toiteseadmed': false,
+export function CategorySidebar({ selectedL1, selectedL2, selectedL3, onSelectCategory, products }: any) {
+  const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({
+    'Desktop kasutatud / used': true,
+    'Arvutid kasutatud': true
   });
 
-  // Track open state for level-2 subcategories
-  const [openL2, setOpenL2] = useState<Record<string, boolean>>({
-    'desktop-pc': true,
-    'notebooks': true,
-    'protsessorid': true,
-    'malu-desktop': true,
-    'videokaardid': true,
-  });
+  const grouped = useMemo(() => {
+    const map = new Map<string, { count: number, subs: Map<string, { count: number, l3: Map<string, number> }> }>();
+    
+    (products || []).forEach((p: any) => {
+      const rawL1 = String(p.categoryL1 || p.topCategory || p.category || 'Muu');
+      const rawL2 = String(p.categoryL2 || p.subCategory || '').trim();
+      const rawL3 = p.categoryL3 ? String(p.categoryL3).trim() : '';
+      
+      // Normaliseeri L1
+      let baseL1 = rawL1;
+      let gen = null;
+      
+      if (rawL1.toLowerCase().includes('desktop kasutatud')) {
+        baseL1 = 'Desktop kasutatud / used';
+        // Kui L1 sisaldab koma, siis teine osa on gen
+        if (rawL1.includes(',')) {
+          gen = rawL1.split(',')[1]?.trim() || null;
+        }
+        // Kui L2 on gen stiilis, kasuta seda
+        if (!gen && rawL2 && rawL2.match(/\d+-gen/i)) {
+          gen = rawL2;
+        }
+      }
+      
+      const actualL2 = gen || rawL2 || 'Üldine';
+      
+      if (!map.has(baseL1)) map.set(baseL1, { count: 0, subs: new Map() });
+      const entry = map.get(baseL1)!;
+      entry.count++;
+      
+      if (!entry.subs.has(actualL2)) entry.subs.set(actualL2, { count: 0, l3: new Map() });
+      const subEntry = entry.subs.get(actualL2)!;
+      subEntry.count++;
+      
+      if (rawL3) {
+        subEntry.l3.set(rawL3, (subEntry.l3.get(rawL3) || 0) + 1);
+      } else if (gen && rawL2 && !rawL2.match(/\d+-gen/i) && rawL2 !== 'Üldine') {
+        // rawL2 on tegelik kategooria kui gen oli L1 sees
+        subEntry.l3.set(rawL2, (subEntry.l3.get(rawL2) || 0) + 1);
+      }
+    });
+    
+    return map;
+  }, [products]);
 
-  const toggleL1 = (id: string, e: React.MouseEvent) => {
-    e.stopPropagation();
-    setOpenL1((prev) => ({ ...prev, [id]: !prev[id] }));
-  };
-
-  const toggleL2 = (id: string, e: React.MouseEvent) => {
-    e.stopPropagation();
-    setOpenL2((prev) => ({ ...prev, [id]: !prev[id] }));
-  };
-
-  // Helper to count products matching categories
-  const getL1Count = (l1Name: string) => {
-    return products.filter((p) => p.categoryL1.toLowerCase() === l1Name.toLowerCase()).length;
-  };
-
-  const getL2Count = (l1Name: string, l2Name: string) => {
-    return products.filter(
-      (p) =>
-        p.categoryL1.toLowerCase() === l1Name.toLowerCase() &&
-        p.categoryL2.toLowerCase() === l2Name.toLowerCase()
-    ).length;
-  };
-
-  const getL3Count = (l1Name: string, l2Name: string, l3Name: string) => {
-    return products.filter(
-      (p) =>
-        p.categoryL1.toLowerCase() === l1Name.toLowerCase() &&
-        p.categoryL2.toLowerCase() === l2Name.toLowerCase() &&
-        p.categoryL3 && p.categoryL3.toLowerCase() === l3Name.toLowerCase()
-    ).length;
+  const toggleGroup = (base: string) => {
+    setOpenGroups(prev => ({ ...prev, [base]: !prev[base] }));
   };
 
   return (
-    <aside className="w-full lg:w-[280px] flex-shrink-0 bg-white border border-slate-200 rounded-xl p-4 shadow-sm h-fit">
-      {/* Category Header */}
-      <div className="flex items-center justify-between pb-3 border-b border-slate-200 mb-3">
-        <div className="flex items-center space-x-2 text-[#0e4da4] font-bold text-sm tracking-wide uppercase">
-          <Layers className="w-4 h-4" />
-          <span>KATEGOORIAD</span>
-        </div>
-        {(selectedL1 || selectedL2 || selectedL3) && (
-          <button
-            onClick={() => onSelectCategory(null, null, null)}
-            className="text-[11px] text-blue-600 hover:text-blue-800 hover:underline font-medium"
+    <aside className="w-full lg:w-[300px] flex-shrink-0">
+      <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+        <h3 className="font-bold text-[13px] tracking-widest text-slate-800 uppercase mb-4">Kategooriad</h3>
+        <div className="space-y-1">
+          <button 
+            onClick={() => onSelectCategory(null, null, null)} 
+            className={`w-full text-left text-[13px] px-3 py-2 rounded-xl transition ${!selectedL1 ? 'bg-[#0e4da4] text-white font-semibold' : 'hover:bg-slate-50 text-slate-700'}`}
           >
-            Clear all
+            Kõik kategooriad <span className="float-right opacity-60">{products?.length || 0}</span>
           </button>
-        )}
-      </div>
-
-      {/* All Products Option */}
-      <button
-        onClick={() => onSelectCategory(null, null, null)}
-        className={`w-full text-left px-3 py-2 rounded-lg text-xs font-semibold flex items-center justify-between mb-2 transition ${
-          !selectedL1 && !selectedL2 && !selectedL3
-            ? 'bg-[#0e4da4] text-white shadow-sm'
-            : 'text-slate-700 hover:bg-slate-100'
-        }`}
-      >
-        <span>Kõik tooted (All Products)</span>
-        <span className={`text-[11px] px-2 py-0.5 rounded-full font-bold ${
-          !selectedL1 && !selectedL2 && !selectedL3
-            ? 'bg-blue-800 text-white'
-            : 'bg-slate-200 text-slate-600'
-        }`}>
-          {products.length}
-        </span>
-      </button>
-
-      {/* 3-Level Collapsible Tree */}
-      <div className="space-y-1 text-xs">
-        {CATEGORIES.map((catL1) => {
-          const isL1Active = selectedL1 === catL1.name && !selectedL2 && !selectedL3;
-          const isL1ParentActive = selectedL1 === catL1.name;
-          const isOpen = openL1[catL1.id];
-          const countL1 = getL1Count(catL1.name);
-
-          return (
-            <div key={catL1.id} className="border-b border-slate-100 last:border-b-0 pb-1">
-              {/* Level 1 Item */}
-              <div
-                onClick={() => onSelectCategory(catL1.name, null, null)}
-                className={`group flex items-center justify-between px-2.5 py-2 rounded-md cursor-pointer transition select-none ${
-                  isL1Active
-                    ? 'bg-[#0e4da4] text-white font-bold'
-                    : isL1ParentActive
-                    ? 'bg-blue-50 text-[#0e4da4] font-semibold'
-                    : 'text-slate-800 hover:bg-slate-100'
-                }`}
-              >
-                <div className="flex items-center space-x-2 flex-1 min-w-0 pr-1">
-                  {isOpen ? (
-                    <FolderOpen className={`w-3.5 h-3.5 flex-shrink-0 ${isL1Active ? 'text-white' : 'text-blue-600'}`} />
-                  ) : (
-                    <Folder className={`w-3.5 h-3.5 flex-shrink-0 ${isL1Active ? 'text-white' : 'text-slate-400'}`} />
-                  )}
-                  <span className="truncate">{catL1.name}</span>
-                </div>
-
-                <div className="flex items-center space-x-1">
-                  {countL1 > 0 && (
-                    <span
-                      className={`text-[10px] px-1.5 py-0.2 rounded font-medium ${
-                        isL1Active
-                          ? 'bg-blue-800 text-white'
-                          : 'bg-slate-100 text-slate-500'
-                      }`}
-                    >
-                      {countL1}
+          
+          {Array.from(grouped.entries()).map(([base, data]) => {
+            const isOpen = openGroups[base] ?? false;
+            const isActive = safeLower(selectedL1) === safeLower(base);
+            const hasSubs = data.subs.size > 0;
+            const isDesktopGroup = base.toLowerCase().includes('desktop kasutatud');
+            
+            // Kui on Desktop grupp ja ainult gen alamkategooriad, näita kompaktselt
+            if (isDesktopGroup) {
+              return (
+                <div key={base} className="pt-2">
+                  <button 
+                    onClick={() => {
+                      toggleGroup(base);
+                      onSelectCategory(base, null, null);
+                    }} 
+                    className={`w-full text-left text-[13px] font-semibold px-3 py-2 rounded-xl flex justify-between items-center transition ${isActive ? 'bg-blue-50 text-[#0e4da4]' : 'hover:bg-slate-50 text-slate-800'}`}
+                  >
+                    <span className="flex items-center gap-2">
+                      <span className={`transform transition ${isOpen ? 'rotate-90' : ''}`}>›</span>
+                      {base}
                     </span>
-                  )}
-                  {catL1.subcategories && catL1.subcategories.length > 0 && (
-                    <button
-                      onClick={(e) => toggleL1(catL1.id, e)}
-                      className={`p-1 hover:bg-black/10 rounded transition ${
-                        isL1Active ? 'text-white' : 'text-slate-400 hover:text-slate-700'
-                      }`}
-                    >
-                      {isOpen ? (
-                        <ChevronDown className="w-3.5 h-3.5" />
-                      ) : (
-                        <ChevronRight className="w-3.5 h-3.5" />
-                      )}
-                    </button>
+                    <span className="text-[11px] bg-slate-100 px-2 py-0.5 rounded-full">{data.count}</span>
+                  </button>
+                  
+                  {isOpen && (
+                    <div className="ml-4 mt-1 space-y-0.5 border-l-2 border-slate-100 pl-3">
+                      {Array.from(data.subs.entries()).sort((a,b) => a[0].localeCompare(b[0])).map(([sub, subData]) => {
+                        const isSubActive = safeLower(selectedL2) === safeLower(sub);
+                        return (
+                          <div key={sub}>
+                            <button 
+                              onClick={() => onSelectCategory(base, sub, null)}
+                              className={`w-full text-left text-[12px] px-2.5 py-1.5 rounded-lg flex justify-between transition ${isSubActive ? 'bg-slate-900 text-white font-medium' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'}`}
+                            >
+                              <span>{sub}</span>
+                              <span className="text-[10px] opacity-60">{subData.count}</span>
+                            </button>
+                          </div>
+                        );
+                      })}
+                    </div>
                   )}
                 </div>
+              );
+            }
+            
+            return (
+              <div key={base} className="pt-1">
+                <button 
+                  onClick={() => onSelectCategory(base, null, null)} 
+                  className={`w-full text-left text-[13px] px-3 py-2 rounded-xl flex justify-between items-center transition ${isActive ? 'bg-blue-50 text-[#0e4da4] font-semibold' : 'hover:bg-slate-50 text-slate-700'}`}
+                >
+                  <span>{base}</span>
+                  <span className="text-[11px] bg-slate-100 px-2 py-0.5 rounded-full text-slate-500">{data.count}</span>
+                </button>
               </div>
-
-              {/* Level 2 Subcategories Accordion */}
-              {isOpen && catL1.subcategories && (
-                <div className="ml-3 pl-2 border-l border-slate-200 mt-1 space-y-1">
-                  {catL1.subcategories.map((catL2) => {
-                    const isL2Active = selectedL1 === catL1.name && selectedL2 === catL2.name && !selectedL3;
-                    const isL2ParentActive = selectedL1 === catL1.name && selectedL2 === catL2.name;
-                    const isL2Open = openL2[catL2.id];
-                    const countL2 = getL2Count(catL1.name, catL2.name);
-
-                    return (
-                      <div key={catL2.id}>
-                        {/* Level 2 Item */}
-                        <div
-                          onClick={() => onSelectCategory(catL1.name, catL2.name, null)}
-                          className={`flex items-center justify-between px-2 py-1.5 rounded cursor-pointer transition select-none ${
-                            isL2Active
-                              ? 'bg-blue-600 text-white font-semibold'
-                              : isL2ParentActive
-                              ? 'bg-blue-100/70 text-[#0e4da4] font-medium'
-                              : 'text-slate-700 hover:bg-slate-100'
-                          }`}
-                        >
-                          <span className="truncate">{catL2.name}</span>
-                          <div className="flex items-center space-x-1">
-                            {countL2 > 0 && (
-                              <span
-                                className={`text-[10px] px-1 rounded ${
-                                  isL2Active
-                                    ? 'bg-blue-800 text-white'
-                                    : 'bg-slate-200/60 text-slate-600'
-                                }`}
-                              >
-                                {countL2}
-                              </span>
-                            )}
-                            {catL2.subcategories && catL2.subcategories.length > 0 && (
-                              <button
-                                onClick={(e) => toggleL2(catL2.id, e)}
-                                className={`p-0.5 rounded ${
-                                  isL2Active ? 'text-white' : 'text-slate-400 hover:text-slate-600'
-                                }`}
-                              >
-                                {isL2Open ? (
-                                  <ChevronDown className="w-3 h-3" />
-                                ) : (
-                                  <ChevronRight className="w-3 h-3" />
-                                )}
-                              </button>
-                            )}
-                          </div>
-                        </div>
-
-                        {/* Level 3 Subcategories Accordion */}
-                        {isL2Open && catL2.subcategories && (
-                          <div className="ml-3 pl-2 border-l border-slate-300 my-0.5 space-y-0.5">
-                            {catL2.subcategories.map((catL3) => {
-                              const isL3Active =
-                                selectedL1 === catL1.name &&
-                                selectedL2 === catL2.name &&
-                                selectedL3 === catL3.name;
-                              const countL3 = getL3Count(catL1.name, catL2.name, catL3.name);
-
-                              return (
-                                <div
-                                  key={catL3.id}
-                                  onClick={() => onSelectCategory(catL1.name, catL2.name, catL3.name)}
-                                  className={`flex items-center justify-between px-2 py-1 rounded cursor-pointer text-[11px] transition select-none ${
-                                    isL3Active
-                                      ? 'bg-blue-700 text-white font-bold'
-                                      : 'text-slate-600 hover:bg-slate-200/60 hover:text-slate-900'
-                                  }`}
-                                >
-                                  <span className="truncate flex items-center">
-                                    {isL3Active && <Check className="w-3 h-3 mr-1 text-yellow-300" />}
-                                    {catL3.name}
-                                  </span>
-                                  {countL3 > 0 && (
-                                    <span className="text-[9px] text-slate-400 ml-1">
-                                      ({countL3})
-                                    </span>
-                                  )}
-                                </div>
-                              );
-                            })}
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </aside>
   );
-};
+}

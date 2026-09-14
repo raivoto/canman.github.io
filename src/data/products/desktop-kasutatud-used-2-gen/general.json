@@ -1,0 +1,25 @@
+[
+  {
+    "id": "320002",
+    "sku": "320002",
+    "title": "ESPRIMO P700 i5-2500",
+    "name": "ESPRIMO P700 i5-2500",
+    "stock": 1,
+    "price": 60,
+    "salePrice": 110,
+    "finalPrice": 110,
+    "topCategory": "Desktop kasutatud / used, 2-gen",
+    "subCategory": "general",
+    "categoryPath": [
+      "Desktop kasutatud / used, 2-gen"
+    ],
+    "brand": "Fujitsu",
+    "tags": "Desktop, Fsprimo",
+    "color": "Gray",
+    "images": [],
+    "rawImages": [],
+    "description": "ESPRIMO P700 E90+ Intel i5-2500/4GB/320GB/DVDRW Miditower W7P",
+    "shortDescription": "Fujitsu ESPRIMO P700 E90+ B630 W7P",
+    "specs": ""
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "id": "320120",
+    "sku": "320120",
+    "title": "HP ProDesk 600 SFF i5-7500",
+    "name": "HP ProDesk 600 SFF i5-7500",
+    "stock": 1,
+    "price": 100,
+    "salePrice": null,
+    "finalPrice": 100,
+    "topCategory": "Desktop kasutatud / used, 7-gen",
+    "subCategory": "general",
+    "categoryPath": [
+      "Desktop kasutatud / used, 7-gen"
+    ],
+    "brand": "HP",
+    "tags": "HP ProDesk 600 SFF i5-7500",
+    "color": "Silver",
+    "images": [],
+    "rawImages": [],
+    "description": "HP ProDesk 600 SFF i5-7500, 8GB RAM, 240GB, Uus puhastatud, kiirendatud Windows 11 Pro install, Viirusetärje, suurendatud turvalisus, Office apps lisatud . Vike korpus. Sobib t tegemiseks. Vajadusel Windows 11 Pro ",
+    "shortDescription": "HP ProDesk 600 SFF i5-7500, 8GB RAM, 240GB",
+    "specs": ""
+  }
+]
