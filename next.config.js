@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  basePath: '/canman.github.io',
-  assetPrefix: '/canman.github.io/',
-  images: { unoptimized: true },
-  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
+  // output: 'export' - kustutatud, Vercel ei vaja
 }
+
 module.exports = nextConfig
