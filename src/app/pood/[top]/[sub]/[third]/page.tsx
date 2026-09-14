@@ -1,3 +1,6 @@
+export function generateStaticParams() {
+  return []
+}
 import fs from 'fs'; 
 import path from 'path'; 
 import Link from 'next/link';
