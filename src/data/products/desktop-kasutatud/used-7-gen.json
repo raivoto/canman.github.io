@@ -38,9 +38,11 @@
     "topCategory": "Desktop kasutatud",
     "categoryL2": "used, 7-gen",
     "subCategory": "used, 7-gen",
-    "image": "/images/Ordi-Type-O-7gen_Game.webp, Ordi-Type-O-7gen_Game_taga.webp,Ordi-Type-O-7gen_Game_sees.webp",
+    "image": "/images/Ordi-Type-O-7gen_Game.webp",
     "images": [
-      "/images/Ordi-Type-O-7gen_Game.webp, Ordi-Type-O-7gen_Game_taga.webp,Ordi-Type-O-7gen_Game_sees.webp"
+      "/images/Ordi-Type-O-7gen_Game.webp",
+      "/images/Ordi-Type-O-7gen_Game_taga.webp",
+      "/images/Ordi-Type-O-7gen_Game_sees.webp"
     ],
     "stock": 1,
     "condition": "used"

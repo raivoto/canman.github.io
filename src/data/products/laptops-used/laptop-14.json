@@ -15,9 +15,10 @@
     "topCategory": "Laptops used",
     "categoryL2": "Laptop 14",
     "subCategory": "Laptop 14",
-    "image": "/images/E6410_4_250.jpg,E6410_RU.jpg",
+    "image": "/images/E6410_4_250.jpg",
     "images": [
-      "/images/E6410_4_250.jpg,E6410_RU.jpg"
+      "/images/E6410_4_250.jpg",
+      "/images/E6410_RU.jpg"
     ],
     "stock": 1,
     "condition": "used"
@@ -38,9 +39,10 @@
     "topCategory": "Laptops used",
     "categoryL2": "Laptop 14",
     "subCategory": "Laptop 14",
-    "image": "/images/DELL-E6420_W10.jpg,DELL-E6420_ees.jpg",
+    "image": "/images/DELL-E6420_W10.jpg",
     "images": [
-      "/images/DELL-E6420_W10.jpg,DELL-E6420_ees.jpg"
+      "/images/DELL-E6420_W10.jpg",
+      "/images/DELL-E6420_ees.jpg"
     ],
     "stock": 1,
     "condition": "used"

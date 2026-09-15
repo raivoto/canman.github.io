@@ -15,9 +15,10 @@
     "topCategory": "Monitorid",
     "categoryL2": "Monitorid 22ï¿½-25ï¿½",
     "subCategory": "Monitorid 22ï¿½-25ï¿½",
-    "image": "/images/Sam-S24E450b.webp,Sam-S24E450b_label.webp",
+    "image": "/images/Sam-S24E450b.webp",
     "images": [
-      "/images/Sam-S24E450b.webp,Sam-S24E450b_label.webp"
+      "/images/Sam-S24E450b.webp",
+      "/images/Sam-S24E450b_label.webp"
     ],
     "stock": 1,
     "condition": "new"
@@ -38,9 +39,10 @@
     "topCategory": "Monitorid",
     "categoryL2": "Monitorid 22ï¿½-25ï¿½",
     "subCategory": "Monitorid 22ï¿½-25ï¿½",
-    "image": "/images/ViewSonic_22_eest_odav.webp,ViewSonic_22_taga_odav.webp",
+    "image": "/images/ViewSonic_22_eest_odav.webp",
     "images": [
-      "/images/ViewSonic_22_eest_odav.webp,ViewSonic_22_taga_odav.webp"
+      "/images/ViewSonic_22_eest_odav.webp",
+      "/images/ViewSonic_22_taga_odav.webp"
     ],
     "stock": 1,
     "condition": "new"

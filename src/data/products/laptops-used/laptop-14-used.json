@@ -38,9 +38,10 @@
     "topCategory": "Laptops used",
     "categoryL2": "Laptop 14 used",
     "subCategory": "Laptop 14 used",
-    "image": "/images/DELL-E5470.jpg,DELL-E5470_at.jpg",
+    "image": "/images/DELL-E5470.jpg",
     "images": [
-      "/images/DELL-E5470.jpg,DELL-E5470_at.jpg"
+      "/images/DELL-E5470.jpg",
+      "/images/DELL-E5470_at.jpg"
     ],
     "stock": 1,
     "condition": "used"

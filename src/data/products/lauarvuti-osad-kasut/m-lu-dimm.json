@@ -23,7 +23,8 @@
     ],
     "description": "Memory Kingston KVR1333 2GB",
     "shortDescription": "Memory Kingston KVR1333 2GB",
-    "specs": ""
+    "specs": "",
+    "image": "/images/Memory-Kingston_KVR1333_2GB.webp"
   },
   {
     "id": "525099",
@@ -49,7 +50,8 @@
     ],
     "description": "Memory Kingston KVR1333 4GB",
     "shortDescription": "Memory Kingston KVR1333 4GB",
-    "specs": ""
+    "specs": "",
+    "image": "/images/Memory-Kingston_KVR1333_2GB.webp"
   },
   {
     "id": "525250",
@@ -75,7 +77,8 @@
     ],
     "description": "Memory DIMM DDR4 8GB PC4-2133R-UAO-1",
     "shortDescription": "Memory DIMM DDR4 8GB PC4-2133R-UAO-1",
-    "specs": ""
+    "specs": "",
+    "image": "/images/Memory-DDR4-DIMM.webp"
   },
   {
     "id": "527027",
@@ -101,7 +104,8 @@
     ],
     "description": "Memory PQI  DDR2-667 1GB",
     "shortDescription": "Memory PQI  DDR2-667 1GB",
-    "specs": ""
+    "specs": "",
+    "image": "/images/DIMM_DDR2_1GB.webp"
   },
   {
     "id": "525174",
@@ -127,6 +131,7 @@
     ],
     "description": "Memory Kingston KTA-MP1066K4_8GB",
     "shortDescription": "Memory Kingston KTA-MP1066K4_8GB",
-    "specs": ""
+    "specs": "",
+    "image": "/images/Kingston_KTA-MP1066K4_8GB.webp"
   }
 ]

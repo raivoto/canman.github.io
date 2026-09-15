@@ -38,9 +38,11 @@
     "topCategory": "Desktop kasutatud",
     "categoryL2": "used, 2-gen",
     "subCategory": "used, 2-gen",
-    "image": "/images/HP_i5_2500_ees.png,Desktop-HP_i5_2500_taga.png,Desktop-HP_i5_2500_sees.png",
+    "image": "/images/HP_i5_2500_ees.png",
     "images": [
-      "/images/HP_i5_2500_ees.png,Desktop-HP_i5_2500_taga.png,Desktop-HP_i5_2500_sees.png"
+      "/images/HP_i5_2500_ees.png",
+      "/images/Desktop-HP_i5_2500_taga.png",
+      "/images/Desktop-HP_i5_2500_sees.png"
     ],
     "stock": 1,
     "condition": "used"
@@ -61,9 +63,11 @@
     "topCategory": "Desktop kasutatud",
     "categoryL2": "used, 2-gen",
     "subCategory": "used, 2-gen",
-    "image": "/images/HP_i5_2500_ees.png,Desktop-HP_i5_2500_taga.png,Desktop-HP_i5_2500_sees.png",
+    "image": "/images/HP_i5_2500_ees.png",
     "images": [
-      "/images/HP_i5_2500_ees.png,Desktop-HP_i5_2500_taga.png,Desktop-HP_i5_2500_sees.png"
+      "/images/HP_i5_2500_ees.png",
+      "/images/Desktop-HP_i5_2500_taga.png",
+      "/images/Desktop-HP_i5_2500_sees.png"
     ],
     "stock": 1,
     "condition": "used"

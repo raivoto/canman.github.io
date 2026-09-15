@@ -15,9 +15,11 @@
     "topCategory": "Laptops",
     "categoryL2": "Laptop 14ï¿½",
     "subCategory": "Laptop 14ï¿½",
-    "image": "/images/IdeaPad-Slim-5_R5.webp,IdeaPad-Slim-5_R5_2.webp,IdeaPad-Slim-5_R5_left.webp",
+    "image": "/images/IdeaPad-Slim-5_R5.webp",
     "images": [
-      "/images/IdeaPad-Slim-5_R5.webp,IdeaPad-Slim-5_R5_2.webp,IdeaPad-Slim-5_R5_left.webp"
+      "/images/IdeaPad-Slim-5_R5.webp",
+      "/images/IdeaPad-Slim-5_R5_2.webp",
+      "/images/IdeaPad-Slim-5_R5_left.webp"
     ],
     "stock": 1,
     "condition": "new"

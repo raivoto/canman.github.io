@@ -38,9 +38,11 @@
     "topCategory": "Laptops used",
     "categoryL2": "Laptop 12-13 used",
     "subCategory": "Laptop 12-13 used",
-    "image": "/images/DELL-E6220.jpg,DELL-E6220_3h.jpg,DELL-E6220_W7P_4_250HDD.jpg",
+    "image": "/images/DELL-E6220.jpg",
     "images": [
-      "/images/DELL-E6220.jpg,DELL-E6220_3h.jpg,DELL-E6220_W7P_4_250HDD.jpg"
+      "/images/DELL-E6220.jpg",
+      "/images/DELL-E6220_3h.jpg",
+      "/images/DELL-E6220_W7P_4_250HDD.jpg"
     ],
     "stock": 1,
     "condition": "used"
@@ -61,9 +63,10 @@
     "topCategory": "Laptops used",
     "categoryL2": "Laptop 12-13 used",
     "subCategory": "Laptop 12-13 used",
-    "image": "/images/DELL-E4310.jpg,DELL-E4310_pealt.jpg",
+    "image": "/images/DELL-E4310.jpg",
     "images": [
-      "/images/DELL-E4310.jpg,DELL-E4310_pealt.jpg"
+      "/images/DELL-E4310.jpg",
+      "/images/DELL-E4310_pealt.jpg"
     ],
     "stock": 1,
     "condition": "used"
@@ -130,9 +133,11 @@
     "topCategory": "Laptops used",
     "categoryL2": "Laptop 12-13 used",
     "subCategory": "Laptop 12-13 used",
-    "image": "/images/Lenovo-X260.jpg,Leno_i5_6300U_6h_W10.jpg,Leno_i5_6300U_6h_W10_900px.jpg",
+    "image": "/images/Lenovo-X260.jpg",
     "images": [
-      "/images/Lenovo-X260.jpg,Leno_i5_6300U_6h_W10.jpg,Leno_i5_6300U_6h_W10_900px.jpg"
+      "/images/Lenovo-X260.jpg",
+      "/images/Leno_i5_6300U_6h_W10.jpg",
+      "/images/Leno_i5_6300U_6h_W10_900px.jpg"
     ],
     "stock": 1,
     "condition": "used"
