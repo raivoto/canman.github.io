@@ -1,158 +1,182 @@
 
 import fs from 'fs';
 import path from 'path';
-import pkg from 'xlsx';
-const XLSX = pkg.default || pkg;
+import xlsx from 'xlsx';
 
-const IMPORT_DIRS = ['data/import', 'data', '.', 'public/data'];
-const OUT_ROOT = 'src/data/products';
-const CAT_FILE = 'src/data/categories.ts';
-const TREE_JSON = 'src/data/category-tree.json';
+const IMPORT_DIR = 'data/import';
+const PRODUCTS_OUT = 'src/data/products';
+const PUBLIC_IMG = 'public/images';
 
-function slugify(s){
-  return s.toLowerCase()
-    .replace(/[ä]/g,'a').replace(/[ö]/g,'o').replace(/[ü]/g,'u').replace(/[õ]/g,'o')
-    .replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-}
-function sanitizeFileName(name){
-  return name.trim().replace(/\s+/g,'_').replace(/[^a-zA-Z0-9_\-\.]/g,'_');
-}
-function parseCategories(raw){
-  if(!raw) return [];
-  return String(raw).split('>').map(s=>s.trim()).filter(Boolean);
-}
+// --- HELPERS ---
+const toSlug = (s) => String(s||'').toLowerCase().trim()
+  .replace(/"/g,'').replace(/'/g,'')
+  .replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 
-function findCategoriesField(row){
-  for(const k of Object.keys(row)){
-    if(k.toLowerCase().trim()==='categories') return row[k];
+const normalizeRow = (row) => {
+  // tee kõik võtmed väikseks
+  const out = {};
+  for (let k of Object.keys(row)) {
+    out[k.toLowerCase().trim()] = row[k];
+  }
+  return out;
+};
+
+const getVal = (r, ...names) => {
+  for (let n of names) {
+    const v = r[n.toLowerCase()];
+    if (v !== undefined && v !== null && String(v).trim() !== '') return String(v).trim();
   }
   return '';
+};
+
+// Kustuta kategooria fail
+function deleteCategory(catPath) {
+  // catPath näiteks "Laptops used > Laptop 14""
+  const parts = catPath.split('>').map(s=>toSlug(s));
+  const file = path.join(PRODUCTS_OUT, ...parts) + '.json';
+  if (fs.existsSync(file)) {
+    fs.unlinkSync(file);
+    console.log(`  -> KUSTUTATUD kategooria: ${file}`);
+  }
+}
+function deleteImage(imgName) {
+  const p = path.join(PUBLIC_IMG, imgName);
+  if (fs.existsSync(p)) {
+    fs.unlinkSync(p);
+    console.log(`  -> KUSTUTATUD pilt: ${p}`);
+  }
 }
 
-const tree = {}; // topSlug -> {name, slug, subMap}
-const grouped = {}; // topSlug -> subSlug -> items
+// --- MAIN ---
+let allProducts = [];
+let categoriesMap = new Map(); // slug -> {name, path, count}
+let toDeleteCategories = new Set();
 
-let totalRows=0;
-for(const dir of IMPORT_DIRS){
-  if(!fs.existsSync(dir)) continue;
-  for(const file of fs.readdirSync(dir)){
-    if(!file.toLowerCase().endsWith('.xls') && !file.toLowerCase().endsWith('.xlsx')) continue;
-    if(file.startsWith('~$')) continue;
-    const fp = path.join(dir,file);
-    console.log('Loen', fp);
-    const wb = XLSX.readFile(fp);
-    const sheet = wb.Sheets[wb.SheetNames[0]];
-    const rows = XLSX.utils.sheet_to_json(sheet,{defval:''});
-    for(const r of rows){
-      const rawCat = findCategoriesField(r);
-      if(!rawCat) continue;
-      const parts = parseCategories(rawCat);
-      if(parts.length===0) continue;
-      const top = parts[0];
-      const sub = parts[1] || 'general';
-      const sub2 = parts[2] || '';
-      const topSlug = slugify(top);
-      const subSlug = slugify(sub);
+const files = fs.readdirSync(IMPORT_DIR).filter(f=>/\.xls[x]?$/i.test(f));
+console.log('Loen', files);
+
+for (let file of files) {
+  const wb = xlsx.readFile(path.join(IMPORT_DIR, file));
+  for (let sheetName of wb.SheetNames) {
+    const sheet = wb.Sheets[sheetName];
+    const rows = xlsx.utils.sheet_to_json(sheet, {defval: ''});
+    console.log(`\n Fail ${file} / sheet ${sheetName}: ${rows.length} rida`);
+    
+    for (let raw of rows) {
+      const r = normalizeRow(raw);
+      const id = getVal(r, 'id');
       
-      if(!tree[topSlug]){
-        tree[topSlug]={name: top, slug: topSlug, subMap: {}};
+      // 1) ID = "-" => kustuta toode, jäta vahele
+      if (id === '-') {
+        console.log(`  skip toode "-" ${getVal(r,'sku','title')}`);
+        continue;
       }
-      if(sub && !tree[topSlug].subMap[subSlug]){
-        tree[topSlug].subMap[subSlug]={name: sub, slug: subSlug, sub2Map:{}, count:0};
-      }
-      if(sub2){
-        const sub2Slug = slugify(sub2);
-        if(!tree[topSlug].subMap[subSlug].sub2Map[sub2Slug]){
-          tree[topSlug].subMap[subSlug].sub2Map[sub2Slug]={name: sub2, slug: sub2Slug, count:0};
+      
+      // 2) ID = "=" => kustuta kategooria või pilt
+      if (id === '=') {
+        const cat = getVal(r, 'categories', 'category', 'kategooria');
+        const img = getVal(r, 'image', 'pilt', 'images');
+        if (cat) {
+          console.log(`  KÄSK = kustuta kategooria: ${cat}`);
+          deleteCategory(cat);
+          toDeleteCategories.add(cat);
         }
-        tree[topSlug].subMap[subSlug].sub2Map[sub2Slug].count++;
+        if (img) {
+          console.log(`  KÄSK = kustuta pilt: ${img}`);
+          deleteImage(img);
+        }
+        continue;
       }
-      if(tree[topSlug].subMap[subSlug]) tree[topSlug].subMap[subSlug].count++;
-
-      if(!grouped[topSlug]) grouped[topSlug]={};
-      const finalSubSlug = sub2 ? `${subSlug}--${slugify(sub2)}` : subSlug;
-      // For laptops: we want to keep original sub name as final file, like laptop-14-used
-      // But we store under subSlug
-      if(!grouped[topSlug][subSlug]) grouped[topSlug][subSlug]=[];
       
-      grouped[topSlug][subSlug].push({
-        id: String(r.sku||r.id), sku: String(r.sku||r.id), 
-        title: r.title, name: r.name,
-        stock: r.stock, price: r['Regular price'], salePrice: r['Sale price'],
-        categoryPath: parts,
-        topCategory: top, subCategory: sub, sub2Category: sub2,
-        brand: r.Brand, tags: r.Tags, color: r.Color,
-        images: (r.image||'').split(',').map(s=>s.trim()).filter(Boolean).map(im=>`/images/${sanitizeFileName(im)}`),
-        description: r.Description, shortDescription: r['Product short description'],
-        specs: r.jutt
+      // tavaline toode
+      const sku = getVal(r, 'sku', 'id');
+      if (!sku) continue;
+      const categoriesRaw = getVal(r, 'categories');
+      const title = getVal(r, 'title', 'name');
+      const brand = getVal(r, 'brand');
+      const image = getVal(r, 'image');
+      
+      if (!categoriesRaw) continue;
+      
+      // pane kirja kategooria
+      const catParts = categoriesRaw.split('>').map(s=>s.trim()).filter(Boolean);
+      const slugParts = catParts.map(toSlug);
+      
+      // salvesta toode
+      allProducts.push({
+        id: sku,
+        sku,
+        title,
+        name: title,
+        brand,
+        categories: categoriesRaw,
+        categorySlug: slugParts.join('/'),
+        image: image ? `/images/${image}` : '',
+        price: Number(getVal(r, 'regular price','price')) || 0,
+        stock: Number(getVal(r,'stock')) || 1
       });
-      totalRows++;
-    }
-  }
-}
-
-// 1. Write product jsons
-for(const [topSlug, subs] of Object.entries(grouped)){
-  for(const [subSlug, items] of Object.entries(subs)){
-    const dir = path.join(OUT_ROOT, topSlug);
-    fs.mkdirSync(dir,{recursive:true});
-    fs.writeFileSync(path.join(dir, `${subSlug}.json`), JSON.stringify(items,null,2));
-    console.log(` -> ${topSlug}/${subSlug}.json (${items.length})`);
-  }
-}
-
-// 2. Build final categoryTree structure
-const finalTree = {};
-for(const [topSlug, topObj] of Object.entries(tree)){
-  const subs = Object.values(topObj.subMap).map(s=>{
-    const deeper = Object.values(s.sub2Map);
-    return {
-      name: s.name,
-      slug: s.slug,
-      count: s.count,
-      file: `${topSlug}/${s.slug}.json`,
-      subcategories: deeper.length? deeper.map(d=>({name:d.name, slug:d.slug, count:d.count, file:`${topSlug}/${s.slug}--${d.slug}.json`})) : undefined
-    };
-  });
-  finalTree[topSlug]={name: topObj.name, slug: topSlug, subcategories: subs};
-}
-
-fs.mkdirSync(path.dirname(TREE_JSON),{recursive:true});
-fs.writeFileSync(TREE_JSON, JSON.stringify(finalTree,null,2));
-console.log('Category tree ->', TREE_JSON);
-
-// 3. Generate src/data/categories.ts AUTOMATICALY - NO MANUAL EDIT
-function toId(slug){ return slug; }
-
-let tsContent = `import { CategoryL1 } from '../types';
-
-// AUTO-GENERATED from kaupade xls - DO NOT EDIT MANUALLY
-// Generated at ${new Date().toISOString()}
-
-export const CATEGORIES: CategoryL1[] = [
-`;
-
-for(const [topSlug, topObj] of Object.entries(finalTree)){
-  tsContent+= `  {\n    id: '${topSlug}',\n    name: '${topObj.name.replace(/'/g,"\\'")}',\n`;
-  if(topObj.subcategories && topObj.subcategories.length){
-    tsContent+= `    subcategories: [\n`;
-    for(const sub of topObj.subcategories){
-      if(sub.subcategories){
-        tsContent+= `      {\n        id: '${sub.slug}',\n        name: '${sub.name.replace(/'/g,"\\'")}',\n        subcategories: [\n`;
-        for(const sub2 of sub.subcategories){
-          tsContent+= `          { id: '${sub2.slug}', name: '${sub2.name.replace(/'/g,"\\'")}' },\n`;
-        }
-        tsContent+= `        ],\n      },\n`;
-      } else {
-        tsContent+= `      { id: '${sub.slug}', name: '${sub.name.replace(/'/g,"\\'")}' },\n`;
+      
+      const slugPath = slugParts.join('/');
+      if (!categoriesMap.has(slugPath)) {
+        categoriesMap.set(slugPath, { 
+          name: catParts[catParts.length-1], 
+          path: catParts,
+          slugPath,
+          count: 0 
+        });
       }
+      categoriesMap.get(slugPath).count++;
     }
-    tsContent+= `    ],\n`;
   }
-  tsContent+= `  },\n`;
 }
-tsContent+= `];\n`;
 
-fs.writeFileSync(CAT_FILE, tsContent);
-console.log('Categories.ts AUTO ->', CAT_FILE);
-console.log(`\\n✅ Valmis! ${totalRows} toodet, ${Object.keys(finalTree).length} pealkategooriat. Nüüd categories.ts tuleb XLS-st!`);
+// --- KIRJUTA JSON-id kategooriate kaupa ---
+for (let [slugPath, info] of categoriesMap) {
+  if (toDeleteCategories.has(info.path.join(' > ')) || toDeleteCategories.has(slugPath)) {
+    console.log(`Jäta vahele kustutatud ${slugPath}`);
+    continue;
+  }
+  const items = allProducts.filter(p=>p.categorySlug===slugPath);
+  if (items.length===0) {
+    console.log(`Tühi kategooria ${slugPath} -> kustutan`);
+    const file = path.join(PRODUCTS_OUT, slugPath) + '.json';
+    if (fs.existsSync(file)) fs.unlinkSync(file);
+    continue;
+  }
+  const outFile = path.join(PRODUCTS_OUT, slugPath) + '.json';
+  fs.mkdirSync(path.dirname(outFile), {recursive:true});
+  fs.writeFileSync(outFile, JSON.stringify(items, null, 2));
+  console.log(` -> ${slugPath}.json (${items.length})`);
+}
+
+// --- category-tree.json ja categories.ts ---
+const tree = {};
+for (let [slugPath, info] of categoriesMap) {
+  if (itemsCountCheck) {}
+}
+const treeJson = Array.from(categoriesMap.values()).filter(v=>!toDeleteCategories.has(v.path.join(' > ')));
+fs.writeFileSync('src/data/category-tree.json', JSON.stringify(treeJson, null, 2));
+
+const catsTs = `// AUTO ${allProducts.length} toodet
+export const categories = ${JSON.stringify(treeJson, null, 2)};\n`;
+fs.writeFileSync('src/data/categories.ts', catsTs);
+
+// --- productCatalog.ts ---
+let catalogImports = [];
+let catalogSpread = [];
+for (let [slugPath] of categoriesMap) {
+  if (toDeleteCategories.has(slugPath)) continue;
+  const varName = 'p_' + slugPath.replace(/[^a-z0-9]/g,'_');
+  catalogImports.push(`import ${varName} from './products/${slugPath}.json';`);
+  catalogSpread.push(`...${varName}`);
+}
+const catalogContent = `// AUTO - ära muuda käsitsi
+${catalogImports.join('\n')}
+
+export const allProducts = [
+  ${catalogSpread.join(',\n  ')}
+] as any[];
+`;
+fs.writeFileSync('src/data/productCatalog.ts', catalogContent);
+
+console.log(`\n✅ Valmis! ${allProducts.length} toodet, ${categoriesMap.size} kategooriat`);

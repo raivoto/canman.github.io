@@ -4,24 +4,11 @@
     "sku": "410006",
     "title": "Printer HP LJ 110",
     "name": "Printer HP LJ 110",
-    "stock": "",
-    "price": 40,
-    "salePrice": "",
-    "categoryPath": [
-      "Printerid, toonerid",
-      "Laserprinter"
-    ],
-    "topCategory": "Printerid, toonerid",
-    "subCategory": "Laserprinter",
-    "sub2Category": "",
     "brand": "",
-    "tags": "HP",
-    "color": "",
-    "images": [
-      "/images/HP-LJ_1010.webp"
-    ],
-    "description": "Printer HP LJ 110 A4 must-valge",
-    "shortDescription": "Printer HP LJ 110 A4 must-valge",
-    "specs": ""
+    "categories": "Printerid, toonerid>Laserprinter",
+    "categorySlug": "printerid-toonerid/laserprinter",
+    "image": "/images/HP-LJ_1010.webp",
+    "price": 40,
+    "stock": 1
   }
 ]

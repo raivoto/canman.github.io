@@ -1,0 +1,38 @@
+[
+  {
+    "id": "525232",
+    "sku": "525232",
+    "title": "Memory Kingston KVR1333 2GB",
+    "name": "Memory Kingston KVR1333 2GB",
+    "brand": "Kingston",
+    "categories": "Lauarvuti osad kasut.>Mï¿½lu DIMM>PC3",
+    "categorySlug": "lauarvuti-osad-kasut/m-lu-dimm/pc3",
+    "image": "/images/Memory-Kingston_KVR1333_2GB.webp",
+    "price": 10,
+    "stock": 1
+  },
+  {
+    "id": "525099",
+    "sku": "525099",
+    "title": "Memory Kingston KVR1333 4GB",
+    "name": "Memory Kingston KVR1333 4GB",
+    "brand": "Kingston",
+    "categories": "Lauarvuti osad kasut.>Mï¿½lu DIMM>PC3",
+    "categorySlug": "lauarvuti-osad-kasut/m-lu-dimm/pc3",
+    "image": "/images/Memory-Kingston_KVR1333_2GB.webp",
+    "price": 15,
+    "stock": 1
+  },
+  {
+    "id": "525174",
+    "sku": "525174",
+    "title": "Memory Kingston KTA-MP1066K4_8GB",
+    "name": "Memory Kingston KTA-MP1066K4_8GB",
+    "brand": "Kingston",
+    "categories": "Lauarvuti osad kasut.>Mï¿½lu DIMM>PC3",
+    "categorySlug": "lauarvuti-osad-kasut/m-lu-dimm/pc3",
+    "image": "/images/Kingston_KTA-MP1066K4_8GB.webp",
+    "price": 20,
+    "stock": 2
+  }
+]

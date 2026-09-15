@@ -3,50 +3,24 @@
     "id": "320101",
     "sku": "320101",
     "title": "HP PRO Desk",
-    "name": "HP EliteDesk ProDesk",
-    "stock": 1,
-    "price": 90,
-    "salePrice": 40,
-    "categoryPath": [
-      "Desktop kasutatud",
-      "used, 4-gen"
-    ],
-    "topCategory": "Desktop kasutatud",
-    "subCategory": "used, 4-gen",
-    "sub2Category": "",
+    "name": "HP PRO Desk",
     "brand": "HP",
-    "tags": "Desktop, i5",
-    "color": "",
-    "images": [
-      "/images/HP-ProDesk-G1-i5_4570.webp"
-    ],
-    "description": "HP EliteDesk ProDesk i5 4570, 8GB RAM, 500GB HDD, DVDRW Window 10. New fast tiny Windows 10 install, office apps added.",
-    "shortDescription": "Desktop HP EliteDesk ProDesk i5 4570",
-    "specs": ""
+    "categories": "Desktop kasutatud > used, 4-gen",
+    "categorySlug": "desktop-kasutatud/used-4-gen",
+    "image": "/images/HP-ProDesk-G1-i5_4570.webp",
+    "price": 90,
+    "stock": 1
   },
   {
     "id": "320102",
     "sku": "320102",
     "title": "DELL OptiPlex 7020 SFF",
     "name": "DELL OptiPlex 7020 SFF",
-    "stock": 1,
-    "price": 60,
-    "salePrice": 55,
-    "categoryPath": [
-      "Desktop kasutatud",
-      "used, 4-gen"
-    ],
-    "topCategory": "Desktop kasutatud",
-    "subCategory": "used, 4-gen",
-    "sub2Category": "",
     "brand": "DELL",
-    "tags": "DELL, i3, OptiPlex",
-    "color": "Gray",
-    "images": [
-      "/images/Dell_Optiplex-7020.png"
-    ],
-    "description": "i3-4150, 8GB, 500GB, DVDRW, W10P",
-    "shortDescription": "i3-4150, 8GB, 500GB, DVDRW, W10P",
-    "specs": ""
+    "categories": "Desktop kasutatud > used, 4-gen",
+    "categorySlug": "desktop-kasutatud/used-4-gen",
+    "image": "/images/Dell_Optiplex-7020.png",
+    "price": 60,
+    "stock": 1
   }
 ]

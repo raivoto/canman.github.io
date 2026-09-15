@@ -4,51 +4,23 @@
     "sku": "320120",
     "title": "HP ProDesk 600 SFF i5-7500",
     "name": "HP ProDesk 600 SFF i5-7500",
-    "stock": 1,
-    "price": 100,
-    "salePrice": "",
-    "categoryPath": [
-      "Desktop kasutatud",
-      "used, 7-gen"
-    ],
-    "topCategory": "Desktop kasutatud",
-    "subCategory": "used, 7-gen",
-    "sub2Category": "",
     "brand": "HP",
-    "tags": "HP ProDesk 600 SFF i5-7500",
-    "color": "Silver",
-    "images": [
-      "/images/ProDesk-600-G3.png"
-    ],
-    "description": "HP ProDesk 600 SFF i5-7500, 8GB RAM, 240GB, Uus puhastatud, kiirendatud Windows 11 Pro install, Viirusetï¿½rje, suurendatud turvalisus, Office apps lisatud . Vï¿½ike korpus. Sobib tï¿½ï¿½ tegemiseks. Vajadusel Windows 11 Pro ",
-    "shortDescription": "HP ProDesk 600 SFF i5-7500, 8GB RAM, 240GB",
-    "specs": ""
+    "categories": "Desktop kasutatud > used, 7-gen",
+    "categorySlug": "desktop-kasutatud/used-7-gen",
+    "image": "/images/ProDesk-600-G3.png",
+    "price": 100,
+    "stock": 1
   },
   {
     "id": "320130",
     "sku": "320130",
     "title": "Ordi Type-O7gen Game",
     "name": "Ordi Type-O7gen Game",
-    "stock": 1,
-    "price": 135,
-    "salePrice": 130,
-    "categoryPath": [
-      "Desktop kasutatud",
-      "used, 7-gen"
-    ],
-    "topCategory": "Desktop kasutatud",
-    "subCategory": "used, 7-gen",
-    "sub2Category": "",
     "brand": "ORDI",
-    "tags": "Ordi Type-O7gen Game",
-    "color": "Black",
-    "images": [
-      "/images/Ordi-Type-O-7gen_Game.webp",
-      "/images/Ordi-Type-O-7gen_Game_taga.webp",
-      "/images/Ordi-Type-O-7gen_Game_sees.webp"
-    ],
-    "description": "ORDI Type O i7-5780, 8GB RAM, 256GB NVMe, GeForce 9080 DDR5 4GB",
-    "shortDescription": "Ordi Type-O7gen Game GeForce 9080 4GB",
-    "specs": ""
+    "categories": "Desktop kasutatud > used, 7-gen",
+    "categorySlug": "desktop-kasutatud/used-7-gen",
+    "image": "/images/Ordi-Type-O-7gen_Game.webp, Ordi-Type-O-7gen_Game_taga.webp,Ordi-Type-O-7gen_Game_sees.webp",
+    "price": 135,
+    "stock": 1
   }
 ]
