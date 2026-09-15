@@ -4,11 +4,23 @@
     "sku": "527027",
     "title": "Memory PQI  DDR2-667 1GB",
     "name": "Memory PQI  DDR2-667 1GB",
+    "slug": "memory-pqi-ddr2-667-1gb-527027",
     "brand": "PQI",
+    "price": 5,
+    "regularPrice": 5,
+    "category": "Lauarvuti osad kasut.",
     "categories": "Lauarvuti osad kasut.>Mï¿½lu DIMM>PC2",
     "categorySlug": "lauarvuti-osad-kasut/m-lu-dimm/pc2",
+    "categoryL1": "Lauarvuti osad kasut.",
+    "topCategory": "Lauarvuti osad kasut.",
+    "categoryL2": "Mï¿½lu DIMM",
+    "subCategory": "Mï¿½lu DIMM",
+    "categoryL3": "PC2",
     "image": "/images/DIMM_DDR2_1GB.webp",
-    "price": 5,
-    "stock": 2
+    "images": [
+      "/images/DIMM_DDR2_1GB.webp"
+    ],
+    "stock": 1,
+    "condition": "new"
   }
 ]

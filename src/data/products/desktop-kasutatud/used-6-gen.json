@@ -4,11 +4,22 @@
     "sku": "320121",
     "title": "HP ProDesk 600 SFF i5-6400",
     "name": "HP ProDesk 600 SFF i5-6400",
+    "slug": "hp-prodesk-600-sff-i5-6400-320121",
     "brand": "HP",
+    "price": 90,
+    "regularPrice": 90,
+    "category": "Desktop kasutatud",
     "categories": "Desktop kasutatud > used, 6-gen",
     "categorySlug": "desktop-kasutatud/used-6-gen",
+    "categoryL1": "Desktop kasutatud",
+    "topCategory": "Desktop kasutatud",
+    "categoryL2": "used, 6-gen",
+    "subCategory": "used, 6-gen",
     "image": "/images/ProDesk-600-G3.png",
-    "price": 90,
-    "stock": 1
+    "images": [
+      "/images/ProDesk-600-G3.png"
+    ],
+    "stock": 1,
+    "condition": "used"
   }
 ]

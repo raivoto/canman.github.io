@@ -4,35 +4,45 @@
     "sku": "340015",
     "title": "Latitude E6420 14\" i5-2520M, 8 RAM, 240SSD, DVDRW",
     "name": "Latitude E6420 14\" i5-2520M, 8 RAM, 240SSD, DVDRW",
+    "slug": "latitude-e6420-14-i5-2520m-8-ram-240ssd-dvdrw-340015",
     "brand": "",
-    "categories": "Laptops used > Laptop 14\" used",
-    "categorySlug": "laptops-used/laptop-14-used",
-    "image": "/images/DELL-E6420.jpg",
     "price": 80,
-    "stock": 1
+    "regularPrice": 80,
+    "category": "Laptops used",
+    "categories": "Laptops used > Laptop 14 used",
+    "categorySlug": "laptops-used/laptop-14-used",
+    "categoryL1": "Laptops used",
+    "topCategory": "Laptops used",
+    "categoryL2": "Laptop 14 used",
+    "subCategory": "Laptop 14 used",
+    "image": "/images/DELL-E6420.jpg",
+    "images": [
+      "/images/DELL-E6420.jpg"
+    ],
+    "stock": 1,
+    "condition": "used"
   },
   {
     "id": "340016",
     "sku": "340016",
     "title": "DELL Latitude E5470 i5-6440HQ",
     "name": "DELL Latitude E5470 i5-6440HQ",
+    "slug": "dell-latitude-e5470-i5-6440hq-340016",
     "brand": "DELL",
-    "categories": "Laptops used > Laptop 14\" used",
-    "categorySlug": "laptops-used/laptop-14-used",
-    "image": "/images/DELL-E5470.jpg,DELL-E5470_at.jpg",
     "price": 140,
-    "stock": 1
-  },
-  {
-    "id": "340018",
-    "sku": "340018",
-    "title": "E7440 8 RAM, 256 SSD, 14\" Full HD 1920 x 1080 pixels",
-    "name": "E7440 8 RAM, 256 SSD, 14\" Full HD 1920 x 1080 pixels",
-    "brand": "Lenovo",
-    "categories": "Laptops used > Laptop 14\" used",
+    "regularPrice": 140,
+    "category": "Laptops used",
+    "categories": "Laptops used > Laptop 14 used",
     "categorySlug": "laptops-used/laptop-14-used",
-    "image": "/images/DELL-E7440_ees.jpg, DELL-E7440_eest.jpg,DELL-E7440_pealt.jpg,DELL-E7440_taga.jpg",
-    "price": 0,
-    "stock": 1
+    "categoryL1": "Laptops used",
+    "topCategory": "Laptops used",
+    "categoryL2": "Laptop 14 used",
+    "subCategory": "Laptop 14 used",
+    "image": "/images/DELL-E5470.jpg,DELL-E5470_at.jpg",
+    "images": [
+      "/images/DELL-E5470.jpg,DELL-E5470_at.jpg"
+    ],
+    "stock": 1,
+    "condition": "used"
   }
 ]

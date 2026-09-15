@@ -4,23 +4,45 @@
     "sku": "340017",
     "title": "Latitude E5520 i3-2330M 8GB RAM, 120SSD.",
     "name": "Latitude E5520 i3-2330M 8GB RAM, 120SSD.",
+    "slug": "latitude-e5520-i3-2330m-8gb-ram-120ssd-340017",
     "brand": "DELL",
-    "categories": "Laptops used > Laptop 15\" used",
-    "categorySlug": "laptops-used/laptop-15-used",
-    "image": "/images/DELL-Latitude-E5520_2h.jpg",
     "price": 50,
-    "stock": 1
+    "regularPrice": 50,
+    "category": "Laptops used",
+    "categories": "Laptops used > Laptop 15 used",
+    "categorySlug": "laptops-used/laptop-15-used",
+    "categoryL1": "Laptops used",
+    "topCategory": "Laptops used",
+    "categoryL2": "Laptop 15 used",
+    "subCategory": "Laptop 15 used",
+    "image": "/images/DELL-Latitude-E5520_2h.jpg",
+    "images": [
+      "/images/DELL-Latitude-E5520_2h.jpg"
+    ],
+    "stock": 1,
+    "condition": "used"
   },
   {
     "id": "340022",
     "sku": "340022",
     "title": "HP 250 G7",
     "name": "HP 250 G7",
+    "slug": "hp-250-g7-340022",
     "brand": "HP",
-    "categories": "Laptops used > Laptop 15\" used",
-    "categorySlug": "laptops-used/laptop-15-used",
-    "image": "/images/HP-250_G7.jpg",
     "price": 175,
-    "stock": 1
+    "regularPrice": 175,
+    "category": "Laptops used",
+    "categories": "Laptops used > Laptop 15 used",
+    "categorySlug": "laptops-used/laptop-15-used",
+    "categoryL1": "Laptops used",
+    "topCategory": "Laptops used",
+    "categoryL2": "Laptop 15 used",
+    "subCategory": "Laptop 15 used",
+    "image": "/images/HP-250_G7.jpg",
+    "images": [
+      "/images/HP-250_G7.jpg"
+    ],
+    "stock": 1,
+    "condition": "used"
   }
 ]

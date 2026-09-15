@@ -4,11 +4,22 @@
     "sku": "635612",
     "title": "Toner Smasung-ML1710 65g",
     "name": "Toner Smasung-ML1710 65g",
+    "slug": "toner-smasung-ml1710-65g-635612",
     "brand": "",
+    "price": 5,
+    "regularPrice": 5,
+    "category": "Printerid, toonerid",
     "categories": "Printerid, toonerid>Toonerid, tindid",
     "categorySlug": "printerid-toonerid/toonerid-tindid",
+    "categoryL1": "Printerid, toonerid",
+    "topCategory": "Printerid, toonerid",
+    "categoryL2": "Toonerid, tindid",
+    "subCategory": "Toonerid, tindid",
     "image": "/images/Toner-Smasung-ML1710_65g.webp",
-    "price": 5,
-    "stock": 1
+    "images": [
+      "/images/Toner-Smasung-ML1710_65g.webp"
+    ],
+    "stock": 1,
+    "condition": "new"
   }
 ]

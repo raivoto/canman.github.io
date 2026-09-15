@@ -4,11 +4,23 @@
     "sku": "525250",
     "title": "Memory DIMM DDR4 8GB PC4-2133R-UAO-1",
     "name": "Memory DIMM DDR4 8GB PC4-2133R-UAO-1",
+    "slug": "memory-dimm-ddr4-8gb-pc4-2133r-uao-1-525250",
     "brand": "",
+    "price": 25,
+    "regularPrice": 25,
+    "category": "Lauarvuti osad kasut.",
     "categories": "Lauarvuti osad kasut.>Mï¿½lu DIMM>PC4",
     "categorySlug": "lauarvuti-osad-kasut/m-lu-dimm/pc4",
+    "categoryL1": "Lauarvuti osad kasut.",
+    "topCategory": "Lauarvuti osad kasut.",
+    "categoryL2": "Mï¿½lu DIMM",
+    "subCategory": "Mï¿½lu DIMM",
+    "categoryL3": "PC4",
     "image": "/images/Memory-DDR4-DIMM.webp",
-    "price": 25,
-    "stock": 1
+    "images": [
+      "/images/Memory-DDR4-DIMM.webp"
+    ],
+    "stock": 1,
+    "condition": "new"
   }
 ]

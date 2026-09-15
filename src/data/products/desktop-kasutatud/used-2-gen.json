@@ -4,35 +4,68 @@
     "sku": "320002",
     "title": "ESPRIMO P700 i5-2500",
     "name": "ESPRIMO P700 i5-2500",
+    "slug": "esprimo-p700-i5-2500-320002",
     "brand": "Fujitsu",
+    "price": 60,
+    "regularPrice": 60,
+    "category": "Desktop kasutatud",
     "categories": "Desktop kasutatud > used, 2-gen",
     "categorySlug": "desktop-kasutatud/used-2-gen",
+    "categoryL1": "Desktop kasutatud",
+    "topCategory": "Desktop kasutatud",
+    "categoryL2": "used, 2-gen",
+    "subCategory": "used, 2-gen",
     "image": "/images/Esprimo-P700.png,Esprimo-t200_aga.png",
-    "price": 60,
-    "stock": 1
+    "images": [
+      "/images/Esprimo-P700.png,Esprimo-t200_aga.png"
+    ],
+    "stock": 1,
+    "condition": "used"
   },
   {
     "id": "320124",
     "sku": "320124",
     "title": "HP i5-2500 4GB RAM, 500GB HDD",
     "name": "HP i5-2500 4GB RAM, 500GB HDD",
+    "slug": "hp-i5-2500-4gb-ram-500gb-hdd-320124",
     "brand": "HP",
+    "price": 40,
+    "regularPrice": 40,
+    "category": "Desktop kasutatud",
     "categories": "Desktop kasutatud > used, 2-gen",
     "categorySlug": "desktop-kasutatud/used-2-gen",
+    "categoryL1": "Desktop kasutatud",
+    "topCategory": "Desktop kasutatud",
+    "categoryL2": "used, 2-gen",
+    "subCategory": "used, 2-gen",
     "image": "/images/HP_i5_2500_ees.png,Desktop-HP_i5_2500_taga.png,Desktop-HP_i5_2500_sees.png",
-    "price": 40,
-    "stock": 1
+    "images": [
+      "/images/HP_i5_2500_ees.png,Desktop-HP_i5_2500_taga.png,Desktop-HP_i5_2500_sees.png"
+    ],
+    "stock": 1,
+    "condition": "used"
   },
   {
     "id": "320125",
     "sku": "320125",
     "title": "HP i5-2500 8GB RAM, 500GB HDD",
     "name": "HP i5-2500 8GB RAM, 500GB HDD",
+    "slug": "hp-i5-2500-8gb-ram-500gb-hdd-320125",
     "brand": "HP",
+    "price": 50,
+    "regularPrice": 50,
+    "category": "Desktop kasutatud",
     "categories": "Desktop kasutatud > used, 2-gen",
     "categorySlug": "desktop-kasutatud/used-2-gen",
+    "categoryL1": "Desktop kasutatud",
+    "topCategory": "Desktop kasutatud",
+    "categoryL2": "used, 2-gen",
+    "subCategory": "used, 2-gen",
     "image": "/images/HP_i5_2500_ees.png,Desktop-HP_i5_2500_taga.png,Desktop-HP_i5_2500_sees.png",
-    "price": 50,
-    "stock": 1
+    "images": [
+      "/images/HP_i5_2500_ees.png,Desktop-HP_i5_2500_taga.png,Desktop-HP_i5_2500_sees.png"
+    ],
+    "stock": 1,
+    "condition": "used"
   }
 ]

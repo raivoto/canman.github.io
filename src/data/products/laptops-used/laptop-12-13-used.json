@@ -4,71 +4,137 @@
     "sku": "340005",
     "title": "Notebook Latitude E6330 used",
     "name": "Notebook Latitude E6330 used",
+    "slug": "notebook-latitude-e6330-used-340005",
     "brand": "DELL",
-    "categories": "Laptops used> Laptop 12\"-13\" used",
-    "categorySlug": "laptops-used/laptop-12-13-used",
-    "image": "/images/DELL-E6330_W10.jpg",
     "price": 50,
-    "stock": 1
+    "regularPrice": 50,
+    "category": "Laptops used",
+    "categories": "Laptops used> Laptop 12-13 used",
+    "categorySlug": "laptops-used/laptop-12-13-used",
+    "categoryL1": "Laptops used",
+    "topCategory": "Laptops used",
+    "categoryL2": "Laptop 12-13 used",
+    "subCategory": "Laptop 12-13 used",
+    "image": "/images/DELL-E6330_W10.jpg",
+    "images": [
+      "/images/DELL-E6330_W10.jpg"
+    ],
+    "stock": 1,
+    "condition": "used"
   },
   {
     "id": "340003",
     "sku": "340003",
     "title": "Notebook Latitude E6220 used",
     "name": "Notebook Latitude E6220 used",
+    "slug": "notebook-latitude-e6220-used-340003",
     "brand": "DELL",
-    "categories": "Laptops used> Laptop 12\"-13\" used",
-    "categorySlug": "laptops-used/laptop-12-13-used",
-    "image": "/images/DELL-E6220.jpg,DELL-E6220_3h.jpg,DELL-E6220_W7P_4_250HDD.jpg",
     "price": 50,
-    "stock": 1
+    "regularPrice": 50,
+    "category": "Laptops used",
+    "categories": "Laptops used> Laptop 12-13 used",
+    "categorySlug": "laptops-used/laptop-12-13-used",
+    "categoryL1": "Laptops used",
+    "topCategory": "Laptops used",
+    "categoryL2": "Laptop 12-13 used",
+    "subCategory": "Laptop 12-13 used",
+    "image": "/images/DELL-E6220.jpg,DELL-E6220_3h.jpg,DELL-E6220_W7P_4_250HDD.jpg",
+    "images": [
+      "/images/DELL-E6220.jpg,DELL-E6220_3h.jpg,DELL-E6220_W7P_4_250HDD.jpg"
+    ],
+    "stock": 1,
+    "condition": "used"
   },
   {
     "id": "340002",
     "sku": "340002",
     "title": "Notebook Latitude E4310 used",
     "name": "Notebook Latitude E4310 used",
+    "slug": "notebook-latitude-e4310-used-340002",
     "brand": "DELL",
-    "categories": "Laptops used> Laptop 12\"-13\" used",
-    "categorySlug": "laptops-used/laptop-12-13-used",
-    "image": "/images/DELL-E4310.jpg,DELL-E4310_pealt.jpg",
     "price": 50,
-    "stock": 1
+    "regularPrice": 50,
+    "category": "Laptops used",
+    "categories": "Laptops used> Laptop 12-13 used",
+    "categorySlug": "laptops-used/laptop-12-13-used",
+    "categoryL1": "Laptops used",
+    "topCategory": "Laptops used",
+    "categoryL2": "Laptop 12-13 used",
+    "subCategory": "Laptop 12-13 used",
+    "image": "/images/DELL-E4310.jpg,DELL-E4310_pealt.jpg",
+    "images": [
+      "/images/DELL-E4310.jpg,DELL-E4310_pealt.jpg"
+    ],
+    "stock": 1,
+    "condition": "used"
   },
   {
     "id": "340006",
     "sku": "340006",
     "title": "Latitude E4320",
     "name": "Latitude E4320",
+    "slug": "latitude-e4320-340006",
     "brand": "DELL",
-    "categories": "Laptops used> Laptop 12\"-13\" used",
-    "categorySlug": "laptops-used/laptop-12-13-used",
-    "image": "/images/Dell-E4320.jpg",
     "price": 50,
-    "stock": 1
+    "regularPrice": 50,
+    "category": "Laptops used",
+    "categories": "Laptops used> Laptop 12-13 used",
+    "categorySlug": "laptops-used/laptop-12-13-used",
+    "categoryL1": "Laptops used",
+    "topCategory": "Laptops used",
+    "categoryL2": "Laptop 12-13 used",
+    "subCategory": "Laptop 12-13 used",
+    "image": "/images/Dell-E4320.jpg",
+    "images": [
+      "/images/Dell-E4320.jpg"
+    ],
+    "stock": 1,
+    "condition": "used"
   },
   {
     "id": "340010",
     "sku": "340010",
     "title": "Lenovo X250",
     "name": "Lenovo X250",
+    "slug": "lenovo-x250-340010",
     "brand": "Lenovo",
-    "categories": "Laptops used> Laptop 12\"-13\" used",
-    "categorySlug": "laptops-used/laptop-12-13-used",
-    "image": "/images/Lenovo-x250.jpg",
     "price": 110,
-    "stock": 1
+    "regularPrice": 110,
+    "category": "Laptops used",
+    "categories": "Laptops used> Laptop 12-13 used",
+    "categorySlug": "laptops-used/laptop-12-13-used",
+    "categoryL1": "Laptops used",
+    "topCategory": "Laptops used",
+    "categoryL2": "Laptop 12-13 used",
+    "subCategory": "Laptop 12-13 used",
+    "image": "/images/Lenovo-x250.jpg",
+    "images": [
+      "/images/Lenovo-x250.jpg"
+    ],
+    "stock": 1,
+    "condition": "used"
   },
   {
     "id": "340012",
     "sku": "340012",
     "title": "Lenovo X260 13,3” i5-6300U Windows10",
     "name": "Lenovo X260 13,3” i5-6300U Windows10",
+    "slug": "lenovo-x260-13-3-i5-6300u-windows10-340012",
     "brand": "Lenovo",
-    "categories": "Laptops used> Laptop 12\"-13\" used",
-    "categorySlug": "laptops-used/laptop-12-13-used",
-    "image": "/images/Lenovo-X260.jpg,Leno_i5_6300U_6h_W10.jpg,Leno_i5_6300U_6h_W10_900px.jpg",
     "price": 120,
-    "stock": 1
+    "regularPrice": 120,
+    "category": "Laptops used",
+    "categories": "Laptops used> Laptop 12-13 used",
+    "categorySlug": "laptops-used/laptop-12-13-used",
+    "categoryL1": "Laptops used",
+    "topCategory": "Laptops used",
+    "categoryL2": "Laptop 12-13 used",
+    "subCategory": "Laptop 12-13 used",
+    "image": "/images/Lenovo-X260.jpg,Leno_i5_6300U_6h_W10.jpg,Leno_i5_6300U_6h_W10_900px.jpg",
+    "images": [
+      "/images/Lenovo-X260.jpg,Leno_i5_6300U_6h_W10.jpg,Leno_i5_6300U_6h_W10_900px.jpg"
+    ],
+    "stock": 1,
+    "condition": "used"
   }
 ]

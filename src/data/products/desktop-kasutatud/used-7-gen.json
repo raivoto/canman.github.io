@@ -4,23 +4,45 @@
     "sku": "320120",
     "title": "HP ProDesk 600 SFF i5-7500",
     "name": "HP ProDesk 600 SFF i5-7500",
+    "slug": "hp-prodesk-600-sff-i5-7500-320120",
     "brand": "HP",
+    "price": 100,
+    "regularPrice": 100,
+    "category": "Desktop kasutatud",
     "categories": "Desktop kasutatud > used, 7-gen",
     "categorySlug": "desktop-kasutatud/used-7-gen",
+    "categoryL1": "Desktop kasutatud",
+    "topCategory": "Desktop kasutatud",
+    "categoryL2": "used, 7-gen",
+    "subCategory": "used, 7-gen",
     "image": "/images/ProDesk-600-G3.png",
-    "price": 100,
-    "stock": 1
+    "images": [
+      "/images/ProDesk-600-G3.png"
+    ],
+    "stock": 1,
+    "condition": "used"
   },
   {
     "id": "320130",
     "sku": "320130",
     "title": "Ordi Type-O7gen Game",
     "name": "Ordi Type-O7gen Game",
+    "slug": "ordi-type-o7gen-game-320130",
     "brand": "ORDI",
+    "price": 135,
+    "regularPrice": 135,
+    "category": "Desktop kasutatud",
     "categories": "Desktop kasutatud > used, 7-gen",
     "categorySlug": "desktop-kasutatud/used-7-gen",
+    "categoryL1": "Desktop kasutatud",
+    "topCategory": "Desktop kasutatud",
+    "categoryL2": "used, 7-gen",
+    "subCategory": "used, 7-gen",
     "image": "/images/Ordi-Type-O-7gen_Game.webp, Ordi-Type-O-7gen_Game_taga.webp,Ordi-Type-O-7gen_Game_sees.webp",
-    "price": 135,
-    "stock": 1
+    "images": [
+      "/images/Ordi-Type-O-7gen_Game.webp, Ordi-Type-O-7gen_Game_taga.webp,Ordi-Type-O-7gen_Game_sees.webp"
+    ],
+    "stock": 1,
+    "condition": "used"
   }
 ]

@@ -4,11 +4,22 @@
     "sku": "410006",
     "title": "Printer HP LJ 110",
     "name": "Printer HP LJ 110",
+    "slug": "printer-hp-lj-110-410006",
     "brand": "",
+    "price": 40,
+    "regularPrice": 40,
+    "category": "Printerid, toonerid",
     "categories": "Printerid, toonerid>Laserprinter",
     "categorySlug": "printerid-toonerid/laserprinter",
+    "categoryL1": "Printerid, toonerid",
+    "topCategory": "Printerid, toonerid",
+    "categoryL2": "Laserprinter",
+    "subCategory": "Laserprinter",
     "image": "/images/HP-LJ_1010.webp",
-    "price": 40,
-    "stock": 1
+    "images": [
+      "/images/HP-LJ_1010.webp"
+    ],
+    "stock": 1,
+    "condition": "new"
   }
 ]

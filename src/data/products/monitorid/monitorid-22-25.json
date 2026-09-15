@@ -4,23 +4,45 @@
     "sku": "555005",
     "title": "Monitor 24\" Sam SyncMaster SA450 HD reg. kï¿½rgusega",
     "name": "Monitor 24\" Sam SyncMaster SA450 HD reg. kï¿½rgusega",
+    "slug": "monitor-24-sam-syncmaster-sa450-hd-reg-k-rgusega-555005",
     "brand": "Samsung",
+    "price": 40,
+    "regularPrice": 40,
+    "category": "Monitorid",
     "categories": "Monitorid>Monitorid 22ï¿½-25ï¿½",
     "categorySlug": "monitorid/monitorid-22-25",
+    "categoryL1": "Monitorid",
+    "topCategory": "Monitorid",
+    "categoryL2": "Monitorid 22ï¿½-25ï¿½",
+    "subCategory": "Monitorid 22ï¿½-25ï¿½",
     "image": "/images/Sam-S24E450b.webp,Sam-S24E450b_label.webp",
-    "price": 40,
-    "stock": 1
+    "images": [
+      "/images/Sam-S24E450b.webp,Sam-S24E450b_label.webp"
+    ],
+    "stock": 1,
+    "condition": "new"
   },
   {
     "id": "555009",
     "sku": "555009",
     "title": "Monitor 22ï¿½ ViwSonic",
     "name": "Monitor 22ï¿½ ViwSonic",
+    "slug": "monitor-22-viwsonic-555009",
     "brand": "",
+    "price": 10,
+    "regularPrice": 10,
+    "category": "Monitorid",
     "categories": "Monitorid>Monitorid 22ï¿½-25ï¿½",
     "categorySlug": "monitorid/monitorid-22-25",
+    "categoryL1": "Monitorid",
+    "topCategory": "Monitorid",
+    "categoryL2": "Monitorid 22ï¿½-25ï¿½",
+    "subCategory": "Monitorid 22ï¿½-25ï¿½",
     "image": "/images/ViewSonic_22_eest_odav.webp,ViewSonic_22_taga_odav.webp",
-    "price": 10,
-    "stock": 1
+    "images": [
+      "/images/ViewSonic_22_eest_odav.webp,ViewSonic_22_taga_odav.webp"
+    ],
+    "stock": 1,
+    "condition": "new"
   }
 ]

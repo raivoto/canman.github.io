@@ -4,35 +4,71 @@
     "sku": "525232",
     "title": "Memory Kingston KVR1333 2GB",
     "name": "Memory Kingston KVR1333 2GB",
+    "slug": "memory-kingston-kvr1333-2gb-525232",
     "brand": "Kingston",
+    "price": 10,
+    "regularPrice": 10,
+    "category": "Lauarvuti osad kasut.",
     "categories": "Lauarvuti osad kasut.>Mï¿½lu DIMM>PC3",
     "categorySlug": "lauarvuti-osad-kasut/m-lu-dimm/pc3",
+    "categoryL1": "Lauarvuti osad kasut.",
+    "topCategory": "Lauarvuti osad kasut.",
+    "categoryL2": "Mï¿½lu DIMM",
+    "subCategory": "Mï¿½lu DIMM",
+    "categoryL3": "PC3",
     "image": "/images/Memory-Kingston_KVR1333_2GB.webp",
-    "price": 10,
-    "stock": 1
+    "images": [
+      "/images/Memory-Kingston_KVR1333_2GB.webp"
+    ],
+    "stock": 1,
+    "condition": "new"
   },
   {
     "id": "525099",
     "sku": "525099",
     "title": "Memory Kingston KVR1333 4GB",
     "name": "Memory Kingston KVR1333 4GB",
+    "slug": "memory-kingston-kvr1333-4gb-525099",
     "brand": "Kingston",
+    "price": 15,
+    "regularPrice": 15,
+    "category": "Lauarvuti osad kasut.",
     "categories": "Lauarvuti osad kasut.>Mï¿½lu DIMM>PC3",
     "categorySlug": "lauarvuti-osad-kasut/m-lu-dimm/pc3",
+    "categoryL1": "Lauarvuti osad kasut.",
+    "topCategory": "Lauarvuti osad kasut.",
+    "categoryL2": "Mï¿½lu DIMM",
+    "subCategory": "Mï¿½lu DIMM",
+    "categoryL3": "PC3",
     "image": "/images/Memory-Kingston_KVR1333_2GB.webp",
-    "price": 15,
-    "stock": 1
+    "images": [
+      "/images/Memory-Kingston_KVR1333_2GB.webp"
+    ],
+    "stock": 1,
+    "condition": "new"
   },
   {
     "id": "525174",
     "sku": "525174",
     "title": "Memory Kingston KTA-MP1066K4_8GB",
     "name": "Memory Kingston KTA-MP1066K4_8GB",
+    "slug": "memory-kingston-kta-mp1066k4-8gb-525174",
     "brand": "Kingston",
+    "price": 20,
+    "regularPrice": 20,
+    "category": "Lauarvuti osad kasut.",
     "categories": "Lauarvuti osad kasut.>Mï¿½lu DIMM>PC3",
     "categorySlug": "lauarvuti-osad-kasut/m-lu-dimm/pc3",
+    "categoryL1": "Lauarvuti osad kasut.",
+    "topCategory": "Lauarvuti osad kasut.",
+    "categoryL2": "Mï¿½lu DIMM",
+    "subCategory": "Mï¿½lu DIMM",
+    "categoryL3": "PC3",
     "image": "/images/Kingston_KTA-MP1066K4_8GB.webp",
-    "price": 20,
-    "stock": 2
+    "images": [
+      "/images/Kingston_KTA-MP1066K4_8GB.webp"
+    ],
+    "stock": 1,
+    "condition": "new"
   }
 ]

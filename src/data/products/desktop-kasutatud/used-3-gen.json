@@ -4,47 +4,91 @@
     "sku": "320001",
     "title": "Fujitsu ESPRIMO P700",
     "name": "Fujitsu ESPRIMO P700",
+    "slug": "fujitsu-esprimo-p700-320001",
     "brand": "Fujitsu",
+    "price": 60,
+    "regularPrice": 60,
+    "category": "Desktop kasutatud",
     "categories": "Desktop kasutatud > used, 3-gen",
     "categorySlug": "desktop-kasutatud/used-3-gen",
+    "categoryL1": "Desktop kasutatud",
+    "topCategory": "Desktop kasutatud",
+    "categoryL2": "used, 3-gen",
+    "subCategory": "used, 3-gen",
     "image": "/images/Esprimo-P700.png,Esprimo-t200_aga.png",
-    "price": 60,
-    "stock": 1
+    "images": [
+      "/images/Esprimo-P700.png,Esprimo-t200_aga.png"
+    ],
+    "stock": 1,
+    "condition": "used"
   },
   {
     "id": "320075",
     "sku": "320075",
     "title": "ORDI Metal i3-3220",
     "name": "ORDI Metal i3-3220",
+    "slug": "ordi-metal-i3-3220-320075",
     "brand": "ORDI",
+    "price": 50,
+    "regularPrice": 50,
+    "category": "Desktop kasutatud",
     "categories": "Desktop kasutatud > used, 3-gen",
     "categorySlug": "desktop-kasutatud/used-3-gen",
+    "categoryL1": "Desktop kasutatud",
+    "topCategory": "Desktop kasutatud",
+    "categoryL2": "used, 3-gen",
+    "subCategory": "used, 3-gen",
     "image": "/images/Ordi-Metal_must.png",
-    "price": 50,
-    "stock": 1
+    "images": [
+      "/images/Ordi-Metal_must.png"
+    ],
+    "stock": 1,
+    "condition": "used"
   },
   {
     "id": "320103",
     "sku": "320103",
     "title": "DELL OptiPlex 3/3010 SFF",
     "name": "DELL OptiPlex 3/3010 SFF",
+    "slug": "dell-optiplex-3-3010-sff-320103",
     "brand": "DELL",
+    "price": 90,
+    "regularPrice": 90,
+    "category": "Desktop kasutatud",
     "categories": "Desktop kasutatud > used, 3-gen",
     "categorySlug": "desktop-kasutatud/used-3-gen",
+    "categoryL1": "Desktop kasutatud",
+    "topCategory": "Desktop kasutatud",
+    "categoryL2": "used, 3-gen",
+    "subCategory": "used, 3-gen",
     "image": "/images/DellOptiPlex3010SFF_2.png",
-    "price": 90,
-    "stock": 1
+    "images": [
+      "/images/DellOptiPlex3010SFF_2.png"
+    ],
+    "stock": 1,
+    "condition": "used"
   },
   {
     "id": "320100",
     "sku": "320100",
     "title": "HP 6300 PRO SFF",
     "name": "HP 6300 PRO SFF",
+    "slug": "hp-6300-pro-sff-320100",
     "brand": "HP",
+    "price": 45,
+    "regularPrice": 45,
+    "category": "Desktop kasutatud",
     "categories": "Desktop kasutatud > used, 3-gen",
     "categorySlug": "desktop-kasutatud/used-3-gen",
+    "categoryL1": "Desktop kasutatud",
+    "topCategory": "Desktop kasutatud",
+    "categoryL2": "used, 3-gen",
+    "subCategory": "used, 3-gen",
     "image": "/images/HP6300Pro_2.png",
-    "price": 45,
-    "stock": 2
+    "images": [
+      "/images/HP6300Pro_2.png"
+    ],
+    "stock": 1,
+    "condition": "used"
   }
 ]

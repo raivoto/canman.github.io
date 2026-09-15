@@ -4,23 +4,45 @@
     "sku": "320101",
     "title": "HP PRO Desk",
     "name": "HP PRO Desk",
+    "slug": "hp-pro-desk-320101",
     "brand": "HP",
+    "price": 90,
+    "regularPrice": 90,
+    "category": "Desktop kasutatud",
     "categories": "Desktop kasutatud > used, 4-gen",
     "categorySlug": "desktop-kasutatud/used-4-gen",
+    "categoryL1": "Desktop kasutatud",
+    "topCategory": "Desktop kasutatud",
+    "categoryL2": "used, 4-gen",
+    "subCategory": "used, 4-gen",
     "image": "/images/HP-ProDesk-G1-i5_4570.webp",
-    "price": 90,
-    "stock": 1
+    "images": [
+      "/images/HP-ProDesk-G1-i5_4570.webp"
+    ],
+    "stock": 1,
+    "condition": "used"
   },
   {
     "id": "320102",
     "sku": "320102",
     "title": "DELL OptiPlex 7020 SFF",
     "name": "DELL OptiPlex 7020 SFF",
+    "slug": "dell-optiplex-7020-sff-320102",
     "brand": "DELL",
+    "price": 60,
+    "regularPrice": 60,
+    "category": "Desktop kasutatud",
     "categories": "Desktop kasutatud > used, 4-gen",
     "categorySlug": "desktop-kasutatud/used-4-gen",
+    "categoryL1": "Desktop kasutatud",
+    "topCategory": "Desktop kasutatud",
+    "categoryL2": "used, 4-gen",
+    "subCategory": "used, 4-gen",
     "image": "/images/Dell_Optiplex-7020.png",
-    "price": 60,
-    "stock": 1
+    "images": [
+      "/images/Dell_Optiplex-7020.png"
+    ],
+    "stock": 1,
+    "condition": "used"
   }
 ]

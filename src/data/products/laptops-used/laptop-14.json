@@ -4,23 +4,45 @@
     "sku": "340001",
     "title": "Notebook Latitude E6410 used",
     "name": "Notebook Latitude E6410 used",
+    "slug": "notebook-latitude-e6410-used-340001",
     "brand": "DELL",
-    "categories": "Laptops used > Laptop 14\"",
-    "categorySlug": "laptops-used/laptop-14",
-    "image": "/images/E6410_4_250.jpg,E6410_RU.jpg",
     "price": 40,
-    "stock": 1
+    "regularPrice": 40,
+    "category": "Laptops used",
+    "categories": "Laptops used > Laptop 14",
+    "categorySlug": "laptops-used/laptop-14",
+    "categoryL1": "Laptops used",
+    "topCategory": "Laptops used",
+    "categoryL2": "Laptop 14",
+    "subCategory": "Laptop 14",
+    "image": "/images/E6410_4_250.jpg,E6410_RU.jpg",
+    "images": [
+      "/images/E6410_4_250.jpg,E6410_RU.jpg"
+    ],
+    "stock": 1,
+    "condition": "used"
   },
   {
     "id": "340019",
     "sku": "340019",
     "title": "Notebook Latitude E6430 used",
     "name": "Notebook Latitude E6430 used",
+    "slug": "notebook-latitude-e6430-used-340019",
     "brand": "DELL",
-    "categories": "Laptops used > Laptop 14\"",
-    "categorySlug": "laptops-used/laptop-14",
-    "image": "/images/DELL-E6420_W10.jpg,DELL-E6420_ees.jpg",
     "price": 50,
-    "stock": 1
+    "regularPrice": 50,
+    "category": "Laptops used",
+    "categories": "Laptops used > Laptop 14",
+    "categorySlug": "laptops-used/laptop-14",
+    "categoryL1": "Laptops used",
+    "topCategory": "Laptops used",
+    "categoryL2": "Laptop 14",
+    "subCategory": "Laptop 14",
+    "image": "/images/DELL-E6420_W10.jpg,DELL-E6420_ees.jpg",
+    "images": [
+      "/images/DELL-E6420_W10.jpg,DELL-E6420_ees.jpg"
+    ],
+    "stock": 1,
+    "condition": "used"
   }
 ]
