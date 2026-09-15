@@ -4,24 +4,21 @@
     "sku": "340017",
     "title": "Latitude E5520 i3-2330M 8GB RAM, 120SSD. ",
     "name": "Latitude E5520 i3-2330M 8GB RAM, 120SSD. ",
-    "stock": 1,
+    "stock": "",
     "price": 50,
     "salePrice": 50,
-    "finalPrice": 50,
-    "topCategory": "Laptops used",
-    "subCategory": "Laptop 15\" used",
     "categoryPath": [
       "Laptops used",
       "Laptop 15\" used"
     ],
+    "topCategory": "Laptops used",
+    "subCategory": "Laptop 15\" used",
+    "sub2Category": "",
     "brand": "DELL",
     "tags": "Latitude",
     "color": "Silver",
     "images": [
-      "/images/DELL-Latitude-E5520_2h.webp"
-    ],
-    "rawImages": [
-      "DELL-Latitude-E5520_2h.webp"
+      "/images/DELL-Latitude-E5520_2h.jpg"
     ],
     "description": "Korralik Latitude E5520 i3-2330M 8GB RAM, 120SSD. Hea klaviatuuriga, hea matt ektaaniga 15,6\", DVDRW, HDMI, ID kaardi lugeja, SD kaart, VGA, Klaviatuur skandinaavia. Uus Windows 10, puhastatud, kiirendatud, lisatud kontori tarkvara, turvalisus parandatud. Aku u-3h. näitab vahest 7h (pildil). Kogult suur, raskem kui väksema klassi arvutid. Eeliseks just tipp tasemel Windowsi seadistus. Parandatud arvuti suurimat ohtu browseri turvalisust. Firefoxil muudetud 5 turvasetingut paremaks. ",
     "shortDescription": "Latitude E5520 i3-2330M 8GB RAM, 120SSD. ",
@@ -34,22 +31,19 @@
     "name": "HP 250 G7",
     "stock": 1,
     "price": 175,
-    "salePrice": null,
-    "finalPrice": 175,
-    "topCategory": "Laptops used",
-    "subCategory": "Laptop 15\" used",
+    "salePrice": "",
     "categoryPath": [
       "Laptops used",
       "Laptop 15\" used"
     ],
+    "topCategory": "Laptops used",
+    "subCategory": "Laptop 15\" used",
+    "sub2Category": "",
     "brand": "HP",
     "tags": "HP",
     "color": "",
     "images": [
-      "/images/HP-250_G7.webp"
-    ],
-    "rawImages": [
-      "HP-250_G7.webp"
+      "/images/HP-250_G7.jpg"
     ],
     "description": "I3-7020U, 8GB, 256SSD NVMe, uus Windows 11. V„he kasutatud. Aku 2-3h.",
     "shortDescription": "",

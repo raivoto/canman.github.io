@@ -4,24 +4,21 @@
     "sku": "520300",
     "title": "Protsessor Intel i5-4440   ",
     "name": "Protsessor Intel i5-4440   ",
-    "stock": 1,
+    "stock": "",
     "price": 20,
     "salePrice": 15,
-    "finalPrice": 15,
-    "topCategory": "Lauarvuti osad kasut.",
-    "subCategory": "Protsessor PC",
     "categoryPath": [
       "Lauarvuti osad kasut.",
       "Protsessor PC"
     ],
+    "topCategory": "Lauarvuti osad kasut.",
+    "subCategory": "Protsessor PC",
+    "sub2Category": "",
     "brand": "Intel",
     "tags": "Intel Protsessor",
     "color": "",
     "images": [
       "/images/I-protsessor_i5_desktop.png"
-    ],
-    "rawImages": [
-      "I-protsessor_i5_desktop.png"
     ],
     "description": "4th-generation desktop processor featuring 4 cores, 4 threads, a 3.1 GHz base clock, and a 3.3 GHz boost clock. Released in 2013 on the LGA 1150 socket ",
     "shortDescription": "Protsessor Intel i5-4440",
@@ -32,24 +29,21 @@
     "sku": "520301",
     "title": "Protsessor Intel i5-4590   ",
     "name": "Protsessor Intel i5-4590   ",
-    "stock": 1,
+    "stock": "",
     "price": 35,
     "salePrice": 30,
-    "finalPrice": 30,
-    "topCategory": "Lauarvuti osad kasut.",
-    "subCategory": "Protsessor PC",
     "categoryPath": [
       "Lauarvuti osad kasut.",
       "Protsessor PC"
     ],
+    "topCategory": "Lauarvuti osad kasut.",
+    "subCategory": "Protsessor PC",
+    "sub2Category": "",
     "brand": "Intel",
     "tags": "Intel Protsessor",
     "color": "",
     "images": [
       "/images/I-protsessor_i5_desktop.png"
-    ],
-    "rawImages": [
-      "I-protsessor_i5_desktop.png"
     ],
     "description": "Protsessor Intel i5-4590   ",
     "shortDescription": "",
@@ -60,27 +54,24 @@
     "sku": "520310",
     "title": "Protsessor Intel i5-6400",
     "name": "Protsessor Intel i5-6400",
-    "stock": 1,
+    "stock": "",
     "price": 35,
-    "salePrice": null,
-    "finalPrice": 35,
-    "topCategory": "Lauarvuti osad kasut.",
-    "subCategory": "Protsessor PC",
+    "salePrice": "",
     "categoryPath": [
       "Lauarvuti osad kasut.",
       "Protsessor PC"
     ],
+    "topCategory": "Lauarvuti osad kasut.",
+    "subCategory": "Protsessor PC",
+    "sub2Category": "",
     "brand": "Intel",
     "tags": "Intel Protsessor",
     "color": "",
     "images": [
       "/images/I-protsessor_i5_desktop.png"
     ],
-    "rawImages": [
-      "I-protsessor_i5_desktop.png"
-    ],
-    "description": "Core I5 I5-6400 Quad-Core (4 Core) 2.70 Ghz Processor - Socket H4 Lga-1151 ",
-    "shortDescription": "Core I5 I5-6400 Quad-Core (4 Core) 2.70 Ghz Processor - Socket H4 Lga-1151 ",
+    "description": "Core I5 I5-6400 Quad-Core (4 Core) 2.70 Ghz Processorï¿½- Socket H4 Lga-1151 ",
+    "shortDescription": "Core I5 I5-6400 Quad-Core (4 Core) 2.70 Ghz Processorï¿½- Socket H4 Lga-1151 ",
     "specs": ""
   }
 ]

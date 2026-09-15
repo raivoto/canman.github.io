@@ -4,26 +4,22 @@
     "sku": "511110",
     "title": "Combo ASUS_P8H61_ i3_3220  Cooler Intel                     ",
     "name": "Combo ASUS_P8H61_ i3_3220  Cooler Intel                     ",
-    "stock": 1,
+    "stock": "",
     "price": 20,
-    "salePrice": null,
-    "finalPrice": 20,
-    "topCategory": "Lauarvuti osad kasut.",
-    "subCategory": "Combo",
+    "salePrice": "",
     "categoryPath": [
       "Lauarvuti osad kasut.",
       "Combo"
     ],
+    "topCategory": "Lauarvuti osad kasut.",
+    "subCategory": "Combo",
+    "sub2Category": "",
     "brand": "ASUS",
     "tags": "Combo",
     "color": "",
     "images": [
-      "/images/ASUS_P8H61_ i3_3220.webp",
-      "/images/Ema-prose-ASUS_P8H61_ i3_3220_taga.webp"
-    ],
-    "rawImages": [
-      "ASUS_P8H61_ i3_3220.webp",
-      "Ema-prose-ASUS_P8H61_ i3_3220_taga.webp"
+      "/images/ASUS_P8H61__i3_3220.webp",
+      "/images/Ema-prose-ASUS_P8H61__i3_3220_taga.webp"
     ],
     "description": "ASUS_P8H61_ i3_3220 cooler Intel",
     "shortDescription": "ASUS_P8H61_ i3_3220 cooler Intel",

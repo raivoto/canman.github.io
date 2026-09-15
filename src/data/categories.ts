@@ -1,161 +1,69 @@
 import { CategoryL1 } from '../types';
 
+// AUTO-GENERATED from kaupade xls - DO NOT EDIT MANUALLY
+// Generated at 2026-09-15T08:08:51.711Z
+
 export const CATEGORIES: CategoryL1[] = [
   {
-    id: 'arvutid',
-    name: 'Arvutid',
+    id: 'lauarvuti-osad-kasut',
+    name: 'Lauarvuti osad kasut.',
     subcategories: [
+      { id: 'protsessor-pc', name: 'Protsessor PC' },
+      { id: 'combo', name: 'Combo' },
+      { id: 'emaplaat', name: 'Emaplaat' },
       {
-        id: 'desktop-pc',
-        name: 'Desktop PC',
+        id: 'm-lu-dimm',
+        name: 'Mï¿½lu DIMM',
         subcategories: [
-          { id: 'office', name: 'Office' },
-          { id: 'gaming', name: 'Gaming' },
-          { id: 'workstation', name: 'Workstation' },
+          { id: 'pc3', name: 'PC3' },
+          { id: 'pc4', name: 'PC4' },
+          { id: 'pc2', name: 'PC2' },
         ],
       },
-      {
-        id: 'notebooks',
-        name: 'Notebooks',
-        subcategories: [
-          { id: 'lenovo', name: 'Lenovo' },
-          { id: 'dell', name: 'DELL' },
-          { id: 'hp', name: 'HP' },
-          { id: 'other-brands', name: 'Other brands' },
-        ],
-      },
-      {
-        id: 'all-in-one',
-        name: 'All-in-One',
-      },
-    ],
-  },
-  {
-    id: 'arvutid-kasutatud',
-    name: 'Arvutid kasutatud',
-    subcategories: [
-      { id: 'desktop-used', name: 'Desktop used' },
-      { id: 'notebooks-used', name: 'Notebooks used' },
-      { id: 'workstations-used', name: 'Workstations used' },
-    ],
-  },
-  {
-    id: 'apple-arvutid',
-    name: 'Apple arvutid',
-    subcategories: [
-      { id: 'imac', name: 'iMac' },
-      { id: 'macbook-air', name: 'MacBook Air' },
-      { id: 'macbook-pro', name: 'MacBook Pro' },
-      { id: 'mac-mini', name: 'Mac Mini' },
-    ],
-  },
-  {
-    id: 'lisaseadmed',
-    name: 'Lisaseadmed',
-    subcategories: [
-      { id: 'keyboards', name: 'Keyboards' },
-      { id: 'mice', name: 'Mice' },
-      { id: 'headsets', name: 'Headsets' },
-      { id: 'webcams', name: 'Webcams' },
-      { id: 'speakers', name: 'Speakers' },
-      { id: 'usb-sticks', name: 'USB sticks' },
     ],
   },
   {
     id: 'monitorid',
     name: 'Monitorid',
     subcategories: [
-      { id: '19-22-inch', name: '19-22 inch' },
-      { id: '24-inch', name: '24 inch' },
-      { id: '27-inch-plus', name: '27 inch+' },
-      { id: '4k-monitors', name: '4K Monitors' },
-      { id: 'monitors-used', name: 'Monitors used' },
+      { id: 'monitorid-22-25', name: 'Monitorid 22ï¿½-25ï¿½' },
     ],
   },
   {
-    id: 'printerid',
-    name: 'Printerid',
+    id: 'printerid-toonerid',
+    name: 'Printerid, toonerid',
     subcategories: [
-      { id: 'laser-printers', name: 'Laser printers' },
-      { id: 'inkjet', name: 'Inkjet' },
-      { id: 'mfp', name: 'MFP' },
-      { id: 'printers-used', name: 'Printers used' },
+      { id: 'laserprinter', name: 'Laserprinter' },
+      { id: 'tooner-laserprindile', name: 'Tooner laserprindile' },
+      { id: 'toonerid-tindid', name: 'Toonerid, tindid' },
     ],
   },
   {
-    id: 'arvutiosad',
-    name: 'Arvutiosad',
+    id: 'desktop-kasutatud',
+    name: 'Desktop kasutatud',
     subcategories: [
-      {
-        id: 'protsessorid',
-        name: 'Protsessorid',
-        subcategories: [
-          { id: 'amd-cpu', name: 'AMD' },
-          { id: 'intel-cpu', name: 'Intel' },
-        ],
-      },
-      {
-        id: 'malu-desktop',
-        name: 'Mälu Desktop',
-        subcategories: [
-          { id: 'ddr3', name: 'DDR3' },
-          { id: 'ddr4', name: 'DDR4' },
-          { id: 'ddr5', name: 'DDR5' },
-        ],
-      },
-      {
-        id: 'malu-notebook',
-        name: 'Mälu Notebook',
-        subcategories: [
-          { id: 'ddr4-sodimm', name: 'DDR4 SODIMM' },
-        ],
-      },
-      {
-        id: 'videokaardid',
-        name: 'Videokaardid',
-        subcategories: [
-          { id: 'nvidia', name: 'NVIDIA' },
-          { id: 'amd-gpu', name: 'AMD' },
-        ],
-      },
-      {
-        id: 'ssd',
-        name: 'SSD',
-        subcategories: [
-          { id: 'sata', name: 'SATA' },
-          { id: 'nvme', name: 'NVMe' },
-        ],
-      },
-      {
-        id: 'hdd',
-        name: 'HDD',
-      },
-      {
-        id: 'emaplaadid',
-        name: 'Emaplaadid',
-        subcategories: [
-          { id: 'amd-mb', name: 'AMD' },
-          { id: 'intel-mb', name: 'Intel' },
-        ],
-      },
-      {
-        id: 'korpused',
-        name: 'Korpused',
-      },
-      {
-        id: 'jahutid',
-        name: 'Jahutid',
-      },
+      { id: 'used-3-gen', name: 'used, 3-gen' },
+      { id: 'used-2-gen', name: 'used, 2-gen' },
+      { id: 'used-4-gen', name: 'used, 4-gen' },
+      { id: 'used-7-gen', name: 'used, 7-gen' },
+      { id: 'used-6-gen', name: 'used, 6-gen' },
     ],
   },
   {
-    id: 'toiteseadmed',
-    name: 'Toiteseadmed',
+    id: 'laptops-used',
+    name: 'Laptops used',
     subcategories: [
-      { id: 'ups', name: 'UPS' },
-      { id: 'toiteplokid', name: 'Toiteplokid' },
-      { id: 'sulearvuti-akud', name: 'Sülearvuti akud' },
-      { id: 'patareid', name: 'Patareid' },
+      { id: 'laptop-14', name: 'Laptop 14"' },
+      { id: 'laptop-12-13-used', name: 'Laptop 12"-13" used' },
+      { id: 'laptop-15-used', name: 'Laptop 15" used' },
+      { id: 'laptop-14-used', name: 'Laptop 14" used' },
+    ],
+  },
+  {
+    id: 'laptops',
+    name: 'Laptops',
+    subcategories: [
+      { id: 'laptop-14', name: 'Laptop 14ï¿½' },
     ],
   },
 ];

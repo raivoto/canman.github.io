@@ -1,0 +1,166 @@
+{
+  "lauarvuti-osad-kasut": {
+    "name": "Lauarvuti osad kasut.",
+    "slug": "lauarvuti-osad-kasut",
+    "subcategories": [
+      {
+        "name": "Protsessor PC",
+        "slug": "protsessor-pc",
+        "count": 3,
+        "file": "lauarvuti-osad-kasut/protsessor-pc.json"
+      },
+      {
+        "name": "Combo",
+        "slug": "combo",
+        "count": 1,
+        "file": "lauarvuti-osad-kasut/combo.json"
+      },
+      {
+        "name": "Emaplaat",
+        "slug": "emaplaat",
+        "count": 1,
+        "file": "lauarvuti-osad-kasut/emaplaat.json"
+      },
+      {
+        "name": "Mï¿½lu DIMM",
+        "slug": "m-lu-dimm",
+        "count": 5,
+        "file": "lauarvuti-osad-kasut/m-lu-dimm.json",
+        "subcategories": [
+          {
+            "name": "PC3",
+            "slug": "pc3",
+            "count": 3,
+            "file": "lauarvuti-osad-kasut/m-lu-dimm--pc3.json"
+          },
+          {
+            "name": "PC4",
+            "slug": "pc4",
+            "count": 1,
+            "file": "lauarvuti-osad-kasut/m-lu-dimm--pc4.json"
+          },
+          {
+            "name": "PC2",
+            "slug": "pc2",
+            "count": 1,
+            "file": "lauarvuti-osad-kasut/m-lu-dimm--pc2.json"
+          }
+        ]
+      }
+    ]
+  },
+  "monitorid": {
+    "name": "Monitorid",
+    "slug": "monitorid",
+    "subcategories": [
+      {
+        "name": "Monitorid 22ï¿½-25ï¿½",
+        "slug": "monitorid-22-25",
+        "count": 2,
+        "file": "monitorid/monitorid-22-25.json"
+      }
+    ]
+  },
+  "printerid-toonerid": {
+    "name": "Printerid, toonerid",
+    "slug": "printerid-toonerid",
+    "subcategories": [
+      {
+        "name": "Laserprinter",
+        "slug": "laserprinter",
+        "count": 1,
+        "file": "printerid-toonerid/laserprinter.json"
+      },
+      {
+        "name": "Tooner laserprindile",
+        "slug": "tooner-laserprindile",
+        "count": 3,
+        "file": "printerid-toonerid/tooner-laserprindile.json"
+      },
+      {
+        "name": "Toonerid, tindid",
+        "slug": "toonerid-tindid",
+        "count": 1,
+        "file": "printerid-toonerid/toonerid-tindid.json"
+      }
+    ]
+  },
+  "desktop-kasutatud": {
+    "name": "Desktop kasutatud",
+    "slug": "desktop-kasutatud",
+    "subcategories": [
+      {
+        "name": "used, 3-gen",
+        "slug": "used-3-gen",
+        "count": 4,
+        "file": "desktop-kasutatud/used-3-gen.json"
+      },
+      {
+        "name": "used, 2-gen",
+        "slug": "used-2-gen",
+        "count": 3,
+        "file": "desktop-kasutatud/used-2-gen.json"
+      },
+      {
+        "name": "used, 4-gen",
+        "slug": "used-4-gen",
+        "count": 2,
+        "file": "desktop-kasutatud/used-4-gen.json"
+      },
+      {
+        "name": "used, 7-gen",
+        "slug": "used-7-gen",
+        "count": 2,
+        "file": "desktop-kasutatud/used-7-gen.json"
+      },
+      {
+        "name": "used, 6-gen",
+        "slug": "used-6-gen",
+        "count": 1,
+        "file": "desktop-kasutatud/used-6-gen.json"
+      }
+    ]
+  },
+  "laptops-used": {
+    "name": "Laptops used",
+    "slug": "laptops-used",
+    "subcategories": [
+      {
+        "name": "Laptop 14\"",
+        "slug": "laptop-14",
+        "count": 2,
+        "file": "laptops-used/laptop-14.json"
+      },
+      {
+        "name": "Laptop 12\"-13\" used",
+        "slug": "laptop-12-13-used",
+        "count": 7,
+        "file": "laptops-used/laptop-12-13-used.json"
+      },
+      {
+        "name": "Laptop 15\" used",
+        "slug": "laptop-15-used",
+        "count": 2,
+        "file": "laptops-used/laptop-15-used.json"
+      },
+      {
+        "name": "Laptop 14\" used",
+        "slug": "laptop-14-used",
+        "count": 3,
+        "file": "laptops-used/laptop-14-used.json"
+      }
+    ]
+  },
+  "laptops": {
+    "name": "Laptops",
+    "slug": "laptops",
+    "subcategories": [
+      {
+        "name": "Laptop 14ï¿½",
+        "slug": "laptop-14",
+        "count": 1,
+        "file": "laptops/laptop-14.json"
+      }
+    ]
+  }
+}

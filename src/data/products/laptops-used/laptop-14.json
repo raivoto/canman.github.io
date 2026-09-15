@@ -1,0 +1,54 @@
+[
+  {
+    "id": "340001",
+    "sku": "340001",
+    "title": "Notebook Latitude E6410 used",
+    "name": "Notebook Latitude E6410",
+    "stock": 1,
+    "price": 40,
+    "salePrice": "",
+    "categoryPath": [
+      "Laptops used",
+      "Laptop 14\""
+    ],
+    "topCategory": "Laptops used",
+    "subCategory": "Laptop 14\"",
+    "sub2Category": "",
+    "brand": "DELL",
+    "tags": "Latitude",
+    "color": "Black",
+    "images": [
+      "/images/E6410_4_250.jpg",
+      "/images/E6410_RU.jpg"
+    ],
+    "description": "Notebook Latitude E6410 14,1\" i5-560 DDR3-4GB 500GB WIN10P DVDRW ID Card Screen WXGA 1400x900 matte",
+    "shortDescription": "Notebook Latitude E6410 i5-560",
+    "specs": ""
+  },
+  {
+    "id": "340019",
+    "sku": "340019",
+    "title": "Notebook Latitude E6430 used",
+    "name": "Notebook Latitude E6430 used",
+    "stock": 1,
+    "price": 50,
+    "salePrice": "",
+    "categoryPath": [
+      "Laptops used",
+      "Laptop 14\""
+    ],
+    "topCategory": "Laptops used",
+    "subCategory": "Laptop 14\"",
+    "sub2Category": "",
+    "brand": "DELL",
+    "tags": "Latitude",
+    "color": "Black",
+    "images": [
+      "/images/DELL-E6420_W10.jpg",
+      "/images/DELL-E6420_ees.jpg"
+    ],
+    "description": "Notebook Latitude E6420 14\" i5-2520M DDR3-4GB 500GB WIN10P DVDRW ID Card Screen WXGA 1366x768 matte",
+    "shortDescription": "Notebook Latitude E6430 14\" i5",
+    "specs": ""
+  }
+]

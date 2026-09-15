@@ -1,0 +1,82 @@
+[
+  {
+    "id": "320002",
+    "sku": "320002",
+    "title": "ESPRIMO P700 i5-2500",
+    "name": "ESPRIMO P700 i5-2500",
+    "stock": 1,
+    "price": 60,
+    "salePrice": 110,
+    "categoryPath": [
+      "Desktop kasutatud",
+      "used, 2-gen"
+    ],
+    "topCategory": "Desktop kasutatud",
+    "subCategory": "used, 2-gen",
+    "sub2Category": "",
+    "brand": "Fujitsu",
+    "tags": "Desktop, Fsprimo",
+    "color": "Gray",
+    "images": [
+      "/images/Esprimo-P700.png",
+      "/images/Esprimo-t200_aga.png"
+    ],
+    "description": "ESPRIMO P700 E90+ Intel i5-2500/4GB/320GB/DVDRW Miditower W7P",
+    "shortDescription": "Fujitsu ESPRIMO P700 E90+ B630 W7P",
+    "specs": ""
+  },
+  {
+    "id": "320124",
+    "sku": "320124",
+    "title": "HP i5-2500 4GB RAM, 500GB HDD",
+    "name": "HP i5-2500 4GB RAM, 500GB HDD",
+    "stock": 1,
+    "price": 40,
+    "salePrice": 30,
+    "categoryPath": [
+      "Desktop kasutatud",
+      "used, 2-gen"
+    ],
+    "topCategory": "Desktop kasutatud",
+    "subCategory": "used, 2-gen",
+    "sub2Category": "",
+    "brand": "HP",
+    "tags": "HP_i5_2500_ees",
+    "color": "Black",
+    "images": [
+      "/images/HP_i5_2500_ees.png",
+      "/images/Desktop-HP_i5_2500_taga.png",
+      "/images/Desktop-HP_i5_2500_sees.png"
+    ],
+    "description": "HP i5-2500 4GB RAM, 500GB HDD",
+    "shortDescription": "HP i5-2500 4GB RAM, 500GB HDD",
+    "specs": ""
+  },
+  {
+    "id": "320125",
+    "sku": "320125",
+    "title": "HP i5-2500 8GB RAM, 500GB HDD",
+    "name": "HP i5-2500 8GB RAM, 500GB HDD",
+    "stock": 1,
+    "price": 50,
+    "salePrice": 40,
+    "categoryPath": [
+      "Desktop kasutatud",
+      "used, 2-gen"
+    ],
+    "topCategory": "Desktop kasutatud",
+    "subCategory": "used, 2-gen",
+    "sub2Category": "",
+    "brand": "HP",
+    "tags": "HP_i5_2500_ees",
+    "color": "Black",
+    "images": [
+      "/images/HP_i5_2500_ees.png",
+      "/images/Desktop-HP_i5_2500_taga.png",
+      "/images/Desktop-HP_i5_2500_sees.png"
+    ],
+    "description": "HP i5-2500 8GB RAM, 500GB HDD",
+    "shortDescription": "HP i5-2500 8GB RAM, 500GB HDD",
+    "specs": ""
+  }
+]

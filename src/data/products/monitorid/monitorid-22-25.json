@@ -2,18 +2,18 @@
   {
     "id": "555005",
     "sku": "555005",
-    "title": "Monitor 24\" Sam SyncMaster SA450 HD reg. kõrgusega          ",
-    "name": "Monitor 24\" Sam SyncMaster SA450 HD reg. kõrgusega          ",
-    "stock": 1,
+    "title": "Monitor 24\" Sam SyncMaster SA450 HD reg. kï¿½rgusega          ",
+    "name": "Monitor 24\" Sam SyncMaster SA450 HD reg. kï¿½rgusega          ",
+    "stock": "Samsung",
     "price": 40,
-    "salePrice": null,
-    "finalPrice": 40,
-    "topCategory": "Monitorid",
-    "subCategory": "Monitorid 22-25",
+    "salePrice": "",
     "categoryPath": [
       "Monitorid",
-      "Monitorid 22-25"
+      "Monitorid 22ï¿½-25ï¿½"
     ],
+    "topCategory": "Monitorid",
+    "subCategory": "Monitorid 22ï¿½-25ï¿½",
+    "sub2Category": "",
     "brand": "Samsung",
     "tags": "Samsung, Monitor",
     "color": "",
@@ -21,29 +21,25 @@
       "/images/Sam-S24E450b.webp",
       "/images/Sam-S24E450b_label.webp"
     ],
-    "rawImages": [
-      "Sam-S24E450b.webp",
-      "Sam-S24E450b_label.webp"
-    ],
-    "description": "Monitor 24\" Sam SyncMaster SA450 HD reg. kõrgusega          ",
-    "shortDescription": "Monitor 24\" Sam SyncMaster SA450 HD reg. kõrgusega          ",
+    "description": "Monitor 24\" Sam SyncMaster SA450 HD reg. kï¿½rgusega          ",
+    "shortDescription": "Monitor 24\" Sam SyncMaster SA450 HD reg. kï¿½rgusega          ",
     "specs": ""
   },
   {
     "id": "555009",
     "sku": "555009",
-    "title": "Monitor 22 ViwSonic",
-    "name": "Monitor 22 ViwSonic",
-    "stock": 1,
+    "title": "Monitor 22ï¿½ ViwSonic",
+    "name": "Monitor 22ï¿½ ViwSonic",
+    "stock": "ViewSonic",
     "price": 10,
-    "salePrice": null,
-    "finalPrice": 10,
-    "topCategory": "Monitorid",
-    "subCategory": "Monitorid 22-25",
+    "salePrice": "",
     "categoryPath": [
       "Monitorid",
-      "Monitorid 22-25"
+      "Monitorid 22ï¿½-25ï¿½"
     ],
+    "topCategory": "Monitorid",
+    "subCategory": "Monitorid 22ï¿½-25ï¿½",
+    "sub2Category": "",
     "brand": "",
     "tags": "",
     "color": "",
@@ -51,12 +47,8 @@
       "/images/ViewSonic_22_eest_odav.webp",
       "/images/ViewSonic_22_taga_odav.webp"
     ],
-    "rawImages": [
-      "ViewSonic_22_eest_odav.webp",
-      "ViewSonic_22_taga_odav.webp"
-    ],
-    "description": "Monitor 22 ViwSonic",
-    "shortDescription": "Monitor 22 ViwSonic",
+    "description": "Monitor 22ï¿½ ViwSonic",
+    "shortDescription": "Monitor 22ï¿½ ViwSonic",
     "specs": ""
   }
 ]

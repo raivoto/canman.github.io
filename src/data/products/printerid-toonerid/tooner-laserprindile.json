@@ -4,24 +4,21 @@
     "sku": "635601",
     "title": "Cartridge Toner HP 4L,4P,4MP                                ",
     "name": "Cartridge Toner HP 4L,4P,4MP                                ",
-    "stock": 1,
+    "stock": "",
     "price": 15,
-    "salePrice": null,
-    "finalPrice": 15,
-    "topCategory": "Printerid, toonerid",
-    "subCategory": "Tooner laserprindile",
+    "salePrice": "",
     "categoryPath": [
       "Printerid, toonerid",
       "Tooner laserprindile"
     ],
+    "topCategory": "Printerid, toonerid",
+    "subCategory": "Tooner laserprindile",
+    "sub2Category": "",
     "brand": "",
     "tags": "HP",
     "color": "",
     "images": [
       "/images/Toner-HP-4L_4P_4MP.webp"
-    ],
-    "rawImages": [
-      "Toner-HP-4L_4P_4MP.webp"
     ],
     "description": "Toner-HP-4L_4P_4MP",
     "shortDescription": "Toner-HP-4L_4P_4MP",
@@ -32,24 +29,21 @@
     "sku": "635602",
     "title": "Cartridge-Samsung-ML1710D3",
     "name": "Cartridge-Samsung-ML1710D3",
-    "stock": 1,
+    "stock": "",
     "price": 18,
-    "salePrice": null,
-    "finalPrice": 18,
-    "topCategory": "Printerid, toonerid",
-    "subCategory": "Tooner laserprindile",
+    "salePrice": "",
     "categoryPath": [
       "Printerid, toonerid",
       "Tooner laserprindile"
     ],
+    "topCategory": "Printerid, toonerid",
+    "subCategory": "Tooner laserprindile",
+    "sub2Category": "",
     "brand": "",
     "tags": "Samsung",
     "color": "",
     "images": [
       "/images/Cartridge-Samsung-ML1710D3.webp"
-    ],
-    "rawImages": [
-      "Cartridge-Samsung-ML1710D3.webp"
     ],
     "description": "Cartridge-Samsung-ML1710D3",
     "shortDescription": "Cartridge-Samsung-ML1710D3",
@@ -60,24 +54,21 @@
     "sku": "635603",
     "title": "Toner-Xerox-3150_3120_3115_3121",
     "name": "Toner-Xerox-3150_3120_3115_3121",
-    "stock": 1,
+    "stock": "",
     "price": 18,
-    "salePrice": null,
-    "finalPrice": 18,
-    "topCategory": "Printerid, toonerid",
-    "subCategory": "Tooner laserprindile",
+    "salePrice": "",
     "categoryPath": [
       "Printerid, toonerid",
       "Tooner laserprindile"
     ],
+    "topCategory": "Printerid, toonerid",
+    "subCategory": "Tooner laserprindile",
+    "sub2Category": "",
     "brand": "",
     "tags": "Xerox",
     "color": "",
     "images": [
       "/images/Toner-Xerox-3150_3120_3115_3121.webp"
-    ],
-    "rawImages": [
-      "Toner-Xerox-3150_3120_3115_3121.webp"
     ],
     "description": "Toner-Xerox-3150_3120_3115_3121",
     "shortDescription": "Toner-Xerox-3150_3120_3115_3121",
