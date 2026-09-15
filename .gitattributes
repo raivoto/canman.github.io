@@ -1,0 +1,4 @@
+﻿* text=auto
+*.json text
+*.ts text
+*.tsx text
